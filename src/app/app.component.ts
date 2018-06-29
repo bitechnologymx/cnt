@@ -3,9 +3,12 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { Dashboard } from '../shared/dashboard/dashboard';
+
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
-import { Dashboard } from '../shared/dashboard/dashboard';
+import { CardLeadPage } from '../pages/leads/cardLead';
+import { EditLeadPage } from '../pages/leads/editLead';
 
 @Component({
   templateUrl: 'app.html'

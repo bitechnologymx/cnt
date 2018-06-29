@@ -2334,7 +2334,7 @@ button:active:focus { outline: none; box-shadow: none; }
 
 button.disabled, button:disabled { opacity: 0.5; cursor: not-allowed; }
 
-.btn { cursor: pointer; font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; letter-spacing: 1px; font-size: 13px; padding: 10px 20px; border-radius: 6px; margin-right: 5px; margin-bottom: 10px; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
+.btn { cursor: pointer; font-family: Roboto, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; letter-spacing: 1px; font-size: 13px; padding:7px 15px; border-radius: 6px; margin-right: 5px; margin-bottom: 10px; transition: all 0.3s ease-in-out; -webkit-transition: all 0.3s ease-in-out; -moz-transition: all 0.3s ease-in-out; -o-transition: all 0.3s ease-in-out; -ms-transition: all 0.3s ease-in-out; }
 
 .btn.dropdown-toggle { margin-bottom: 0px; }
 
@@ -3259,7 +3259,7 @@ a.card:hover, a.card:focus { -webkit-box-shadow: 0 7px 15px rgba(0, 0, 0, 0.075)
 
 .table-sm > tbody > tr > td, .table-sm > tbody > tr > th, .table-sm > tfoot > tr > td, .table-sm > tfoot > tr > th, .table-sm > thead > tr > td, .table-sm > thead > tr > th { padding: 5px; }
 
-.table-lg > tbody > tr > td, .table-lg > tbody > tr > th, .table-lg > tfoot > tr > td, .table-lg > tfoot > tr > th, .table-lg > thead > tr > td, .table-lg > thead > tr > th { padding: 15px; }
+.table-lg > tbody > tr > td, .table-lg > tbody > tr > th, .table-lg > tfoot > tr > td, .table-lg > tfoot > tr > th, .table-lg > thead > tr > td, .table-lg > thead > tr > th { padding: 15px 2px; }
 
 .table-xl > tbody > tr > td, .table-xl > tbody > tr > th, .table-xl > tfoot > tr > td, .table-xl > tfoot > tr > th, .table-xl > thead > tr > td, .table-xl > thead > tr > th { padding: 20px; }
 
