@@ -1,0 +1,35 @@
+<!-- Theme Configurator START -->
+<div class="theme-configurator" [ngClass]="{'theme-config-open' : app.layout.themeConfigOpen}">
+    <div class="configurator-wrapper">
+        <div class="config-header">
+            <h4 class="config-title">Config Panel</h4>
+            <button class="config-close" (click)="app.layout.themeConfigOpen = !app.layout.themeConfigOpen">
+                <i class="ti-close"></i>
+            </button>
+        </div>
+        <div class="config-body">
+            <div class="mrg-btm-30">
+                <p class="lead font-weight-normal">Header Color</p>
+                <div class="theme-colors {{headerTheme}}" *ngFor="let headerTheme of headerThemes">
+                    <input type="radio" id="{{headerTheme}}"  name="theme" value="{{headerTheme}}" (click)="changeHeader(headerTheme)">
+                    <label for="{{headerTheme}}"></label>
+                </div>
+            </div>
+            <div class="mrg-btm-30">
+                <p class="lead font-weight-normal">Sidebar Color</p>
+                <div class="theme-colors {{sidenavTheme}}" *ngFor="let sidenavTheme of sidenavThemes">
+                    <input type="radio" id="{{sidenavTheme}}" name="sidenav" (click)="changeSidenav(sidenavTheme)">
+                    <label for="{{sidenavTheme}}"></label>
+                </div>
+            </div>
+            <div class="mrg-btm-30">
+                <p class="lead font-weight-normal no-mrg-btm">RTL</p>
+                <div class="toggle-checkbox checkbox-inline toggle-sm mrg-top-10">
+                    <input type="checkbox" name="rtl-toogle" id="rtl-toogle" (click)="app.layout.rtlActived = !app.layout.rtlActived">
+                    <label for="rtl-toogle"></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Theme Configurator END -->

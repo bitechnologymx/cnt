@@ -1,0 +1,8 @@
+{
+  "name": "cntH",
+  "app_id": "3acd581d",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

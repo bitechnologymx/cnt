@@ -1,0 +1,65 @@
+
+<div class="app">
+	<div class="authentication" style="background-color: white;">
+		<div class="sign-in">
+			<div class="row no-mrg-horizon">
+				<div class="col-md-8 no-pdd-horizon d-none d-md-block">
+					<div id="divVideo" class="full-height bg" style="">
+						<video playsinline id="video-background" autoplay="autoplay" style="width: auto; height: -webkit-fill-available; background-color: white; visibility: hidden;" onplay="var s=this;setTimeout(function(){s.style.visibility='visible';},100);">
+							<source src="assets/intro.mp4" type="video/mp4">
+						</video>
+					</div>
+				</div>
+				<div class="col-md-4 no-pdd-horizon" style="padding-right: 30px !important;">
+					<div class="full-height bg-white height-100">
+						<div class="vertical-align full-height">
+							<div class="table-cell">
+								<div class="pdd-horizon-15">
+									<!--		<h2 class="centrado">Ingresar</h2>
+              <p class="mrg-btm-15 centrado font-size-13">Bienvenida: Leticia Mendoza</p>-->
+
+									<div style="width: 100%; text-align: center; padding: 10px;">
+										<img id="userImage" class="borderfoto margen margenizq" src="assets/images/foto_login_b.jpg" width="40%" height="auto" style="border-radius: 50%; margin-bottom: 30px; border: 4px solid #a7a7a7;" />
+									</div>
+
+									<form>
+
+										<!--USUARIO-->
+
+										<div _ngcontent-c1="" class="form-group">
+											<div _ngcontent-c1="" class="input-icon form-group">
+												<i _ngcontent-c1="" class="ti-user"></i> <input id="usuarioLogin" _ngcontent-c1="" class="form-control m-b  border" placeholder="Usuario" value="supe" type="text" onkeyup="changeUser();">
+											</div>
+										</div>
+
+										<!--CONTRASEÑA-->
+
+										<div class="form-group">
+
+											<div _ngcontent-c1="" class="input-icon form-group">
+												<i _ngcontent-c1="" class="ti-lock"></i> <input _ngcontent-c1="" class="form-control m-b border" placeholder="Contraseña" type="password">
+											</div>
+
+										</div>
+
+
+
+										<div class="checkbox font-size-12">
+											<input id="agreement" name="agreement" type="checkbox"> <label for="agreement">Mantenerme conectado</label>
+										</div>
+										<a (click)="dashboard()" class="btn btn-info col-12 border">Ingresar</a>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="login-footer">
+
+							<span class="font-size-10 centrado pull-right pdd-top-10">Corporación Nacional de Telecomunicaciones © CNT nos une 2014. Todos los derechos reservados. <a href="https://www.cnt.gob.ec/">Sitio Web</a></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
