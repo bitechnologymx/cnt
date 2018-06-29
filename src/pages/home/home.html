@@ -1,1 +1,838 @@
-HOLA MUNDO
+
+
+
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+
+
+			<h4 class="card-title">Hola Adrián</h4>
+			<div class="mrg-top-10">
+				<p>Bienvenido a CNT Dashboard</p>
+			</div>
+
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="card">
+						<div class="card-block">
+							<p class="mrg-btm-5">Leads Asignados</p>
+							<div class="mrg-top-10">
+								<h2 class="no-mrg-btm">39</h2>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3">
+					<div class="card">
+						<div class="card-block">
+							<p class="mrg-btm-5">Leads Ganados</p>
+							<div class="mrg-top-10">
+								<div class="row">
+
+									<div class="col-3">
+										<h2 class="no-mrg-btm">09</h2>
+									</div>
+
+									<div class="col-9 mrg-top-15">
+										<div class="progress progress-success">
+											<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3">
+					<div class="card">
+						<div class="card-block">
+							<p class="mrg-btm-5">En Stand By</p>
+							<div class="mrg-top-10">
+								<div class="row">
+
+									<div class="col-3">
+										<h2 class="no-mrg-btm">12</h2>
+									</div>
+
+									<div class="col-9 mrg-top-15">
+										<div class="progress progress-success">
+											<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-3">
+					<div class="card">
+						<div class="card-block">
+							<p class="mrg-btm-5">Leads Perdidos</p>
+							<div class="mrg-top-10">
+								<div class="row">
+
+									<div class="col-3">
+										<h2 class="no-mrg-btm">05</h2>
+									</div>
+
+									<div class="col-9 mrg-top-15">
+										<div class="progress progress-success">
+											<div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!--Tarjeta-->
+
+
+
+		<!--- GOOGLE MAP--->
+
+		<div class="col-md-12">
+			<div id="accordion-2" class="accordion panel-group" role="tablist" aria-multiselectable="true">
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="heading-2-One">
+						<h4 class="panel-title">
+							<a class="collapsed" data-toggle="collapse" data-parent="#accordion-2" href="#collapse-2-One"> <span>Asignaciones</span> <i class="icon ti-arrow-circle-down"></i>
+							</a>
+						</h4>
+					</div>
+					<div id="collapse-2-One" class="collapse panel-collapse">
+						<div class="panel-body">
+
+							<div class="widget card">
+								<div class="map">
+									<div id="google-container"></div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading" role="tab" id="heading-2-Two">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion-2" href="#collapse-2-Two"> <span>Nuevas Asignaciones</span> <i class="icon ti-arrow-circle-down"></i>
+							</a>
+						</h4>
+					</div>
+					<div id="collapse-2-Two" class="collapse panel-collapse show">
+						<div class="panel-body row">
+
+							<div class="col-md-4 row">
+								<label for="form-1-1" class="mrg-top-10 col-md-3 control-label">Mostrar</label>
+								<div class="col-md-5">
+									<select class="form-control" id="form-1-1" placeholder="Seleccione una provincia">
+										<option value="">Seleccione</option>
+										<option value="P1">1</option>
+										<option value="P2">2</option>
+										<option value="P3">3</option>
+										<option value="P4">4</option>
+									</select>
+
+								</div>
+								<label for="form-1-1" class="mrg-top-10 col-md-4 control-label">asignaciones</label>
+							</div>
+
+
+							<div class="col-md-4 row "></div>
+
+							<div class="col-md-4 row">
+								<label for="form-1-1" class="text-right mrg-top-10 col-md-4 control-label">Buscar: </label> <input type="text" class="form-control col-md-8" id="form-1-1" placeholder="Búsqueda">
+
+
+							</div>
+
+
+
+
+							<div class="card-block col-12">
+
+								<div class="table-overflow">
+									<table id="dt-opt" class="table table-lg table-hover">
+										<thead>
+											<tr>
+												<th>
+													<div class="checkbox mrg-left-20">
+														<input id="task10" name="task10" type="checkbox"> <label for="task10"></label>
+													</div>
+												</th>
+												<th>Nombre del Lead</th>
+												<th>No. de Asignación</th>
+												<th>Estatus</th>
+												<th>Prob %</th>
+												<th>Localidad</th>
+												<th>Etapa</th>
+												<th>Fecha Asignación</th>
+												<th>Última actualización</th>
+												<th>Acciones</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>
+													<div class="checkbox mrg-left-20">
+														<input id="task10" name="task10" type="checkbox"> <label for="task10"></label>
+													</div>
+												</td>
+												<td>
+													<div class="list-info mrg-top-10">
+
+														<div class="">
+															<span class="thumb-sm bg-primary"> <span class="text-white">JD</span>
+															</span>John Doe
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="relative mrg-top-15">
+														<span>#877367</span>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-15">
+														<div class="dropdown inline-block">
+															<button class="btn btn-danger btn-inverse dropdown-toggle" type="button" data-toggle="dropdown">
+
+																<span class="ei-alarm"> Para hoy</span> <i class="ti-angle-down font-size-9"></i>
+															</button>
+															<ul class="dropdown-menu status_box">
+																<li class="col-12">
+																	<div class="row col-12 no-pdd mrg-left-10">
+
+																		<label class="mrg-top-10 text-right gray control-label">Cambiar estatus de la asignación</label>
+
+
+																		<div class="mrg-top-10">
+																			<a href="" class="padding-10 no-mrg-right btn btn-default ei-alarm"> Para hoy</a> <a href="" class="padding-10 no-mrg-right btn btn-default ei-time-left"> Stand by</a> <a href="" class="padding-10 no-mrg-right btn btn-default ei-smiley"> Ganado</a> <a href=""
+																				class="padding-10 no-mrg-right btn btn-default ei-sad"> Perdido</a> <a href="" class="padding-10 no-mrg-right btn btn-default ei-straight"> Cancelado</a>
+
+																		</div>
+																		<label class="mrg-top-10 text-right gray control-label">Describe lo que hiciste (Opcional) </label>
+
+																		<div class="col-12" style="padding-left: 0px !important">
+																			<textarea class="form-control col-12 no-pdd"></textarea>
+																		</div>
+
+
+																		<div class="col-8 mrg-top-15 mrg-btm-15" style="padding-left: 0px !important">
+																			<select class="form-control" id="" placeholder="Última actividad...">
+																				<option value="">Última actividad...</option>
+																				<option value="UA1">1</option>
+																				<option value="UA2">2</option>
+																				<option value="UA3">3</option>
+																				<option value="UA4">4</option>
+																			</select>
+
+																		</div>
+
+																		<div class="col-1 mrg-top-15 mrg-btm-15" style="padding-left: 0px !important"></div>
+
+																		<div class="col-3 mrg-btm-15" style="padding-left: 0px !important">
+
+																			<div class="mrg-top-10">
+																				<a href="" class=" mrg-right-15 btn btn-default ei-save font-size-15"></a> <a href="" class=" no-mrg-right btn btn-default ei-close" style="padding-top: 12px; padding-bottom: 12px;"></a>
+
+
+																			</div>
+
+
+																		</div>
+
+
+
+
+																	</div>
+
+
+
+																</li>
+
+
+
+															</ul>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-15">
+														<div class="dropdown inline-block">
+															<button class="btn btn-default btn-inverse dropdown-toggle" type="button" data-toggle="dropdown" style="border: none;">
+
+																<span> %</span>
+
+
+															</button>
+															<ul class="dropdown-menu status_box">
+																<li class="col-12">
+																	<div class="row col-12 no-pdd mrg-left-10">
+
+																		<label class="mrg-top-10 text-right gray control-label">Posibilidad de Cierre</label>
+
+
+
+																		<div class="col-10" style="padding-left: 0px !important">
+																			<input type="text" class="form-control" id="" placeholder="Escriba el porcentaje">
+																		</div>
+
+																		<div class="col-2 no-pdd mrg-top-5 font-size-18">
+																			<label>%</label>
+																		</div>
+
+																		<div class="row col-6 mrg-btm-15"></div>
+																		<div class="row col-6 mrg-btm-15">
+
+																			<div class="mrg-top-10">
+
+																				<div class="display-block">
+																					<div class="btn-group">
+																						<button type="button" class="btn btn-default">
+																							<i class="ei-save"></i>
+																						</button>
+																						<button type="button" class="btn btn-default">
+																							<i class="ei-close"></i>
+																						</button>
+
+																					</div>
+																				</div>
+																			</div>
+
+
+																		</div>
+
+
+
+
+																	</div>
+
+
+
+																</li>
+
+
+
+															</ul>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-15">
+														<b class="text-dark font-size-16">Quito</b>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-10 text-center">
+														<div class="dropdown inline-block">
+															<button class="btn  btn-default btn-inverse dropdown-toggle no-pdd-right no-pdd-left" type="button" style="border: none; width: 125px; text-align: left;" data-toggle="dropdown">
+																Por contactar
+																<div class="progress mrg-top-5">
+																	<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 30%"></div>
+																</div>
+															</button>
+															<ul class="dropdown-menu">
+																<li><a href="#">Por Contactar</a></li>
+																<li><a href="#">Contactado</a></li>
+																<li><a href="#">Solicitud</a></li>
+
+																<li><a href="#">Negociación</a></li>
+
+															</ul>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-10 text-center">
+														30 Julio 2018,<br>09:30 A.M.
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-10 text-center">
+														30 Julio 2018,<br>09:30 A.M.
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-10 text-center">
+														<button class="btn btn-icon btn-flat btn-rounded dropdown-toggle" data-toggle="dropdown">
+															<i class="ti-more-alt"></i>
+														</button>
+														<ul class="dropdown-menu">
+															<li><a href="#"><i class="ei-file-edit pdd-right-10"></i>Editar lead</a></li>
+															<li><a href="#"><i class="ti-layers-alt pdd-right-10"></i>Cambiar Estatus</a></li>
+															<li><a href="#"><i class="ei-timer pdd-right-10"></i>Recordatorio</a></li>
+
+															<li><a href="#"><i class="fa fa-flag pdd-right-10"></i>Probabilidad</a></li>
+
+															<li><a href="#"><i class="ei-file-blank pdd-right-10"></i>Crear Solicitud</a></li>
+														</ul>
+
+
+													</div>
+												</td>
+
+											</tr>
+											<tr>
+												<td>
+													<div class="checkbox mrg-left-20">
+														<input id="task10" name="task10" type="checkbox"> <label for="task10"></label>
+													</div>
+												</td>
+												<td>
+													<div class="list-info mrg-top-10">
+
+														<div class="">
+															<span class="thumb-sm bg-primary"> <span class="text-white">JD</span>
+															</span>John Doe
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="relative mrg-top-15">
+														<span>#877367</span>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-15">
+														<div class="dropdown inline-block">
+															<button class="btn btn-danger btn-inverse dropdown-toggle" type="button" data-toggle="dropdown">
+
+																<span class="ei-alarm"> Para hoy</span> <i class="ti-angle-down font-size-9"></i>
+															</button>
+															<ul class="dropdown-menu status_box">
+																<li class="col-12">
+																	<div class="row col-12 no-pdd mrg-left-10">
+
+																		<label class="mrg-top-10 text-right gray control-label">Cambiar estatus de la asignación</label>
+
+
+																		<div class="mrg-top-10">
+																			<a href="" class="padding-10 no-mrg-right btn btn-default ei-alarm"> Para hoy</a> <a href="" class="padding-10 no-mrg-right btn btn-default ei-time-left"> Stand by</a> <a href="" class="padding-10 no-mrg-right btn btn-default ei-smiley"> Ganado</a> <a href=""
+																				class="padding-10 no-mrg-right btn btn-default ei-sad"> Perdido</a> <a href="" class="padding-10 no-mrg-right btn btn-default ei-straight"> Cancelado</a>
+
+																		</div>
+																		<label class="mrg-top-10 text-right gray control-label">Describe lo que hiciste (Opcional) </label>
+
+																		<div class="col-12" style="padding-left: 0px !important">
+																			<textarea class="form-control col-12 no-pdd"></textarea>
+																		</div>
+
+
+																		<div class="col-8 mrg-top-15 mrg-btm-15" style="padding-left: 0px !important">
+																			<select class="form-control" id="" placeholder="Última actividad...">
+																				<option value="">Última actividad...</option>
+																				<option value="UA1">1</option>
+																				<option value="UA2">2</option>
+																				<option value="UA3">3</option>
+																				<option value="UA4">4</option>
+																			</select>
+
+																		</div>
+
+																		<div class="col-1 mrg-top-15 mrg-btm-15" style="padding-left: 0px !important"></div>
+
+																		<div class="col-3 mrg-btm-15" style="padding-left: 0px !important">
+
+																			<div class="mrg-top-10">
+																				<a href="" class=" mrg-right-15 btn btn-default ei-save font-size-15"></a> <a href="" class=" no-mrg-right btn btn-default ei-close" style="padding-top: 12px; padding-bottom: 12px;"></a>
+
+
+																			</div>
+
+
+																		</div>
+
+
+
+
+																	</div>
+
+
+
+																</li>
+
+
+
+															</ul>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-15">
+														<div class="dropdown inline-block">
+															<button class="btn btn-default btn-inverse dropdown-toggle" type="button" data-toggle="dropdown" style="border: none;">
+
+																<span> %</span>
+
+
+															</button>
+															<ul class="dropdown-menu status_box">
+																<li class="col-12">
+																	<div class="row col-12 no-pdd mrg-left-10">
+
+																		<label class="mrg-top-10 text-right gray control-label">Posibilidad de Cierre</label>
+
+
+
+																		<div class="col-10" style="padding-left: 0px !important">
+																			<input type="text" class="form-control" id="" placeholder="Escriba el porcentaje">
+																		</div>
+
+																		<div class="col-2 no-pdd mrg-top-5 font-size-18">
+																			<label>%</label>
+																		</div>
+
+																		<div class="row col-6 mrg-btm-15"></div>
+																		<div class="row col-6 mrg-btm-15">
+
+																			<div class="mrg-top-10">
+
+																				<div class="display-block">
+																					<div class="btn-group">
+																						<button type="button" class="btn btn-default">
+																							<i class="ei-save"></i>
+																						</button>
+																						<button type="button" class="btn btn-default">
+																							<i class="ei-close"></i>
+																						</button>
+
+																					</div>
+																				</div>
+																			</div>
+
+
+																		</div>
+
+
+
+
+																	</div>
+
+
+
+																</li>
+
+
+
+															</ul>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-15">
+														<b class="text-dark font-size-16">Quito</b>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-10 text-center">
+														<div class="dropdown inline-block">
+															<button class="btn  btn-default btn-inverse dropdown-toggle no-pdd-right no-pdd-left" type="button" style="border: none; width: 125px; text-align: left;" data-toggle="dropdown">
+																Por contactar
+																<div class="progress mrg-top-5">
+																	<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 30%"></div>
+																</div>
+															</button>
+															<ul class="dropdown-menu">
+																<li><a href="#">Por Contactar</a></li>
+																<li><a href="#">Contactado</a></li>
+																<li><a href="#">Solicitud</a></li>
+
+																<li><a href="#">Negociación</a></li>
+
+															</ul>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-10 text-center">
+														30 Julio 2018,<br>09:30 A.M.
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-10 text-center">
+														30 Julio 2018,<br>09:30 A.M.
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-10 text-center">
+														<button class="btn btn-icon btn-flat btn-rounded dropdown-toggle" data-toggle="dropdown">
+															<i class="ti-more-alt"></i>
+														</button>
+														<ul class="dropdown-menu">
+															<li><a href="#"><i class="ei-file-edit pdd-right-10"></i>Editar lead</a></li>
+															<li><a href="#"><i class="ti-layers-alt pdd-right-10"></i>Cambiar Estatus</a></li>
+															<li><a href="#"><i class="ei-timer pdd-right-10"></i>Recordatorio</a></li>
+
+															<li><a href="#"><i class="fa fa-flag pdd-right-10"></i>Probabilidad</a></li>
+
+															<li><a href="#"><i class="ei-file-blank pdd-right-10"></i>Crear Solicitud</a></li>
+														</ul>
+
+
+													</div>
+												</td>
+
+											</tr>
+											<tr>
+												<td>
+													<div class="checkbox mrg-left-20">
+														<input id="task10" name="task10" type="checkbox"> <label for="task10"></label>
+													</div>
+												</td>
+												<td>
+													<div class="list-info mrg-top-10">
+
+														<div class="">
+															<span class="thumb-sm bg-primary"> <span class="text-white">JD</span>
+															</span>John Doe
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="relative mrg-top-15">
+														<span>#877367</span>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-15">
+														<div class="dropdown inline-block">
+															<button class="btn btn-danger btn-inverse dropdown-toggle" type="button" data-toggle="dropdown">
+
+																<span class="ei-alarm"> Para hoy</span> <i class="ti-angle-down font-size-9"></i>
+															</button>
+															<ul class="dropdown-menu status_box">
+																<li class="col-12">
+																	<div class="row col-12 no-pdd mrg-left-10">
+
+																		<label class="mrg-top-10 text-right gray control-label">Cambiar estatus de la asignación</label>
+
+
+																		<div class="mrg-top-10">
+																			<a href="" class="padding-10 no-mrg-right btn btn-default ei-alarm"> Para hoy</a> <a href="" class="padding-10 no-mrg-right btn btn-default ei-time-left"> Stand by</a> <a href="" class="padding-10 no-mrg-right btn btn-default ei-smiley"> Ganado</a> <a href=""
+																				class="padding-10 no-mrg-right btn btn-default ei-sad"> Perdido</a> <a href="" class="padding-10 no-mrg-right btn btn-default ei-straight"> Cancelado</a>
+
+																		</div>
+																		<label class="mrg-top-10 text-right gray control-label">Describe lo que hiciste (Opcional) </label>
+
+																		<div class="col-12" style="padding-left: 0px !important">
+																			<textarea class="form-control col-12 no-pdd"></textarea>
+																		</div>
+
+
+																		<div class="col-8 mrg-top-15 mrg-btm-15" style="padding-left: 0px !important">
+																			<select class="form-control" id="" placeholder="Última actividad...">
+																				<option value="">Última actividad...</option>
+																				<option value="UA1">1</option>
+																				<option value="UA2">2</option>
+																				<option value="UA3">3</option>
+																				<option value="UA4">4</option>
+																			</select>
+
+																		</div>
+
+																		<div class="col-1 mrg-top-15 mrg-btm-15" style="padding-left: 0px !important"></div>
+
+																		<div class="col-3 mrg-btm-15" style="padding-left: 0px !important">
+
+																			<div class="mrg-top-10">
+																				<a href="" class=" mrg-right-15 btn btn-default ei-save font-size-15"></a> <a href="" class=" no-mrg-right btn btn-default ei-close" style="padding-top: 12px; padding-bottom: 12px;"></a>
+
+
+																			</div>
+
+
+																		</div>
+
+
+
+
+																	</div>
+
+
+
+																</li>
+
+
+
+															</ul>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-15">
+														<div class="dropdown inline-block">
+															<button class="btn btn-default btn-inverse dropdown-toggle" type="button" data-toggle="dropdown" style="border: none;">
+
+																<span> %</span>
+
+
+															</button>
+															<ul class="dropdown-menu status_box">
+																<li class="col-12">
+																	<div class="row col-12 no-pdd mrg-left-10">
+
+																		<label class="mrg-top-10 text-right gray control-label">Posibilidad de Cierre</label>
+
+
+
+																		<div class="col-10" style="padding-left: 0px !important">
+																			<input type="text" class="form-control" id="" placeholder="Escriba el porcentaje">
+																		</div>
+
+																		<div class="col-2 no-pdd mrg-top-5 font-size-18">
+																			<label>%</label>
+																		</div>
+
+																		<div class="row col-6 mrg-btm-15"></div>
+																		<div class="row col-6 mrg-btm-15">
+
+																			<div class="mrg-top-10">
+
+																				<div class="display-block">
+																					<div class="btn-group">
+																						<button type="button" class="btn btn-default">
+																							<i class="ei-save"></i>
+																						</button>
+																						<button type="button" class="btn btn-default">
+																							<i class="ei-close"></i>
+																						</button>
+
+																					</div>
+																				</div>
+																			</div>
+
+
+																		</div>
+
+
+
+
+																	</div>
+
+
+
+																</li>
+
+
+
+															</ul>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-15">
+														<b class="text-dark font-size-16">Quito</b>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-10 text-center">
+														<div class="dropdown inline-block">
+															<button class="btn  btn-default btn-inverse dropdown-toggle no-pdd-right no-pdd-left" type="button" style="border: none; width: 125px; text-align: left;" data-toggle="dropdown">
+																Por contactar
+																<div class="progress mrg-top-5">
+																	<div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 30%"></div>
+																</div>
+															</button>
+															<ul class="dropdown-menu">
+																<li><a href="#">Por Contactar</a></li>
+																<li><a href="#">Contactado</a></li>
+																<li><a href="#">Solicitud</a></li>
+
+																<li><a href="#">Negociación</a></li>
+
+															</ul>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-10 text-center">
+														30 Julio 2018,<br>09:30 A.M.
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-10 text-center">
+														30 Julio 2018,<br>09:30 A.M.
+													</div>
+												</td>
+												<td>
+													<div class="mrg-top-10 text-center">
+														<button class="btn btn-icon btn-flat btn-rounded dropdown-toggle" data-toggle="dropdown">
+															<i class="ti-more-alt"></i>
+														</button>
+														<ul class="dropdown-menu">
+															<li><a href="#"><i class="ei-file-edit pdd-right-10"></i>Editar lead</a></li>
+															<li><a href="#"><i class="ti-layers-alt pdd-right-10"></i>Cambiar Estatus</a></li>
+															<li><a href="#"><i class="ei-timer pdd-right-10"></i>Recordatorio</a></li>
+
+															<li><a href="#"><i class="fa fa-flag pdd-right-10"></i>Probabilidad</a></li>
+
+															<li><a href="#"><i class="ei-file-blank pdd-right-10"></i>Crear Solicitud</a></li>
+														</ul>
+
+
+													</div>
+												</td>
+
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+
+
+						</div>
+
+
+						<div class="row col-12">
+							<div class="col-8 pdd-btm-10">
+								<label class="mrg-top-20  control-label">Mostrando 1 a 3 de 39 registros</label>
+
+							</div>
+
+							<div class="col-4 pdd-btm-10 row">
+
+								<a href="#"> <label class="mrg-top-20 col-3 control-label">Anterior</label></a>
+								<div class="mrg-top-10 col-6 row">
+
+									<a href="" class="btn mrg-left-5 col-5 btn-info btn-rounded">1</a> <a href="" class="btn mrg-left-5 col-5 btn-info btn-rounded">2</a>
+
+								</div>
+								<a href="#"><label class="mrg-top-20 col-3 control-label">Siguiente</label></a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+		</div>
+
+
+
+
+		<!--NUEVAS ASIGNACIONES-->
+
+
+
+
+
+
+
+	</div>
+</div>

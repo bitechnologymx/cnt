@@ -2,21 +2,21 @@
 <div class="theme-configurator" [ngClass]="{'theme-config-open' : app.layout.themeConfigOpen}">
     <div class="configurator-wrapper">
         <div class="config-header">
-            <h4 class="config-title">Config Panel</h4>
+            <h4 class="config-title">Configuración Colores</h4>
             <button class="config-close" (click)="app.layout.themeConfigOpen = !app.layout.themeConfigOpen">
                 <i class="ti-close"></i>
             </button>
         </div>
         <div class="config-body">
             <div class="mrg-btm-30">
-                <p class="lead font-weight-normal">Header Color</p>
+                <p class="lead font-weight-normal">Encabezado</p>
                 <div class="theme-colors {{headerTheme}}" *ngFor="let headerTheme of headerThemes">
                     <input type="radio" id="{{headerTheme}}"  name="theme" value="{{headerTheme}}" (click)="changeHeader(headerTheme)">
                     <label for="{{headerTheme}}"></label>
                 </div>
             </div>
             <div class="mrg-btm-30">
-                <p class="lead font-weight-normal">Sidebar Color</p>
+                <p class="lead font-weight-normal">Menu lateral</p>
                 <div class="theme-colors {{sidenavTheme}}" *ngFor="let sidenavTheme of sidenavThemes">
                     <input type="radio" id="{{sidenavTheme}}" name="sidenav" (click)="changeSidenav(sidenavTheme)">
                     <label for="{{sidenavTheme}}"></label>

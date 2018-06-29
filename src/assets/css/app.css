@@ -1640,9 +1640,9 @@ iframe { border: 0; }
 .header .header-container .nav-right .dropdown-menu > li > a { line-height: 1.5; min-height: auto; padding: 10px 15px; }
 
 .header csearch {
-  top: 20px;
-  position: relative;
-  left: 20px;
+  top: -44px;
+    position: relative;
+    left: 55px;
 }
 
 .header .search-box .search-icon-close { display: none; }

@@ -12,7 +12,7 @@ import { Dashboard } from '../shared/dashboard/dashboard';
 })
 export class MyApp {
 
-  rootPage:any = LoginPage;
+  rootPage:any = Dashboard;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

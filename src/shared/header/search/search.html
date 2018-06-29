@@ -5,7 +5,7 @@
     </a>
 </li>
 <li class="search-input" [ngClass]="{'active': app.layout.searchActived}">
-    <input [(ngModel)]="searchModel" class="form-control" type="text" placeholder="Search...">
+    <input [(ngModel)]="searchModel" class="form-control" type="text" placeholder="Buscar...">
     <div class="advanced-search" [ngClass]="{'active': searchModel?.length > 0}">
         <div class="search-wrapper">
             <div class="pdd-vertical-10">
@@ -85,7 +85,7 @@
             </div>
         </div>
         <div class="search-footer">
-            <span>You are Searching for '<b class="text-dark"><span class="serach-text-bind"></span></b>'</span>
+            <span>Tu búsqueda :  '<b class="text-dark"><span class="serach-text-bind"></span></b>'</span>
         </div>
     </div>
 </li>
