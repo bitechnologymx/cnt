@@ -1,8 +1,10 @@
-import { AfterViewInit, Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { NavController, NavParams, Content  } from 'ionic-angular';
 
 import { HomePage } from '../../pages/home/home';
 import { EditLeadPage } from '../../pages/leads/editLead';
+
+import { Asignacion } from "../../providers/interfaces/asignacion.interface";
 
 @Component({
   selector: 'page-cardLead',
@@ -10,8 +12,13 @@ import { EditLeadPage } from '../../pages/leads/editLead';
 })
 export class CardLeadPage {
 
-  constructor(public navCtrl: NavController) {
+  @ViewChild(Content) content: Content;
 
+  asignacion:Asignacion;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.asignacion = this.navParams.get("asignacion");
+    window.scrollTo(0, 0);
   }
 
   public home(){
@@ -19,6 +26,6 @@ export class CardLeadPage {
   }
 
   public editLead(){
-    this.navCtrl.setRoot(EditLeadPage);
+    this.navCtrl.push(EditLeadPage, {'asignacion':this.asignacion});
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ViewController } from 'ionic-angular';
 
 import { Dashboard } from '../../shared/dashboard/dashboard';
 import { HomePage } from '../../pages/home/home';
@@ -13,13 +13,22 @@ export class LoginPage {
   public usuarioImage = "assets/images/foto_login_b.jpg";
   public usuario:string = "supe";
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private viewCtrl: ViewController) {
 
   }
 
   public dashboard(){
     //this.navCtrl.push(HomePage);
-    this.navCtrl.setRoot(Dashboard);
+    //this.navCtrl.push(Dashboard);
+
+    this.navCtrl
+      .setRoot(Dashboard)
+      .then(() => {
+        // first we find the index of the current view controller:
+        const index = this.viewCtrl.index;
+        // then we remove it from the navigation stack
+        this.navCtrl.remove(index);
+      });
   }
 
   public goToDashboard(){

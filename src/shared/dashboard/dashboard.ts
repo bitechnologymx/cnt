@@ -25,6 +25,8 @@ export class Dashboard {
     }
 
     ngOnInit():any {
+        $('#appLogin').remove();
+        $('#appLogin').html("------");
         $('.side-nav .side-nav-menu li a').click(function(event) {
             if ($(this).parent().hasClass("open")) {
 

@@ -1,0 +1,25 @@
+<div class="maps map-fs" id="mapAsignacionesComponent">
+  <ngui-map zoom="7" center="-2.185792, -79.917908">
+    <marker *ngFor="let marker of markers" icon="{{marker.icon}}"
+        (click)="showInfoWindow($event,marker)"
+        position="{{marker.position}}">
+    </marker>
+    <info-window id="iw" *ngIf="activeMarker.display">
+
+      <div class="card-block" style="text-align:center;">
+        <div class="row">
+          <div>
+            <span style="font-size:medium;font-weight:bold;padding:5px;color:#5a57ca;">{{activeMarker.nombre}}</span>
+            <span style="font-size:initial;font-weight:normal;padding:5px;">#</span>
+            <span style="font-size:medium;font-weight:bold;padding:5px;">{{activeMarker.noAsignacion}}</span>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <button class="btn btn-info" (click)="cardLead(activeMarker.asignacion)">Editar lead</button>
+          <button class="btn btn-success" (click)="solicitud(activeMarker.asignacion)">Crear solicitud</button>
+        </div>
+    </div>
+    </info-window>
+  </ngui-map>
+</div>

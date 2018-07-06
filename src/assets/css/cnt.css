@@ -1,0 +1,21 @@
+span.thumb-sm {
+    padding: 3px;
+    padding-left: 5px;
+    border-radius: 20px;
+    margin: 0px 2px;
+}
+
+span.thumb-med {
+    padding: 3px;
+    padding-left: 5px;
+    border-radius: 20px;
+    margin: 0px 2px;
+}
+
+.estatusGrid{
+  width: 550px;
+}
+
+.card-block {
+    padding: 10px 20px;
+}

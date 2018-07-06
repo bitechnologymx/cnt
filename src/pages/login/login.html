@@ -1,16 +1,15 @@
-
-<div class="app">
+<div class="app" id="appLogin">
 	<div class="authentication" style="background-color: white;">
 		<div class="sign-in">
 			<div class="row no-mrg-horizon">
-				<div class="col-md-8 no-pdd-horizon d-none d-md-block">
+				<div col-8 class="col-sm-8 col-md-8 col-lg-8 no-pdd-horizon d-none d-md-block">
 					<div id="divVideo" class="full-height bg" style="">
 						<video playsinline id="video-background" autoplay="autoplay" style="width: auto; height: -webkit-fill-available; background-color: white; visibility: hidden;" onplay="var s=this;setTimeout(function(){s.style.visibility='visible';},100);">
 							<source src="assets/intro.mp4" type="video/mp4">
 						</video>
 					</div>
 				</div>
-				<div class="col-md-4 no-pdd-horizon" style="padding-right: 30px !important;">
+				<div col-4 class="col-sm-4 col-md-4 col-lg-4 no-pdd-horizon" style="padding-right: 30px !important;">
 					<div class="full-height bg-white height-100">
 						<div class="vertical-align full-height">
 							<div class="table-cell">
@@ -45,7 +44,7 @@
 										<div class="checkbox font-size-12">
 											<input id="agreement" name="agreement" type="checkbox"> <label for="agreement">Mantenerme conectado</label>
 										</div>
-										<a (click)="goToDashboard()" class="btn btn-info col-12 border">Ingresar</a>
+										<a (click)="goToDashboard()" class="btn btn-info col-12 border" style="color:white;">Ingresar</a>
 									</form>
 								</div>
 							</div>

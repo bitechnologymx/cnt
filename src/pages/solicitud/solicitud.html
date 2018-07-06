@@ -1,0 +1,1765 @@
+<div class="header-container header navbar header_2" style="height:90px;padding:10px;margin-top:-30px;margin-left:-15px;">
+	<div class="row relative">
+		<form id="shipping-form" class="width-100" method="get">
+			<div id="rootwizard" class="form-wizard col-md-10 ml-auto mr-auto">
+				<ul class="nav nav-pills nav-fill">
+					<li class="nav-item">
+						<a href="#step1" data-toggle="tab" class="active show">
+							<span class="step">1</span>
+							<span class="title">Información del cliente</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="#step2" data-toggle="tab">
+							<span class="step">2</span>
+							<span class="title">Solicitud de Servicio</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="#step3" data-toggle="tab">
+							<span class="step">3</span>
+							<span class="title">Forma de Pago</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="#step4" data-toggle="tab">
+							<span class="step">4</span>
+							<span class="title">Política de Buen Uso</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="#step5" data-toggle="tab">
+							<span class="step">5</span>
+							<span class="title">Envío de Información</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="#step6" data-toggle="tab">
+							<span class="step">6</span>
+							<span class="title">Anexos/Firma</span>
+						</a>
+					</li>
+				</ul>
+				<div id="bar" class="progress progress-info" style="width: 75%">
+					<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+</div>
+
+
+
+<div class="main-content" style="margin-top:0px;">
+	<div class="container-fluid">
+
+
+		<div class="row">
+			<div class="col-md-9">
+				<div class="card">
+					<div class="card-block">
+						<div class="">
+
+							<!--	PRIMER TAB DE CLIENTE-->
+
+							<div class="tab-content">
+
+								<div id="step1" class="tab-pane fade in active">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="card-heading row border bottom">
+												<h3 class="card-title col-11">Información de Cliente /Abonado /Suscriptor</h3>
+
+												<a href="" class="btn btn-default btn-inverse" style="margin-bottom: 0px; float: right;"><i class="fa fa-edit"></i></a>
+
+											</div>
+
+											<div class="card-block">
+
+												<div class="row">
+													<div class="col-md-12">
+
+														<div class="padding-15">
+															<span>El siguiente formulario de información de leads debe ser completado ya que todos los campos son obligatorios</span>
+														</div>
+
+														<div class="form-layout form-layout-2">
+															<div class="col-12 no-pdd-btm">
+																<div class="row no-gutters">
+																	<div class="col-md-12">
+																		<div class="form-group">
+																			<label class="form-control-label">Nombre(s) y Apellidos / Razón Social de la Empresa<span class="tx-danger">*</span></label>
+																			<input class="form-control" type="text" name="title" value="{{asignacion.nombre}}" placeholder="Escriba nombre completo o razón social del suscriptor">
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+																	<div class="col-md-4 ">
+																		<div class="form-group">
+																			<label class="form-control-label">No. de Cédula / RUC <span class="tx-danger">*</span></label>
+																			<input class="form-control" type="text" name="lastname" value="" placeholder="Escriba No. de Cédula o RUC">
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+																	<div class="col-md-4 ">
+																		<div class="form-group ">
+																			<label class="form-control-label">Teléfono de Contacto<span class="tx-danger">*</span></label>
+																			<input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el teléfono de contacto">
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label">Teléfono Móvil<span class="tx-danger">*</span></label>
+																			<input class="form-control" type="number" name="phone" value="" placeholder="Escriba el número de teléfono móvil">
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+																	<div class="col-md-6">
+																		<div class="form-group">
+																			<label class="form-control-label">Nombre del Representante Legal<span class="tx-danger">*</span></label>
+																			<input class="form-control" type="email" name="repLegal" value="" placeholder="Escriba nombre del representante legal">
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+																	<div class="col-md-6">
+																		<div class="form-group">
+																			<label class="form-control-label">Cédula del Representante Legal<span class="tx-danger">*</span></label>
+																			<input class="form-control" type="text" name="cedRepLegal" value="" placeholder="Escriba número de cedúla de representante">
+																		</div>
+																	</div>
+																	<!-- col-6 -->
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label">Domicilio Calle Principal<span class="tx-danger">*</span></label>
+																			<input class="form-control" type="text" name="address" value="" placeholder="Escriba domicilio (Calle Principal)">
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label">No.<span class="tx-danger">*</span></label>
+																			<input class="form-control" type="text" name="address" value="" placeholder="Escriba No. Exterior">
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label">Calle Secundaria<span class="tx-danger">*</span></label>
+																			<input class="form-control" type="text" name="address" value="" placeholder="Escriba Calle Secundaria">
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label">Edificio<span class="tx-danger">*</span></label>
+																			<input class="form-control" type="text" name="address" value="" placeholder="Escriba nombre del edificio">
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label">Piso<span class="tx-danger">*</span></label>
+																			<input class="form-control" type="text" name="address" value="" placeholder="Escriba número de piso">
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label">No. de Departamento<span class="tx-danger">*</span></label>
+																			<input class="form-control" type="text" name="address" value="" placeholder="Escriba número de departamento">
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+
+
+
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label mg-b-0-force">Provincia <span class="danger">*</span></label> <select id="select2-a" class="form-control" data-placeholder="Seleccione la provincia">
+																				<option label="Seleccione la provincia"></option>
+																				<option value="Quito">Quito</option>
+																				<option value="Quito">Quito</option>
+																				<option value="Quito">Quito</option>
+																				<option value="Quito">Quito</option>
+																			</select>
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label mg-b-0-force">Ciudad <span class="tx-danger">*</span></label> <select id="" class="form-control" data-placeholder="Seleccione la ciudad">
+																				<option label="Seleccione la ciudad"></option>
+																				<option value="Quito">Quito</option>
+																				<option value="Quito">Quito</option>
+																				<option value="Quito">Quito</option>
+																				<option value="Quito">Quito</option>
+																			</select>
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label mg-b-0-force">Sector <span class="tx-danger">*</span></label> <select id="" class="form-control" data-placeholder="Seleccione el sector">
+																				<option label="Seleccione el sector"></option>
+																				<option value="Quito">Quito</option>
+																				<option value="Quito">Quito</option>
+																				<option value="Quito">Quito</option>
+																				<option value="Quito">Quito</option>
+																			</select>
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+
+																	<div class="col-md-12">
+																		<div class="form-group">
+																			<label class="form-control-label">Correo Electrónico<span class="tx-danger">*</span></label> <input class="form-control" type="email" name="email" value="" placeholder="Introduzca un correo electrónico">
+																		</div>
+																	</div>
+																	<!-- col-4 -->
+
+
+
+
+																</div>
+																<!-- row -->
+																<div class="form-layout-footer mrg-5top-10 bd pd-20 bd-t-0 pdd-top-10" style="float: right">
+
+																	<button class="btn btn-info">Guardar</button>
+																	<button class="btn btn-default" (click)="home()">Cancelar</button>
+
+																</div>
+																<!-- form-group -->
+															</div>
+
+														</div>
+														<!-- form-layout -->
+
+
+													</div>
+												</div>
+
+
+
+
+											</div>
+
+										</div>
+									</div>
+								</div>
+
+
+
+
+
+								<div id="step2" class="tab-pane fade">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="card-heading row border bottom">
+												<h3 class="card-title col-11">Solicitud de Servicio</h3>
+											</div>
+
+
+
+											<div class="card-block">
+
+												<div class="row">
+													<div class="col-md-12 row">
+
+														<div class="padding-15">
+															<span>Seleccione el servicio que desea contratar</span>
+														</div>
+
+														<div class="border col-10 row pdd-left-15 pdd-btm-5 pdd-top-15 pdd-right-15 border-radius-10">
+															<div class="col-11">
+																<span class="strong font-size-17">1.- Servicios Fijos</span>
+															</div>
+
+															<div class="radio col-1 no-pdd">
+																<input style="float: right;" type="radio" name="form-3" id="___"> <label for="form-3-3"></label>
+															</div>
+														</div>
+
+														<div class="border col-10 mrg-top-15 row pdd-left-15 pdd-btm-5 pdd-top-15 pdd-right-15 border-radius-10">
+															<div class="col-11">
+																<span class="strong font-size-17">2.- Servicios Móviles</span>
+															</div>
+
+															<div class="radio col-1 no-pdd">
+																<input style="float: right;" type="radio" name="form-3" id="__"> <label for="form-3-3"></label>
+															</div>
+														</div>
+
+
+													</div>
+
+
+												</div>
+
+
+
+
+											</div>
+
+
+
+
+
+
+										</div>
+
+
+									</div>
+
+									<div style="height: 25px; background-color: #f6f7fb;"></div>
+
+
+
+
+									<div class="card-block">
+
+										<div class="row">
+											<div class="col-md-12 row">
+
+												<div class="col-md-12 card-heading row">
+													<h3 class="card-title col-11 no-pdd">Servicios Fijos a Contratar</h3>
+
+													<a href="" class="btn btn-default btn-inverse" style="margin-bottom: 0px; float: right;"><i class="ti-save"></i></a>
+
+												</div>
+
+
+												<div class="col-12 no-pdd-left">
+													<p>Seleccione los servicios que desea contratar</p>
+												</div>
+
+
+												<div class="tab-info">
+													<ul class="nav nav-tabs" role="tablist">
+														<li class="nav-item"><a href="#default-tab-1" class="nav-link active" role="tab" data-toggle="tab">
+
+																<div class="checkbox checkbox-inline checkbox-primary">
+																	<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Telefonía Fija</label>
+																</div>
+
+														</a></li>
+														<li class="nav-item"><a href="#default-tab-2" class="nav-link" role="tab" data-toggle="tab">
+																<div class="checkbox checkbox-inline checkbox-primary">
+																	<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Internet Fijo</label>
+																</div>
+														</a></li>
+														<li class="nav-item"><a href="#default-tab-3" class="nav-link" role="tab" data-toggle="tab">
+																<div class="checkbox checkbox-inline checkbox-primary">
+																	<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Televisión por Suscripción</label>
+																</div>
+
+														</a></li>
+														<li class="nav-item"><a href="#default-tab-4" class="nav-link" role="tab" data-toggle="tab">
+																<div class="checkbox checkbox-inline checkbox-primary">
+																	<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Otros</label>
+																</div>
+
+														</a></li>
+													</ul>
+													<div class="tab-content">
+														<div role="tabpanel" class="tab-pane fade in active" id="default-tab-1">
+															<div class="row">
+																<div class="col-md-12">
+
+																	<div class="padding-15">
+																		<span>Por favor complete el siguiente formulario para la contratación de Telefonía Fija.</span>
+																	</div>
+
+																	<div class="form-layout form-layout-2">
+																		<div class="col-12 no-pdd-btm">
+																			<div class="row no-gutters">
+																				<div class="col-md-5">
+																					<div class="form-group">
+																						<label class="form-control-label">Fecha de la solicitud <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="date" value="" placeholder="Escriba la fecha y hora">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+																				<div class="col-md-7 ">
+																					<div class="form-group">
+																						<label class="form-control-label">No. de petición <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba No. de Petición">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+																				<div class="col-md-8">
+																					<div class="form-group">
+																						<label class="form-control-label">Plan Contratado<span class="tx-danger">*</span></label>
+																						<div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Residencial</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Comercial</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							</div>
+																						</div>
+
+
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+																				<div class="col-md-4">
+																					<div class="form-group">
+																						<label class="form-control-label mg-b-0-force">No. de Líneas<span class="tx-danger">*</span></label> <select id="select2-b" class="form-control" placeholder="Seleccione No. de Líneas">
+																							<option label="Seleccione número de Líneas"></option>
+																							<option value="">1</option>
+																							<option value="">2</option>
+																							<option value="">3</option>
+																							<option value="">4</option>
+																						</select>
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+																				<div class="col-md-5">
+																					<div class="form-group">
+																						<label class="form-control-label">Pensión básica mensual sin impuestos <span class="tx-danger">*</span></label>
+
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i> <input type="number" class="form-control datepicker-1" placeholder="Valor por cada línea">
+																						</div>
+
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+																				<div class="col-md-7">
+																					<div class="form-group">
+																						<label class="form-control-label">Descuento<span class="tx-danger">*</span></label>
+																						<div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id-="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Tercera edad</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Discapacidad</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							</div>
+																						</div>
+
+
+																					</div>
+																				</div>
+																				<!-- col-8 -->
+																				<div class="col-md-8">
+																					<div class="form-group">
+																						<label class="form-control-label">Tipo de tecnología<span class="tx-danger">*</span></label>
+																						<div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Cobre</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Fibra Óptica</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							</div>
+																						</div>
+
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-4">
+																					<div class="form-group">
+																						<label class="form-control-label">No. de Serie del Equipo <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el No. de Serie del equipo">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label class="form-control-label">Valor de Inscripción <span class="tx-danger">*</span></label>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-8">
+																					<div class="form-group">
+																						<div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Prom $0</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Contado</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">3 m</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">6 m</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							</div>
+																						</div>
+
+
+																					</div>
+																				</div>
+
+
+																				<div class="col-md-4">
+																					<div class="form-group">
+
+
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor">
+																						</div>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label><strong>Nota:</strong> Costos de materiales de instalación no son financiables; valor a cobrarse en la primera planilla.</label>
+
+																					</div>
+																				</div>
+
+
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label>DATOS REFERENCIA INSTALACIÓN</label>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-4">
+																					<div class="form-group">
+
+																						<input class="form-control" type="text" name="lastname" value="" placeholder="Número de Referencia">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+
+																				<div class="col-md-4">
+																					<div class="form-group">
+
+																						<input class="form-control" type="text" name="lastname" value="" placeholder="Central">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+
+																				<div class="col-md-4">
+																					<div class="form-group">
+
+																						<input class="form-control" type="text" name="lastname" value="" placeholder="Distrib">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+
+
+
+																			</div>
+																			<!-- row -->
+
+																		</div>
+																		<!-- form-group -->
+																	</div>
+
+																</div>
+																<!-- form-layout -->
+
+
+															</div>
+														</div>
+
+
+
+
+														<div role="tabpanel" class="tab-pane fade" id="default-tab-2">
+															<div class="row">
+																<div class="col-md-12">
+
+																	<div class="padding-15">
+																		<span>Por favor complete el siguiente formulario para la contratación de Internet fijo</span>
+																	</div>
+
+																	<div class="form-layout form-layout-2">
+																		<div class="col-12 no-pdd-btm">
+																			<div class="row no-gutters">
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label class="form-control-label">No. de Petición<span class="tx-danger">*</span></label> <input class="form-control" type="text" name="date" value="" placeholder="Escriba No. de Petición">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+																				<div class="col-md-6 ">
+																					<div class="form-group">
+																						<label class="form-control-label">No. de Contrato <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba No. de Contrato">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+																				<div class="col-md-12 ">
+																					<div class="form-group">
+																						<label class="form-control-label">Plan Contratado <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el plan solicitado por el suscriptor">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+
+																				<!-- col-4 -->
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label class="form-control-label">Pensión básica mensual sin impuestos <span class="tx-danger">*</span></label>
+
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i> <input type="number" class="form-control datepicker-1" placeholder="Valor por cada línea">
+																						</div>
+
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label class="form-control-label">Descuento<span class="tx-danger">*</span></label>
+																						<div>
+
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Discapacidad</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							</div>
+																						</div>
+
+
+																					</div>
+																				</div>
+																				<!-- col-8 -->
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label class="form-control-label">Tipo de tecnología<span class="tx-danger">*</span></label>
+																						<div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Cobre</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Fibra Óptica</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							</div>
+																						</div>
+
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label class="form-control-label">No. de Conexión de Referencia (En el caso de tener línea fija) <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el No. de referencia">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label class="form-control-label">No. a Facturar (No. Telefónico o Virtual) <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el No. telefónico al que se facturará">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+
+
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label>VALOR DE INSCRIPCIÓN</label>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-8">
+																					<div class="form-group">
+																						<div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Prom $0</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Contado</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">3 m</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">6 m</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							</div>
+																						</div>
+
+
+																					</div>
+																				</div>
+
+
+																				<div class="col-md-4">
+																					<div class="form-group">
+
+
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor">
+																						</div>
+
+																					</div>
+																				</div>
+
+
+
+
+
+																			</div>
+																			<!-- row -->
+
+																		</div>
+																		<!-- form-group -->
+																	</div>
+
+																</div>
+																<!-- form-layout -->
+
+
+															</div>
+														</div>
+
+
+														<div role="tabpanel" class="tab-pane fade" id="default-tab-3">
+															<div class="row">
+																<div class="col-md-12">
+
+																	<div class="padding-15">
+																		<span>Por favor complete el siguiente formulario para la contratación de Televisión por Suscripción</span>
+																	</div>
+
+																	<div class="form-layout form-layout-2">
+																		<div class="col-12 no-pdd-btm">
+																			<div class="row no-gutters">
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label class="form-control-label">No. de Petición<span class="tx-danger">*</span></label> <input class="form-control" type="text" name="date" value="" placeholder="Escriba No. de Petición">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+																				<div class="col-md-6 ">
+																					<div class="form-group">
+																						<label class="form-control-label">No. de Contrato <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba No. de Contrato">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+																				<div class="col-md-12 ">
+																					<div class="form-group">
+																						<label class="form-control-label">Plan Contratado <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el plan solicitado por el suscriptor">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label class="form-control-label">Tipo de tecnología<span class="tx-danger">*</span></label>
+																						<div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">SD</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">HD</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">ZAPPER</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							</div>
+																						</div>
+
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label class="form-control-label">No. a Facturar (No. Telefónico o Virtual) <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el No. de Serie del equipo">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+
+																				<!-- col-4 -->
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label class="form-control-label">Pensión básica mensual sin impuestos <span class="tx-danger">*</span></label>
+
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i> <input type="number" class="form-control datepicker-1" placeholder="Valor por cada línea">
+																						</div>
+
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label class="form-control-label">Descuento<span class="tx-danger">*</span></label>
+																						<div>
+
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Discapacidad</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							</div>
+																						</div>
+
+
+																					</div>
+																				</div>
+																				<!-- col-8 -->
+
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label>PLANES ADICIONALES SIN IMPUESTOS</label>
+
+																					</div>
+																				</div>
+
+
+																				<div class="col-md-6">
+																					<div class="form-group">
+
+																						<input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el nombre del Plan Adicional">
+																					</div>
+																				</div>
+																				<!-- col-4 -->
+
+																				<div class="col-md-6">
+																					<div class="form-group">
+
+
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor del Plan Adicional">
+																						</div>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label>VALOR DE INSTALACIÓN DEL SERVICIO SIN IMPUESTOS</label>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-4">
+																					<div class="form-group">
+																						<label class="form-control-label">Decodificador Principal<span class="tx-danger">*</span></label>
+
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor">
+																						</div>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-4">
+																					<div class="form-group">
+																						<label class="form-control-label">Decodificador Adicional<span class="tx-danger">*</span></label>
+
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor">
+																						</div>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-4">
+																					<div class="form-group">
+																						<label class="form-control-label">Garantía Extendida<span class="tx-danger">*</span></label>
+
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor">
+																						</div>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label class="form-control-label">Prom $0<span class="tx-danger">*</span></label> <input type="text" class="form-control" placeholder="Detallar tipo de promoción">
+
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label>TARIFA MENSUAL DE DECODIFICADORES ADICIONALES SIN IMPUESTOS</label>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label class="form-control-label">Tipo de tecnología<span class="tx-danger">*</span></label>
+																						<div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">SD</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">HD</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">ZAPPER</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							</div>
+																						</div>
+
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label class="form-control-label">Decodificador Principal<span class="tx-danger">*</span></label>
+
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor">
+																						</div>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label class="form-control-label">Prom $0<span class="tx-danger">*</span></label>
+
+																						<div class=" input-icon ">
+
+																							<input type="text" class="form-control" placeholder="Detallar tipo de promoción">
+																						</div>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label>No. DE DECODIFICADORES ADICIONALES</label>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-12">
+																					<div class="form-group">
+																						<label class="form-control-label">Tipo de tecnología<span class="tx-danger">*</span></label>
+																						<div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">SD</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">HD</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">ZAPPER</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							</div>
+																						</div>
+
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-12">
+																					<div class="form-group">
+
+
+																						<div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<label class="pdd-right-10"><strong>Aplica: </strong></label> <input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">CNT Dúo Pack</label>
+																							</div>
+																							<div class="checkbox checkbox-inline checkbox-primary">
+																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">CNT Triple Pack</label>
+																							</div>
+
+
+																						</div>
+
+																					</div>
+																				</div>
+
+																				<div class="col-md-12">
+																					<div class="form-group form-inline">
+																						<label class="pdd-right-10"><strong>Requisitos: </strong></label>
+																						<p class="no-mrg-btm">Persona Jurídica: RUC, nombramiento del representante legal, cédula de identidad del representante legal</p>
+																						<p class="no-mrg-btm">Persona Natural: Cédula de identidad</p>
+
+																					</div>
+																				</div>
+
+
+
+
+
+
+
+
+
+
+																			</div>
+																			<!-- row -->
+
+																		</div>
+																		<!-- form-group -->
+																	</div>
+
+																</div>
+																<!-- form-layout -->
+
+
+															</div>
+														</div>
+														<div role="tabpanel" class="tab-pane fade" id="default-tab-4">
+															<div class="pdd-horizon-15 pdd-vertical-20">
+																<p>If only you had attached my legs, I wouldn't be in this ridiculous position. Now, remember, Chewbacca, you have a responsibility to me, so don't do anything foolish. What's going on...buddy? You're being put into carbon freeze. What if he doesn't survive? He's worth a lot to
+																	me. The Empire will compensate you if he dies. Put him in! Oh, no! No, no, no! Stop, Chewbacca, stop...! Stop, Chewie, stop! Do you hear me? Stop! Yes, stop, please! I'm not ready to die. Chewie! Chewie, this won't help me.</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div id="step3" class="tab-pane fade">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="card-heading row border bottom">
+												<h3 class="card-title col-11">Forma de Pago</h3>
+												<a href="" class="btn btn-default btn-inverse" style="margin-bottom: 0px; float: right;"><i class="ti-save"></i></a>
+											</div>
+
+
+
+
+
+											<div class="card-block">
+
+												<div class="row">
+													<div class="col-md-12 row">
+
+														<div class="padding-15">
+															<span>Seleccione el servicio que desea contratar</span>
+														</div>
+
+														<div class="tab-info col-12 no-pdd">
+															<ul class="nav nav-tabs" role="tablist">
+																<li class="nav-item"><a href="#card-tab-1" class="nav-link" role="tab" data-toggle="tab"><div class="checkbox checkbox-inline checkbox-primary">
+																			<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Telefonía Fija</label>
+																		</div> </a></li>
+																<li class="nav-item"><a href="#card-tab-2" class="nav-link" role="tab" data-toggle="tab"><div class="checkbox checkbox-inline checkbox-primary">
+																			<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Internet Fijo</label>
+																		</div></a></li>
+																<li class="nav-item"><a href="#card-tab-3" class="nav-link" role="tab" data-toggle="tab"><div class="checkbox checkbox-inline checkbox-primary">
+																			<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Televisión por Suscripción</label>
+																		</div></a></li>
+																<li class="nav-item"><a href="#card-tab-4" class="nav-link" role="tab" data-toggle="tab"><div class="checkbox checkbox-inline checkbox-primary">
+																			<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Autorización de Débito</label>
+																		</div></a></li>
+															</ul>
+															<div class="tab-content">
+																<div role="tabpanel" class="tab-pane fade in active" id="card-tab-1">
+																	<div class="pdd-horizon-15 pdd-vertical-20">
+
+																		<div class="row">
+																			<div class="col-md-12 no-pdd">
+																				<div id="accordion-1" class="accordion panel-group" role="tablist" aria-multiselectable="true">
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingOne">
+																							<h4 class="panel-title">
+																								<a data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne"> <span>Ventanilla</span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+
+																						<div id="collapseOne" class="collapse panel-collapse show">
+																							<div class="panel-body">
+
+																								<div class="form-group">
+																									<label>Teléfono</label> <input type="text" placeholder="Escriba No. Telefónico o Virtual" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingTwo">
+																							<h4 class="panel-title">
+																								<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapseTwo"> <span>Tarjeta de débito</span>
+																									<div style="float: right;" class="radio radio-inline radio-primary no-pdd no-mrg">
+																										<input type="radio" name="debito" id="debito"> <label for="debito"></label>
+																									</div>
+																								</a>
+																							</h4>
+																						</div>
+																						<div id="collapseTwo" class="collapse panel-collapse" role="tabpanel">
+																							<div class="panel-body">
+
+																								<div class="mrg-top-10">
+																									<div class="radio radio-inline radio-primary">
+																										<input type="radio" name="form-5" id="form-5-1"> <label for="form-5-1">Ahorros</label>
+																									</div>
+																									<div class="radio radio-inline radio-primary">
+																										<input type="radio" name="form-5" id="form-5-2" checked=""> <label for="form-5-2">Corriente</label>
+																									</div>
+																								</div>
+
+																								<div class="form-group">
+																									<label>No. de Cuenta</label> <input type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Entidad Financiera</label> <input type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingThree">
+																							<h4 class="panel-title">
+																								<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree"> <span>Tarjeta de crédito </span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+																						<div id="collapseThree" class="collapse panel-collapse" role="tabpanel">
+																							<div class="panel-body">
+
+																								<div class="mrg-top-10">
+																									<div class="radio radio-inline radio-primary">
+																										<input type="radio" name="form-5" id="form-5-1"> <label for="form-5-1">Ahorros</label>
+																									</div>
+																									<div class="radio radio-inline radio-primary">
+																										<input type="radio" name="form-5" id="form-5-2" checked=""> <label for="form-5-2">Corriente</label>
+																									</div>
+																								</div>
+
+																								<div class="form-group">
+																									<label>No. de Cuenta</label> <input type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Entidad Financiera</label> <input type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+
+
+
+
+																		</div>
+																	</div>
+																</div>
+																<div role="tabpanel" class="tab-pane fade" id="card-tab-2">
+																	<div class="pdd-horizon-15 pdd-vertical-20">
+
+																		<div class="row">
+																			<div class="col-md-12 no-pdd">
+																				<div id="accordion-1" class="accordion panel-group" role="tablist" aria-multiselectable="true">
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingOne">
+																							<h4 class="panel-title">
+																								<a data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne"> <span>Ventanilla</span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+
+																						<div id="collapseOne" class="collapse panel-collapse show">
+																							<div class="panel-body">
+
+																								<div class="form-group">
+																									<label>Teléfono</label> <input type="text" placeholder="Escriba No. Telefónico o Virtual" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingTwo">
+																							<h4 class="panel-title">
+																								<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapseTwo"> <span>Tarjeta de débito</span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+																						<div id="collapseTwo" class="collapse panel-collapse" role="tabpanel">
+																							<div class="panel-body">
+
+																								<div class="mrg-top-10">
+																									<div class="radio radio-inline radio-primary">
+																										<input type="radio" name="form-5" id="form-5-1"> <label for="form-5-1">Ahorros</label>
+																									</div>
+																									<div class="radio radio-inline radio-primary">
+																										<input type="radio" name="form-5" id="form-5-2" checked=""> <label for="form-5-2">Corriente</label>
+																									</div>
+																								</div>
+
+																								<div class="form-group">
+																									<label>No. de Cuenta</label> <input type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Entidad Financiera</label> <input type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingThree">
+																							<h4 class="panel-title">
+																								<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree"> <span>Tarjeta de crédito </span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+																						<div id="collapseThree" class="collapse panel-collapse" role="tabpanel">
+																							<div class="panel-body">
+
+																								<div class="mrg-top-10">
+																									<div class="radio radio-inline radio-primary">
+																										<input type="radio" name="form-5" id="form-5-1"> <label for="form-5-1">Ahorros</label>
+																									</div>
+																									<div class="radio radio-inline radio-primary">
+																										<input type="radio" name="form-5" id="form-5-2" checked=""> <label for="form-5-2">Corriente</label>
+																									</div>
+																								</div>
+
+																								<div class="form-group">
+																									<label>No. de Cuenta</label> <input type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Entidad Financiera</label> <input type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+
+
+
+
+																		</div>
+
+																	</div>
+																</div>
+																<div role="tabpanel" class="tab-pane fade" id="card-tab-3">
+																	<div class="pdd-horizon-15 pdd-vertical-20">
+																		<div class="row">
+																			<div class="col-md-12 no-pdd">
+																				<div id="accordion-1" class="accordion panel-group" role="tablist" aria-multiselectable="true">
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingOne">
+																							<h4 class="panel-title">
+																								<a data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne"> <span>Ventanilla</span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+
+																						<div id="collapseOne" class="collapse panel-collapse show">
+																							<div class="panel-body">
+
+																								<div class="form-group">
+																									<label>Teléfono</label> <input type="text" placeholder="Escriba No. Telefónico o Virtual" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingTwo">
+																							<h4 class="panel-title">
+																								<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapseTwo"> <span>Tarjeta de débito</span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+																						<div id="collapseTwo" class="collapse panel-collapse" role="tabpanel">
+																							<div class="panel-body">
+
+																								<div class="mrg-top-10">
+																									<div class="radio radio-inline radio-primary">
+																										<input type="radio" name="form-5" id="form-5-1"> <label for="form-5-1">Ahorros</label>
+																									</div>
+																									<div class="radio radio-inline radio-primary">
+																										<input type="radio" name="form-5" id="form-5-2" checked=""> <label for="form-5-2">Corriente</label>
+																									</div>
+																								</div>
+
+																								<div class="form-group">
+																									<label>No. de Cuenta</label> <input type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Entidad Financiera</label> <input type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingThree">
+																							<h4 class="panel-title">
+																								<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree"> <span>Tarjeta de crédito </span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+																						<div id="collapseThree" class="collapse panel-collapse" role="tabpanel">
+																							<div class="panel-body">
+
+																								<div class="mrg-top-10">
+																									<div class="radio radio-inline radio-primary">
+																										<input type="radio" name="form-5" id="form-5-1"> <label for="form-5-1">Ahorros</label>
+																									</div>
+																									<div class="radio radio-inline radio-primary">
+																										<input type="radio" name="form-5" id="form-5-2" checked=""> <label for="form-5-2">Corriente</label>
+																									</div>
+																								</div>
+
+																								<div class="form-group">
+																									<label>No. de Cuenta</label> <input type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Entidad Financiera</label> <input type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+
+
+
+
+																		</div>
+																	</div>
+																</div>
+																<div role="tabpanel" class="tab-pane fade" id="card-tab-4">
+																	<div class="pdd-horizon-15 pdd-vertical-20">
+																		<div class="row">
+																			<div class="col-md-12 no-pdd">
+																				<form class="form-horizontal mrg-left-20">
+
+
+
+																					<div class="form-group row mrg-top-20 mrg-left-20 ">
+
+																						<p class="col-md-2">Aplica:</p>
+
+																						<div class="radio col-md-1">
+																							<input id="si1" name="si1" type="radio"> <label for="si1">Si</label>
+																						</div>
+
+																						<div class="radio col-md-1">
+																							<input id="no1" name="no1" type="radio"> <label for="no1">No</label>
+																						</div>
+																					</div>
+
+																				</form>
+
+																				<!--TEXTO AUTORIZACIÓN DEBITO-->
+
+																				<p class="col-md-12 pdd-right-0 pdd-left-0">Como cliente de la CNT EP , adicionalmente ratiﬁco mi compromiso de mantener los pagos de mi Tarjeta de Crédito al día y los fondos suﬁcientes en mi Cuenta Corriente o de Ahorros dentro de los plazos estipulados, a ﬁn de cubrir los
+																					valores cuyos débitos automáticos autorizo a través del presente documento.</p>
+
+																				<p class="col-md-12 pdd-right-0 pdd-left-0">Así mismo, expresamente me obligo a no renovar la presente autorización sin el previo consentimiento por escrito de la CNT EP, por lo que libero de toda responsabilidad a la entidad ﬁnanciera: Banco o, a la emisora de la Tarjeta de
+																					Crédito por los débitos o cargos efectuados en base a la presente autorización.</p>
+
+																				<p class="col-md-12 pdd-right-0 pdd-left-0">De igual manera, autorizo a que, en caso de pérdida, o cualquier circunstancia por la cual fuera cambiado el número de Tarjeta de Crédito, o de la cuenta antes mencionada; en caso de pérdida; retiro; expiración; o, cambio de número,
+																					me comprometo a notiﬁcar en forma inmediata a la CNT EP, sobre el número asignado. De tal manera que el cambio de número indicado no será causa para no cancelar los valores que adeude a la CNT EP, por los conceptos mencionados. La CNT EP no asume ninguna responsabilidad sobre
+																					los cargos que la Institución Financiera por Usted seleccionada le cobre por prestar este servicio a su Cliente.</p>
+
+																				<p class="col-md-12 pdd-right-0 pdd-left-0">El cliente, usuario o consumidor declara conocer que la información suministrada es verídica y maniﬁesta su consentimiento expreso e irrevocable a la CNT EP, a posible cesionaria de sus derechos y obligaciones o, a quien pudiese
+																					ostentar a futuro a cualquier título, la calidad de acreedor de los valores adeudados por el cliente, usuario o consumidor por concepto de los servicios prestados, para:</p>
+
+																				<p class="col-md-12 pdd-right-0 pdd-left-0">1. Consultar, en cualquier tiempo, en los burós de información crediticia, toda la información relevante que permita a la CNT EP conocer el desempeño del cliente, usuario o consumidor como deudor y su capacidad de pago, valorar el
+																					riesgo futuro en caso de concederle un crédito por el servicio a prestarse.</p>
+
+																				<p class="col-md-12 pdd-right-0 pdd-left-0">2. Reportar en los burós de información crediticia en forma directa o por intermedio de la Superintendencia de Bancos y Seguros, datos referidos a:</p>
+
+																				<p class="col-md-12 pdd-right-0 pdd-left-0">2.1 Cumplimiento oportuno o incumplimiento, de las obligaciones crediticias pasadas, presentes o futuras del cliente.</p>
+
+																				<p class="col-md-12 pdd-right-0 pdd-left-0">2.2 Información comercial, ﬁnanciera y socioeconómica que el cliente haya entregado o que consten en registros públicos, bases de datos públicos o documentos públicos.</p>
+
+																				<p class="col-md-12 pdd-right-0 pdd-left-0">3. Conservar, tanto en la CNT EP como en los burós de información crediticia, con las debidas autorizaciones y durante el período necesario, la información detallada en el numeral 2 de esta declaración.</p>
+
+																				<p class="col-md-12 pdd-right-0 pdd-left-0">Ésta autorización expresa del cliente, usuario o consumidor permitirá a la CNT EP y a los burós de información crediticia, divulgar la información mencionada para evaluar los riesgos de conceder al cliente, usuario o consumidor un
+																					crédito por el servicio a prestar, elaborar estadísticas y derivar, mediante modelos matemáticos, conclusiones de ellas y demás ﬁnes autorizados por la ley. Si a pesar de existir la factibilidad técnica y comercial para prestar el servicio solicitado por el cliente, usuario
+																					consumidor, de la CNT EP se reserva la facultad de negar la solicitud del servicio.</p>
+
+																				<!--FIN DE TEXTO AUTORIZACIÓN DEBITO-->
+
+
+																			</div>
+
+
+
+
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+
+													</div>
+
+
+												</div>
+
+
+
+
+											</div>
+
+
+										</div>
+
+									</div>
+								</div>
+								<div id="step4" class="tab-pane fade">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="card-heading row border bottom">
+												<h3 class="card-title col-11">Política de buen uso de los Servicios Fijos de CNT EP</h3>
+											</div>
+
+
+
+											<div class="card-block">
+
+												<div class="row">
+
+
+
+													<div class="col-md-12 mrg-left-20">
+
+														<form class="form-horizontal">
+
+
+															<div class="form-group row mrg-top-10 ">
+
+																<div class="checkbox col-md-4">
+																	<input id="intfij" name="intfij" type="checkbox"> <label for="intfij">Internet Fijo</label>
+																</div>
+
+																<div class="checkbox col-md-4">
+																	<input id="tesus" name="tesus" type="checkbox"> <label for="tesus">Televisión por Suscripción</label>
+																</div>
+
+																<div class="checkbox col-md-4">
+																	<input id="telfij" name="telfij" type="checkbox"> <label for="telfij">Telefonía Fija</label>
+																</div>
+															</div>
+														</form>
+
+
+														<p class="col-md-12 pdd-right-40 pdd-left-0">
+
+															Mediante la presente, declaro que he sido informado por la operadora sobre las características, tarifas ﬁnales del servicio y plan contratado a la fecha de suscripción de este anexo. Me comprometo a informarme periódicamente de las políticas, condiciones comerciales, contractuales,
+															condiciones de uso del servicio y plan contratado, promociones, tarifas y políticas de prevención de fraude que se encuentran publicadas en la página web de la operadora: <a href="www.cnt.gob.ec"> www.cnt.gob.ec </a>
+
+														</p>
+
+														<p class="col-md-12 pdd-right-40 pdd-left-0">Acepto que la operadora, con el afán de no atentar al derecho de todos los usuarios al acceso igualitario al servicio prestado y prevenir usos fraudulentos y abusos en los planes y servicios de telecomunicaciones, ha establecido la
+															siguiente diferenciación para el uso de planes residenciales y comerciales, acorde la siguiente política:</p>
+
+														<p class="col-md-12 pdd-right-40 pdd-left-0">• Planes Residenciales: únicamente para uso personal en el hogar, este servicio no podrá ser utilizado para actividades comerciales, de lucro o de comunicación masiva, ni para cometer actos no autorizados que vayan en contra de los
+															intereses económicos, de imagen o cualquier otro perjuicio que afecte a la CNT EP.</p>
+
+
+														<p class="col-md-12 pdd-right-40 pdd-left-0">• Planes Comerciales/Corporativos: para uso comercial en actividades diferentes al uso residencial, con ﬁnes de lucro o comunicación masiva; no se podra utilizar estas líneas para cometer actos no autorizados que vayan en contra de los
+															intereses económicos, de imagen o cualquier otro perjuicio que afecte a la CNT EP.</p>
+
+														<p class="col-md-12 pdd-right-40 pdd-left-0">
+															En caso que se compruebe el uso no autorizado del servicio, la operadora podrá tomar las acciones pertinentes conforme a lo establecido a la normativa vigente y las disposiciones contractuales pactadas e informadas mediante la página web:<a href="www.cnt.gob.ec"> www.cnt.gob.ec </a>
+														</p>
+
+
+
+
+
+
+
+
+													</div>
+												</div>
+
+											</div>
+
+
+										</div>
+
+									</div>
+								</div>
+
+								<div id="step5" class="tab-pane fade">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="card-heading row border bottom">
+												<h3 class="card-title col-11">Autorización para el envío de Información</h3>
+											</div>
+
+
+
+											<div class="card-block no-pdd-btm">
+
+												<p>Autorizo a la Corporación Nacional de Telecomunicaciones CNT EP. a enviar la siguiente información:</p>
+
+												<div class="row">
+													<div class="col-md-12 mrg-left-20">
+
+
+
+
+														<form class="form-horizontal">
+
+
+															<div class="form-group row mrg-top-20 ">
+
+																<div class="checkbox col-md-4">
+																	<input id="facel" name="facel" type="checkbox"> <label for="facel">Facturas electrónicas en mi correo</label>
+																</div>
+
+																<div class="checkbox col-md-8">
+																	<input id="infco" name="infco" type="checkbox"> <label for="infco"> Información comercial de la CNT E.P. a través de los diferentes medios </label>
+																</div>
+															</div>
+														</form>
+
+
+
+													</div>
+
+												</div>
+
+											</div>
+
+
+										</div>
+
+									</div>
+								</div>
+
+								<div id="step6" class="tab-pane fade">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="card-heading row border bottom">
+												<h3 class="card-title col-11">Autorización para el envío de información</h3>
+											</div>
+
+
+
+											<div class="card-block">
+
+												<p>Autorizo a la Corporación Nacional de Telecomunicaciones CNT RP a enviar la siguiente información:</p>
+
+												<form class="form-horizontal mrg-top-40 pdd-right-30">
+
+													<div class="form-group row">
+
+														<div class="col-md-6">
+															<label for="form-1-1" class="control-label">Lugar</label> <input type="text" class="form-control" id="form-1-1" placeholder="Ingrese el lugar">
+														</div>
+
+														<div class="col-md-6">
+															<label for="form-1-1" class="control-label">Fecha</label> <input type="text" class="form-control" id="form-1-1" placeholder="Ingrese la fecha">
+														</div>
+
+													</div>
+
+													<div class="border bottom">
+
+														<p class="border bottom pdd-btm-10">Anexar documentación o archivos</p>
+
+														<button type="button" class="btn btn-default mrg-btm-15">Agregar Archivo</button>
+
+													</div>
+
+													<div class="form-group row">
+
+														<div class="col-md-6  padding-25">
+															<div class="col-md-12 border border-radius-10" style="width: 100%; height: 200px;"></div>
+															<label style="text-align: center;" for="form-1-1" class="col-md-12 control-label tac pdd-top-10">Firma Cliente/Abonado/Suscriptor </label>
+
+														</div>
+
+														<div class="col-md-6  padding-25">
+															<div class="col-md-12 border border-radius-10" style="width: 100%; height: 200px;"></div>
+															<label style="text-align: center;" for="form-1-1" class="col-md-12 control-label tac pdd-top-10">Firma Vendedor</label>
+
+														</div>
+													</div>
+
+
+
+
+
+													<div class="form-group row">
+
+														<div class="col-md-6 no-pdd">
+															<label for="form-1-1" class="col-md-12 control-label tac">Nombre Completo</label>
+															<div class="col-md-12">
+																<input type="text" class="form-control" id="form-1-1" placeholder="Ingrese nombre(s) y apellido(s) del cliente">
+															</div>
+														</div>
+
+														<div class="col-md-6 no-pdd">
+															<label for="form-1-1" class="col-md-12 control-label tac">Nombre Completo</label>
+															<div class="col-md-12">
+																<input type="text" class="form-control" id="form-1-1" placeholder="Ingrese nombre(s) y apellido(s) del vendedor">
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group row">
+
+														<div class="col-md-6 no-pdd">
+															<label for="form-1-1" class="col-md-12 control-label tac">No. de Cédula</label>
+															<div class="col-md-12">
+																<input type="text" class="form-control" id="form-1-1" placeholder="Ingrese el número de cédula del cliente">
+															</div>
+														</div>
+
+														<div class="col-md-6 no-pdd">
+															<label for="form-1-1" class="col-md-12 control-label tac">Código del vendedor</label>
+															<div class="col-md-12">
+																<input type="text" class="form-control" id="form-1-1" placeholder="Ingrese código del vendedor">
+															</div>
+														</div>
+													</div>
+												</form>
+
+
+
+
+											</div>
+
+
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+
+
+						</div>
+
+
+					</div>
+
+				</div>
+
+
+			</div>
+
+			<div class="col-md-3">
+				<div class="card">
+					<div class="card-block no-pdd-btm">
+
+						<div class="col-12 no-pdd">
+							<div class="card no-pdd no-mrg-btm">
+								<div class="card-block padding-10">
+									<div>
+										<span class="thumb-sm bg-primary"> <span class="text-white">JD</span>
+										</span><strong>ASIGNACIÓN #5678927</strong><br> <span>21 Junio 2018 13:51 P.M.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-block no-pdd-btm">
+
+						<div class="col-12 no-pdd">
+							<div class="card no-pdd no-mrg-btm">
+								<div class="card-block padding-10">
+									<div>
+										<strong>Fecha Solicitud</strong><br> <span>21 Junio 2018 13:51 P.M.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="card-block no-pdd-btm">
+
+						<div class="col-12 no-pdd">
+							<div class="card">
+								<div class="card-block padding-10">
+
+									<div class="card-heading col-12 row border bottom ml-auto mr-auto no-pdd-left no-pdd-right padding-10">
+										<h5 class="card-title mr-auto ml-auto">Servicios a Contratar</h5>
+
+									</div>
+
+									<div class="col-md-12">
+										<p class="mrg-top-10 no-mrg-btm">
+											<span class="status away"></span> <span class="mrg-left-10 "><strong>Telefonía Fija </strong></span>
+											<i class="ti-trash font-size-18 mrg-top-5" style="float: right;"></i>
+										</p>
+										<p class="font-size-13 no-mrg">No. de Petición: #162528</p>
+
+									</div>
+
+									<div class="col-md-12">
+										<p class="mrg-top-10 no-mrg-btm">
+											<span class="status away"></span> <span class="mrg-left-10 "><strong>Internet Fijo </strong></span>
+											<i class="ti-trash font-size-18 mrg-top-5" style="float: right;"></i>
+										</p>
+										<p class="font-size-13 no-mrg">No. de Petición: #162528</p>
+										<p class="font-size-13 no-mrg">No. de Contrato: #162528</p>
+
+									</div>
+
+									<div class="col-md-12">
+										<p class="mrg-top-10 no-mrg-btm">
+											<span class="status away"></span> <span class="mrg-left-10 font-size-10 "><strong>Televisión por Suscripción </strong></span>
+											<i class="ti-trash font-size-18 mrg-top-5" style="float: right;"></i>
+										</p>
+										<p class="font-size-13 no-mrg">No. de Petición: #162528</p>
+										<p class="font-size-13 no-mrg">No. de Contrato: #162528</p>
+
+									</div>
+
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+
+		</div>
+		<!--row-->
+
+
+
+	</div>
+
+
+	<div class="wizard-pager">
+		<div class="">
+			<button type="button" class="btn btn-default button-previous" (click)="home()">
+				<i class="ti-angle-left pdd-right-10"></i>Anterior
+			</button>
+			<button type="button" class="btn btn-info button-next pull-right">
+				Siguiente<i class="ti-angle-right pdd-left-10"></i>
+			</button>
+		</div>
+	</div>
+
+
+</div>
