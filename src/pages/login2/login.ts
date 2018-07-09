@@ -1,22 +1,34 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { NavController, ViewController } from 'ionic-angular';
 
-import { DashboardPage } from '../../shared/dashboard/dashboard';
+import { Dashboard } from '../../shared/dashboard2/dashboard';
+import { HomePage } from '../../pages/home/home';
 
-@IonicPage()
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html',
+  templateUrl: 'login.html'
 })
 export class LoginPage {
 
-  public usuarioImage = "assets/images/foto_login2.jpg";
+  public usuarioImage = "assets/images/foto_login_b.jpg";
   public usuario:string = "user";
 
-  constructor(public navCtrl: NavController, public splashScreen: SplashScreen) {
-    splashScreen.hide();
+  constructor(public navCtrl: NavController, private viewCtrl: ViewController) {
+
+  }
+
+  public dashboard(){
+    //this.navCtrl.push(HomePage);
+    //this.navCtrl.push(Dashboard);
+
+    this.navCtrl
+      .setRoot(Dashboard)
+      .then(() => {
+        // first we find the index of the current view controller:
+        const index = this.viewCtrl.index;
+        // then we remove it from the navigation stack
+        this.navCtrl.remove(index);
+      });
   }
 
   public goToDashboard(){
@@ -25,9 +37,9 @@ export class LoginPage {
       //$("#video-background").hide();
       //$("#divVideo").css('background-image', 'url("assets/images/others/img-29.jpg")');
       if (usuarioLogin=="super"){
-        this.navCtrl.push(DashboardPage);
+        this.navCtrl.push(Dashboard);
       } else if (usuarioLogin=="user"){
-        this.navCtrl.push(DashboardPage);
+        this.navCtrl.push(Dashboard);
       }
       return false;
     }

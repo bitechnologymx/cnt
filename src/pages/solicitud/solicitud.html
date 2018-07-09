@@ -10,7 +10,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="#step2" data-toggle="tab">
+						<a (click)="showTab('#step2')" data-toggle="tab">
 							<span class="step">2</span>
 							<span class="title">Solicitud de Servicio</span>
 						</a>
@@ -65,7 +65,7 @@
 
 							<div class="tab-content">
 
-								<div id="step1" class="tab-pane fade in active">
+								<div id="step1" class="tab-pane fade {{step1Active}}">
 									<div class="row">
 										<div class="col-md-12">
 											<div class="card-heading row border bottom">
@@ -254,7 +254,7 @@
 
 
 
-								<div id="step2" class="tab-pane fade">
+								<div id="step2" class="tab-pane fade {{step2Active}}">
 									<div class="row">
 										<div class="col-md-12">
 											<div class="card-heading row border bottom">

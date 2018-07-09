@@ -42,11 +42,11 @@
     </td>
     <td>
       <div class="mrg-top-15">
-        <div class="dropdown inline-block">
-          <button class="btn {{ asignacion.estatus | asignacionesGridEstatus}} btn-inverse dropdown-toggle" type="button" data-toggle="dropdown">
+        <div class="dropdown inline-block" ngbDropdown #estatusDropdown="ngbDropdown">
+          <button class="btn {{ asignacion.estatus | asignacionesGridEstatus}} btn-inverse dropdown-toggle" type="button" data-toggle="dropdown" ngbDropdownAnchor (focus)="estatusDropdown.open()">
             <span class="ei-alarm"> {{ asignacion.estatus }}</span> <i class="ti-angle-down font-size-9"></i>
           </button>
-          <ul class="dropdown-menu status_box estatusGrid">
+          <ul class="dropdown-menu status_box estatusGrid" ngbDropdownMenu>
             <li class="col-12">
               <div class="row col-12 no-pdd mrg-left-10">
 
@@ -82,7 +82,8 @@
                 <div class="col-3 mrg-btm-15" style="padding-left: 0px !important">
 
                   <div class="mrg-top-10">
-                    <a href="" class=" mrg-right-15 btn btn-default ei-save font-size-15"></a> <a href="" class=" no-mrg-right btn btn-default ei-close" style="padding-top: 12px; padding-bottom: 12px;"></a>
+                    <a href="" class=" mrg-right-15 btn btn-default ei-save font-size-15"></a>
+                    <a (click)="$event.stopPropagation(); estatusDropdown.close();" class=" no-mrg-right btn btn-default ei-close" style="padding-top: 12px; padding-bottom: 12px;"></a>
                   </div>
 
                 </div>
@@ -97,11 +98,11 @@
     </td>
     <td>
       <div class="mrg-top-15">
-        <div class="dropdown inline-block">
-          <button class="btn btn-default btn-inverse dropdown-toggle" type="button" data-toggle="dropdown" style="border: none;">
+        <div class="dropdown inline-block" ngbDropdown>
+          <button class="btn btn-default btn-inverse dropdown-toggle" type="button" data-toggle="dropdown" style="border: none;" ngbDropdownToggle>
             <span> {{ asignacion.probabilidad }}%</span>
           </button>
-          <ul class="dropdown-menu status_box" style="width:200px;">
+          <ul class="dropdown-menu status_box" style="width:200px;" ngbDropdownMenu>
             <li class="col-12">
               <div class="row col-12 no-pdd mrg-left-10">
 
@@ -124,7 +125,7 @@
                         <button type="button" class="btn btn-default">
                           <i class="ei-save"></i>
                         </button>
-                        <button type="button" class="btn btn-default">
+                        <button type="button" class="btn btn-default" ngbDropdownToggle>
                           <i class="ei-close"></i>
                         </button>
 
@@ -149,14 +150,14 @@
     </td>
     <td>
       <div class="mrg-top-10 text-center">
-        <div class="dropdown inline-block">
-          <button class="btn  btn-default btn-inverse dropdown-toggle no-pdd-right no-pdd-left" type="button" style="border: none; width: 125px; text-align: left;" data-toggle="dropdown">
+        <div class="dropdown inline-block" ngbDropdown>
+          <button class="btn  btn-default btn-inverse dropdown-toggle no-pdd-right no-pdd-left" type="button" style="border: none; width: 125px; text-align: left;" data-toggle="dropdown" ngbDropdownToggle>
             {{ asignacion.etapa }}
             <div class="progress mrg-top-5">
               <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 30%"></div>
             </div>
           </button>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" ngbDropdownMenu>
             <li><a href="#">Por Contactar</a></li>
             <li><a href="#">Contactado</a></li>
             <li><a href="#">Solicitud</a></li>
@@ -172,11 +173,11 @@
       <div class="mrg-top-10 text-center" [innerHTML]="asignacion.ultimaActualizacion | asignacionesGridFecha"></div>
     </td>
     <td>
-      <div class="mrg-top-10 text-center">
-        <button class="btn btn-icon btn-flat btn-rounded dropdown-toggle" data-toggle="dropdown">
+      <div class="mrg-top-10 text-center" ngbDropdown>
+        <button class="btn btn-icon btn-flat btn-rounded dropdown-toggle" data-toggle="dropdown" ngbDropdownToggle>
           <i class="ti-more-alt"></i>
         </button>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu" ngbDropdownMenu>
           <li><a (click)="cardLead(asignacion)"><i class="ei-file-edit pdd-right-10"></i>Editar lead</a></li>
           <li><a href="#"><i class="ti-layers-alt pdd-right-10"></i>Cambiar Estatus</a></li>
           <li><a href="#"><i class="ei-timer pdd-right-10"></i>Recordatorio</a></li>

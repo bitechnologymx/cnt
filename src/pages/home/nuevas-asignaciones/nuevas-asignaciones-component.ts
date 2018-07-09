@@ -27,4 +27,8 @@ export class NuevasAsignacionesComponent {
       this.navCtrl.push(SolicitudPage, {'asignacion':asignacion});
     }
 
+    ngOnInit():any {
+      //$("#estatusDropdown").dropdown('toggle')
+    }
+
 }

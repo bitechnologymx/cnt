@@ -13,6 +13,9 @@ export class SolicitudPage {
 
   asignacion:Asignacion;
 
+  step1Active:string = "in active";
+  step2Active:string = "";
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.asignacion = this.navParams.get("asignacion");
     window.scrollTo(0, 0);
@@ -20,5 +23,10 @@ export class SolicitudPage {
 
   public home(){
     this.navCtrl.setRoot(HomePage);
+  }
+
+  public showTab(id){
+    this.step1Active = "";
+    this.step2Active = "in active";
   }
 }
