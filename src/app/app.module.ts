@@ -10,40 +10,45 @@ import { NguiMapModule} from '@ngui/map';
 import * as $ from 'jquery';
 
 import { MyApp } from './app.component';
-import { LoginPage } from '../pages/login/login';
-import { HomePage } from '../pages/home/home';
+
+import { HomeVendedorPage } from '../pages/home-vendedor/home-vendedor';
 import { CardLeadPage } from '../pages/leads/cardLead';
 import { EditLeadPage } from '../pages/leads/editLead';
 import { SolicitudPage } from '../pages/solicitud/solicitud';
 
-import { Dashboard } from '../shared/dashboard2/dashboard';
 import { SideNavComponent } from '../shared/sidenav/sidenav-component';
 import { SearchComponent } from '../shared/header/search/search-component';
 import { FooterComponent } from '../shared/footer/footer-component';
 import { ThemeConfigComponent } from '../shared/footer/theme-config-component';
 
-import { MapAsignacionesComponent } from '../pages/home/map-asignaciones/map-asignaciones-component';
-import { NuevasAsignacionesComponent } from '../pages/home/nuevas-asignaciones/nuevas-asignaciones-component';
+import { MapAsignacionesComponent } from '../pages/home-vendedor/map-asignaciones/map-asignaciones-component';
+import { NuevasAsignacionesComponent } from '../pages/home-vendedor/nuevas-asignaciones/nuevas-asignaciones-component';
 
 import { AsignacionesProvider } from '../providers/asignaciones/asignaciones';
 
-import { AsignacionesGridEstatusPipe } from '../pipes/asignaciones-grid/asignaciones-grid-estatus';
-import { AsignacionesGridFechaPipe } from '../pipes/asignaciones-grid/asignaciones-grid-fecha';
+import { PipesModule } from '../pipes/pipes.module';
 
-import { DashboardPage } from '../shared/dashboard/dashboard';
+import { LoginPageModule } from '../pages/login/login.module';
+import { DashboardPageModule } from '../shared/dashboard/dashboard.module';
+
+//import { AsignacionesGridEstatusPipe } from '../pipes/asignaciones-grid/asignaciones-grid-estatus';
+//import { AsignacionesGridFechaPipe } from '../pipes/asignaciones-grid/asignaciones-grid-fecha';
+
+//import { DashboardPage } from '../shared/dashboard/dashboard';
 
 @NgModule({
   declarations: [
     MyApp,
-    LoginPage,
-    HomePage,CardLeadPage,EditLeadPage,SolicitudPage,
-    Dashboard,SideNavComponent,SearchComponent,FooterComponent,ThemeConfigComponent,
+    HomeVendedorPage,CardLeadPage,EditLeadPage,SolicitudPage,
+    SideNavComponent,SearchComponent,FooterComponent,ThemeConfigComponent,
     NuevasAsignacionesComponent,MapAsignacionesComponent,
-    AsignacionesGridEstatusPipe,AsignacionesGridFechaPipe,
-    DashboardPage
+    //AsignacionesGridEstatusPipe,AsignacionesGridFechaPipe,
+    //DashboardPage
   ],
   imports: [
     BrowserModule,
+    LoginPageModule,
+    DashboardPageModule,
     IonicModule.forRoot(MyApp),
     NgbModule.forRoot(),
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyA80cWOalTZWvHNwZWK9VEVVa3gYzOCKJE'})
@@ -51,11 +56,10 @@ import { DashboardPage } from '../shared/dashboard/dashboard';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginPage,
-    HomePage,CardLeadPage,EditLeadPage,SolicitudPage,
-    Dashboard,SideNavComponent,SearchComponent,FooterComponent,ThemeConfigComponent,
+    HomeVendedorPage,CardLeadPage,EditLeadPage,SolicitudPage,
+    SideNavComponent,SearchComponent,FooterComponent,ThemeConfigComponent,
     NuevasAsignacionesComponent,MapAsignacionesComponent,
-    DashboardPage
+    //DashboardPage
   ],
   providers: [
     StatusBar,

@@ -1,6 +1,6 @@
 <div class="maps map-fs" id="mapAsignacionesComponent">
   <ngui-map zoom="7" center="-2.185792, -79.917908">
-    <marker *ngFor="let marker of markers" 
+    <marker *ngFor="let marker of markers" icon="{{marker.icon}}"
         (click)="showInfoWindow($event,marker)"
         position="{{marker.position}}">
     </marker>

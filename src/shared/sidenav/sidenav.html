@@ -2,19 +2,19 @@
 <div class="side-nav" sideBar>
     <div class="side-nav-inner">
         <div class="side-nav-logo">
-            <a href="" (click)="['/dashboard']">
+            <a href="" (click)="goTo()">
                 <div class="logo logo-dark" style="background-image: url('assets/images/logo/logo.png')"></div>
                 <div class="logo logo-white" style="background-image: url('assets/images/logo/logo-white.png')"></div>
             </a>
             <div class="mobile-toggle side-nav-toggle">
-                <a href="javascript:void(0);" (click)="app.layout.isMenuCollapsed = !app.layout.isMenuCollapsed">
+                <a  (click)="app.layout.isMenuCollapsed = !app.layout.isMenuCollapsed">
                     <i class="ti-arrow-circle-left"></i>
                 </a>
             </div>
         </div>
         <ul class="side-nav-menu scrollable">
             <li clas="nav-item" routerLinkActive="active">
-                <a class="mrg-top-30" href="" (click)="['/dashboard']">
+                <a class="mrg-top-30" href="" (click)="goTo()">
                     <span class="icon-holder">
                         <i class="ti-home"></i>
                     </span>
@@ -22,7 +22,7 @@
                 </a>
             </li>
             <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" href="javascript:void(0);">
+                    <a class="dropdown-toggle" >
                         <span class="icon-holder">
 						<i class="ti-envelope"></i>
 					</span>
@@ -30,15 +30,15 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" href="javascript:void(0);">
+                    <a class="dropdown-toggle" >
                         <span class="icon-holder">
 						<i class="ti-layout-tab"></i>
 					</span>
-                        <span class="title">Solicitudess</span>
+                        <span class="title">Solicitudes</span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" href="javascript:void(0);">
+                    <a class="dropdown-toggle" >
                         <span class="icon-holder">
 						<i class="ti-export"></i>
 					</span>
@@ -46,14 +46,14 @@
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="dropdown-toggle" href="javascript:void(0);">
+                    <a class="dropdown-toggle" (click)="login()">
                         <span class="icon-holder">
 						<i class="ti-power-off"></i>
 					</span>
                         <span class="title">Salir</span>
 
                     </a>
-                  </li>  
+                  </li>
         </ul>
     </div>
 </div>

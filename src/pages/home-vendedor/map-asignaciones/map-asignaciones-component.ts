@@ -52,13 +52,13 @@ export class MapAsignacionesComponent {
       marker.asignacion = asignacion;
 
       if (asignacion.etapa=="Por contactar"){
-        marker.icon = "/assets/images/inactivoL.png";
+        marker.icon = "assets/images/inactivoL.png";
       } else if (asignacion.etapa=="Contactado"){
-        marker.icon = "/assets/images/activoL.png";
+        marker.icon = "assets/images/activoL.png";
       } else if (asignacion.etapa=="Solicitud"){
-        marker.icon = "/assets/images/sinasignarL.png";
+        marker.icon = "assets/images/sinasignarL.png";
       } else {
-        marker.icon = "/assets/images/sinasignarL.png";
+        marker.icon = "assets/images/sinasignarL.png";
       }
 
       return marker;

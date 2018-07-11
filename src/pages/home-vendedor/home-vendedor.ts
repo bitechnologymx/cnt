@@ -5,7 +5,10 @@ import { NavController } from 'ionic-angular';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomeVendedorPage {
+
+  public isCollapsedMap = false;
+  public isCollapsedAsignaciones = false;
 
   constructor(public navCtrl: NavController) {
 

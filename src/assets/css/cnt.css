@@ -19,3 +19,7 @@ span.thumb-med {
 .card-block {
     padding: 10px 20px;
 }
+
+.dropup .dropdown-toggle::after{
+  border:none;
+}

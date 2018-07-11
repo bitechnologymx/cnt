@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-import { Dashboard } from '../../../shared/dashboard2/dashboard';
+import { DashboardPage } from '../../../shared/dashboard/dashboard';
 
 @Component({
   selector: 'csearch',

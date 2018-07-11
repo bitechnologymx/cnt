@@ -40,6 +40,7 @@
     "bootstrap": "4.0.0-beta.2",
     "chart.js": "^2.7.1",
     "cordova-android": "7.0.0",
+    "cordova-browser": "5.0.3",
     "cordova-plugin-crosswalk-webview": "^2.4.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
@@ -112,7 +113,8 @@
       "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }

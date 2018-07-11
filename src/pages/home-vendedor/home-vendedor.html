@@ -99,11 +99,12 @@
 				<div class="panel panel-default">
 					<div class="panel-heading" role="tab" id="heading-2-One">
 						<h4 class="panel-title">
-							<a class="collapsed" data-toggle="collapse" data-parent="#accordion-2" href="#collapse-2-One"> <span>Asignaciones</span> <i class="icon ti-arrow-circle-down"></i>
+							<a class="collapsed" data-toggle="collapse" data-parent="#accordion-2" (click)="isCollapsedMap = !isCollapsedMap"
+          [attr.aria-expanded]="!isCollapsedMap"> <span>Asignaciones</span> <i class="icon ti-arrow-circle-down"></i>
 							</a>
 						</h4>
 					</div>
-					<div id="collapse-2-One" class="collapse show">
+					<div id="collapse-2-One" class="collapse show" [ngbCollapse]="isCollapsedMap">
 						<div class="panel-body">
 
 							<div class="widget card">
@@ -117,11 +118,12 @@
 				<div class="panel panel-default">
 					<div class="panel-heading" role="tab" id="heading-2-Two">
 						<h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion-2" href="#collapse-2-Two"> <span>Nuevas Asignaciones</span> <i class="icon ti-arrow-circle-down"></i>
+							<a data-toggle="collapse" data-parent="#accordion-2" (click)="isCollapsedAsignaciones = !isCollapsedAsignaciones"
+          [attr.aria-expanded]="!isCollapsedAsignaciones"> <span>Nuevas Asignaciones</span> <i class="icon ti-arrow-circle-down"></i>
 							</a>
 						</h4>
 					</div>
-					<div id="collapse-2-Two" class="collapse panel-collapse show">
+					<div id="collapse-2-Two" class="collapse panel-collapse show" [ngbCollapse]="isCollapsedAsignaciones">
 						<div class="panel-body row">
 
 							<div class="col-md-4 row">

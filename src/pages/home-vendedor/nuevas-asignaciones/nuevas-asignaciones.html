@@ -53,11 +53,11 @@
                 <label class="mrg-top-10 text-right gray control-label">Cambiar estatus de la asignación</label>
 
                 <div class="mrg-top-10">
-                  <a href="#" class="padding-10 no-mrg-right btn btn-default ei-alarm"> Para hoy</a>
-                  <a href="" class="padding-10 no-mrg-right btn btn-default ei-time-left"> Stand by</a>
-                  <a href="" class="padding-10 no-mrg-right btn btn-default ei-smiley"> Ganado</a>
-                  <a href="" class="padding-10 no-mrg-right btn btn-default ei-sad"> Perdido</a>
-                  <a href="" class="padding-10 no-mrg-right btn btn-default ei-straight"> Cancelado</a>
+                  <a  class="padding-10 no-mrg-right btn btn-default ei-alarm"> Para hoy</a>
+                  <a  class="padding-10 no-mrg-right btn btn-default ei-time-left"> Stand by</a>
+                  <a  class="padding-10 no-mrg-right btn btn-default ei-smiley"> Ganado</a>
+                  <a  class="padding-10 no-mrg-right btn btn-default ei-sad"> Perdido</a>
+                  <a  class="padding-10 no-mrg-right btn btn-default ei-straight"> Cancelado</a>
                 </div>
                 <label class="mrg-top-10 text-right gray control-label">Describe lo que hiciste (Opcional) </label>
 
@@ -82,7 +82,7 @@
                 <div class="col-3 mrg-btm-15" style="padding-left: 0px !important">
 
                   <div class="mrg-top-10">
-                    <a href="" class=" mrg-right-15 btn btn-default ei-save font-size-15"></a>
+                    <a  class=" mrg-right-15 btn btn-default ei-save font-size-15"></a>
                     <a (click)="$event.stopPropagation(); estatusDropdown.close();" class=" no-mrg-right btn btn-default ei-close" style="padding-top: 12px; padding-bottom: 12px;"></a>
                   </div>
 
@@ -158,10 +158,10 @@
             </div>
           </button>
           <ul class="dropdown-menu" ngbDropdownMenu>
-            <li><a href="#">Por Contactar</a></li>
-            <li><a href="#">Contactado</a></li>
-            <li><a href="#">Solicitud</a></li>
-            <li><a href="#">Negociación</a></li>
+            <li><a >Por Contactar</a></li>
+            <li><a >Contactado</a></li>
+            <li><a >Solicitud</a></li>
+            <li><a >Negociación</a></li>
           </ul>
         </div>
       </div>
@@ -179,10 +179,10 @@
         </button>
         <ul class="dropdown-menu" ngbDropdownMenu>
           <li><a (click)="cardLead(asignacion)"><i class="ei-file-edit pdd-right-10"></i>Editar lead</a></li>
-          <li><a href="#"><i class="ti-layers-alt pdd-right-10"></i>Cambiar Estatus</a></li>
-          <li><a href="#"><i class="ei-timer pdd-right-10"></i>Recordatorio</a></li>
+          <li><a ><i class="ti-layers-alt pdd-right-10"></i>Cambiar Estatus</a></li>
+          <li><a ><i class="ei-timer pdd-right-10"></i>Recordatorio</a></li>
 
-          <li><a href="#"><i class="fa fa-flag pdd-right-10"></i>Probabilidad</a></li>
+          <li><a ><i class="fa fa-flag pdd-right-10"></i>Probabilidad</a></li>
 
           <li><a (click)="solicitud(asignacion)"><i class="ei-file-blank pdd-right-10"></i>Crear Solicitud</a></li>
         </ul>
