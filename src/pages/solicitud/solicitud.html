@@ -1,44 +1,20 @@
-<div class="header-container header navbar header_2" style="height:90px;padding:10px;margin-top:-30px;margin-left:-15px;">
+<div class="header-container header navbar header_2" style="height: 90px; padding: 10px; margin-top: -30px; margin-left: -15px;">
 	<div class="row relative">
-		<form id="shipping-form" class="width-100" method="get">
+		<form class="width-100" method="get">
 			<div id="rootwizard" class="form-wizard col-md-10 ml-auto mr-auto">
 				<ul class="nav nav-pills nav-fill">
-					<li class="nav-item">
-						<a (click)="showTab(1)" data-toggle="tab" class="{{step1Btn}}">
-							<span class="step">1</span>
-							<span class="title">Información del cliente</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a (click)="showTab(2)" data-toggle="tab" class="{{step2Btn}}">
-							<span class="step">2</span>
-							<span class="title">Solicitud de Servicio</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a (click)="showTab(3)" data-toggle="tab" class="{{step3Btn}}">
-							<span class="step">3</span>
-							<span class="title">Forma de Pago</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a (click)="showTab(4)" data-toggle="tab" class="{{step4Btn}}">
-							<span class="step">4</span>
-							<span class="title">Política de Buen Uso</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a (click)="showTab(5)" data-toggle="tab" class="{{step5Btn}}">
-							<span class="step">5</span>
-							<span class="title">Envío de Información</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a (click)="showTab(6)" data-toggle="tab" class="{{step6Btn}}">
-							<span class="step">6</span>
-							<span class="title">Anexos/Firma</span>
-						</a>
-					</li>
+					<li class="nav-item"><a (click)="showTab(1)" data-toggle="tab" class="{{step1Btn}}"> <span class="step">1</span> <span class="title">Información del cliente</span>
+					</a></li>
+					<li class="nav-item"><a (click)="showTab(2)" data-toggle="tab" class="{{step2Btn}}"> <span class="step">2</span> <span class="title">Solicitud de Servicio</span>
+					</a></li>
+					<li class="nav-item"><a (click)="showTab(3)" data-toggle="tab" class="{{step3Btn}}"> <span class="step">3</span> <span class="title">Forma de Pago</span>
+					</a></li>
+					<li class="nav-item"><a (click)="showTab(4)" data-toggle="tab" class="{{step4Btn}}"> <span class="step">4</span> <span class="title">Política de Buen Uso</span>
+					</a></li>
+					<li class="nav-item"><a (click)="showTab(5)" data-toggle="tab" class="{{step5Btn}}"> <span class="step">5</span> <span class="title">Envío de Información</span>
+					</a></li>
+					<li class="nav-item"><a (click)="showTab(6)" data-toggle="tab" class="{{step6Btn}}"> <span class="step">6</span> <span class="title">Anexos/Firma</span>
+					</a></li>
 				</ul>
 				<div id="bar" class="progress progress-info" style="width: 75%">
 					<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
@@ -49,9 +25,7 @@
 
 </div>
 
-
-
-<div class="main-content" style="margin-top:0px;">
+<div class="main-content" style="margin-top: 0px;">
 	<div class="container-fluid">
 
 
@@ -65,14 +39,14 @@
 
 							<div class="tab-content">
 
+								<!--	.................................................................................. -->
+								<!--	.................................................................................. -->
+								<!--	.................................................................................. -->
 								<div id="step1" class="tab-pane fade {{step1Tab}}">
 									<div class="row">
 										<div class="col-md-12">
 											<div class="card-heading row border bottom">
 												<h3 class="card-title col-11">Información de Cliente /Abonado /Suscriptor</h3>
-
-												<a  class="btn btn-default btn-inverse" style="margin-bottom: 0px; float: right;"><i class="fa fa-edit"></i></a>
-
 											</div>
 
 											<div class="card-block">
@@ -89,147 +63,154 @@
 																<div class="row no-gutters">
 																	<div class="col-md-12">
 																		<div class="form-group">
-																			<label class="form-control-label">Nombre(s) y Apellidos / Razón Social de la Empresa<span class="tx-danger">*</span></label>
-																			<input class="form-control" type="text" name="title" value="{{asignacion.nombre}}" placeholder="Escriba nombre completo o razón social del suscriptor">
+																			<label class="form-control-label"> Nombre(s) y Apellidos / Razón Social de la Empresa <span class="tx-danger">*</span>
+																			</label> <input [(ngModel)]="informacionCliente.nombreApellidosRazonSocial" value="{{informacionCliente.nombreApellidosRazonSocial}}" class="form-control" type="text" placeholder="Escriba nombre completo o razón social del suscriptor">
 																		</div>
 																	</div>
-																	<!-- col-4 -->
+
 																	<div class="col-md-4 ">
 																		<div class="form-group">
-																			<label class="form-control-label">No. de Cédula / RUC <span class="tx-danger">*</span></label>
-																			<input class="form-control" type="text" name="lastname" value="" placeholder="Escriba No. de Cédula o RUC">
+																			<label class="form-control-label"> No. de Cédula / RUC <span class="tx-danger">*</span>
+																			</label> <input [(ngModel)]="informacionCliente.noCedula" value="{{informacionCliente.noCedula}}" class="form-control" type="text" placeholder="Escriba No. de Cédula o RUC">
 																		</div>
 																	</div>
-																	<!-- col-4 -->
+
 																	<div class="col-md-4 ">
 																		<div class="form-group ">
-																			<label class="form-control-label">Teléfono de Contacto<span class="tx-danger">*</span></label>
-																			<input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el teléfono de contacto">
+																			<label class="form-control-label"> Teléfono de Contacto <span class="tx-danger">*</span>
+																			</label> <input [(ngModel)]="informacionCliente.telefonoContacto" value="{{informacionCliente.telefonoContacto}}" class="form-control" type="text" placeholder="Escriba el teléfono de contacto">
 																		</div>
 																	</div>
 																	<!-- col-4 -->
 																	<div class="col-md-4">
 																		<div class="form-group">
-																			<label class="form-control-label">Teléfono Móvil<span class="tx-danger">*</span></label>
-																			<input class="form-control" type="number" name="phone" value="" placeholder="Escriba el número de teléfono móvil">
+																			<label class="form-control-label"> Teléfono Móvil <span class="tx-danger">*</span>
+																			</label> <input [(ngModel)]="informacionCliente.telefonoReferenciaPersonal" value="{{informacionCliente.telefonoReferenciaPersonal}}" class="form-control" type="number" placeholder="Escriba el número de teléfono móvil">
 																		</div>
 																	</div>
-																	<!-- col-4 -->
+
 																	<div class="col-md-6">
 																		<div class="form-group">
-																			<label class="form-control-label">Nombre del Representante Legal<span class="tx-danger">*</span></label>
-																			<input class="form-control" type="email" name="repLegal" value="" placeholder="Escriba nombre del representante legal">
+																			<label class="form-control-label"> Nombre del Representante Legal <span class="tx-danger">*</span>
+																			</label> <input [(ngModel)]="informacionCliente.nombreRepresentanteLegal" value="{{informacionCliente.nombreRepresentanteLegal}}" class="form-control" type="email" placeholder="Escriba nombre del representante legal">
 																		</div>
 																	</div>
-																	<!-- col-4 -->
+
 																	<div class="col-md-6">
 																		<div class="form-group">
-																			<label class="form-control-label">Cédula del Representante Legal<span class="tx-danger">*</span></label>
-																			<input class="form-control" type="text" name="cedRepLegal" value="" placeholder="Escriba número de cedúla de representante">
+																			<label class="form-control-label"> Cédula del Representante Legal <span class="tx-danger">*</span>
+																			</label> <input [(ngModel)]="informacionCliente.cedulaRepresentanteLegal" value="{{informacionCliente.cedulaRepresentanteLegal}}" class="form-control" type="text" placeholder="Escriba número de cedúla de representante">
 																		</div>
 																	</div>
-																	<!-- col-6 -->
-																	<div class="col-md-4">
-																		<div class="form-group">
-																			<label class="form-control-label">Domicilio Calle Principal<span class="tx-danger">*</span></label>
-																			<input class="form-control" type="text" name="address" value="" placeholder="Escriba domicilio (Calle Principal)">
-																		</div>
-																	</div>
-																	<!-- col-4 -->
-																	<div class="col-md-4">
-																		<div class="form-group">
-																			<label class="form-control-label">No.<span class="tx-danger">*</span></label>
-																			<input class="form-control" type="text" name="address" value="" placeholder="Escriba No. Exterior">
-																		</div>
-																	</div>
-																	<!-- col-4 -->
-																	<div class="col-md-4">
-																		<div class="form-group">
-																			<label class="form-control-label">Calle Secundaria<span class="tx-danger">*</span></label>
-																			<input class="form-control" type="text" name="address" value="" placeholder="Escriba Calle Secundaria">
-																		</div>
-																	</div>
-																	<!-- col-4 -->
-																	<div class="col-md-4">
-																		<div class="form-group">
-																			<label class="form-control-label">Edificio<span class="tx-danger">*</span></label>
-																			<input class="form-control" type="text" name="address" value="" placeholder="Escriba nombre del edificio">
-																		</div>
-																	</div>
-																	<!-- col-4 -->
-																	<div class="col-md-4">
-																		<div class="form-group">
-																			<label class="form-control-label">Piso<span class="tx-danger">*</span></label>
-																			<input class="form-control" type="text" name="address" value="" placeholder="Escriba número de piso">
-																		</div>
-																	</div>
-																	<!-- col-4 -->
-																	<div class="col-md-4">
-																		<div class="form-group">
-																			<label class="form-control-label">No. de Departamento<span class="tx-danger">*</span></label>
-																			<input class="form-control" type="text" name="address" value="" placeholder="Escriba número de departamento">
-																		</div>
-																	</div>
-																	<!-- col-4 -->
-
-
 
 																	<div class="col-md-4">
 																		<div class="form-group">
-																			<label class="form-control-label mg-b-0-force">Provincia <span class="danger">*</span></label> <select id="select2-a" class="form-control" data-placeholder="Seleccione la provincia">
+																			<label class="form-control-label"> Domicilio Calle Principal <span class="tx-danger">*</span>
+																			</label> <input [(ngModel)]="informacionCliente.direccionCliente.callePrincipal" value="{{informacionCliente.direccionCliente.callePrincipal}}" class="form-control" type="text" placeholder="Escriba domicilio (Calle Principal)">
+																		</div>
+																	</div>
+
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label"> No. <span class="tx-danger">*</span>
+																			</label> <input [(ngModel)]="informacionCliente.direccionCliente.numero" value="{{informacionCliente.direccionCliente.numero}}" class="form-control" type="text" placeholder="Escriba No. Exterior">
+																		</div>
+																	</div>
+
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label"> Calle Secundaria <span class="tx-danger">*</span>
+																			</label> <input [(ngModel)]="informacionCliente.direccionCliente.calleSecundaria" value="{{informacionCliente.direccionCliente.calleSecundaria}}" class="form-control" type="text" placeholder="Escriba Calle Secundaria">
+																		</div>
+																	</div>
+
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label"> Edificio <span class="tx-danger">*</span>
+																			</label> <input [(ngModel)]="informacionCliente.direccionCliente.edificio" value="{{informacionCliente.direccionCliente.edificio}}" class="form-control" type="text" placeholder="Escriba nombre del edificio">
+																		</div>
+																	</div>
+
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label"> Piso <span class="tx-danger">*</span>
+																			</label> <input [(ngModel)]="informacionCliente.direccionCliente.piso" value="{{informacionCliente.direccionCliente.piso}}" class="form-control" type="text" placeholder="Escriba número de piso">
+																		</div>
+																	</div>
+
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label"> No. de Departamento <span class="tx-danger">*</span>
+																			</label> <input [(ngModel)]="informacionCliente.direccionCliente.noDepartamento" value="{{informacionCliente.direccionCliente.noDepartamento}}" class="form-control" type="text" placeholder="Escriba número de departamento">
+																		</div>
+																	</div>
+
+																	<div class="col-md-4">
+																		<div class="form-group">
+																			<label class="form-control-label mg-b-0-force"> Provincia <span class="danger">*</span>
+																			</label> <select [(ngModel)]="informacionCliente.direccionCliente.provincia" class="form-control" data-placeholder="Seleccione la provincia">
 																				<option label="Seleccione la provincia"></option>
-																				<option value="Quito">Quito</option>
-																				<option value="Quito">Quito</option>
-																				<option value="Quito">Quito</option>
-																				<option value="Quito">Quito</option>
+																				<option value="{{informacionCliente.direccionCliente.provincia}}" selected>{{informacionCliente.direccionCliente.provincia}}</option>
 																			</select>
 																		</div>
 																	</div>
-																	<!-- col-4 -->
 
 																	<div class="col-md-4">
 																		<div class="form-group">
-																			<label class="form-control-label mg-b-0-force">Ciudad <span class="tx-danger">*</span></label> <select id="" class="form-control" data-placeholder="Seleccione la ciudad">
+																			<label class="form-control-label mg-b-0-force"> Ciudad <span class="tx-danger">*</span>
+																			</label> <select [(ngModel)]="informacionCliente.direccionCliente.ciudad" class="form-control" data-placeholder="Seleccione la ciudad">
 																				<option label="Seleccione la ciudad"></option>
-																				<option value="Quito">Quito</option>
-																				<option value="Quito">Quito</option>
-																				<option value="Quito">Quito</option>
-																				<option value="Quito">Quito</option>
+																				<option value="{{informacionCliente.direccionCliente.ciudad}}" selected>{{informacionCliente.direccionCliente.ciudad}}</option>
 																			</select>
 																		</div>
 																	</div>
-																	<!-- col-4 -->
 
 																	<div class="col-md-4">
 																		<div class="form-group">
-																			<label class="form-control-label mg-b-0-force">Sector <span class="tx-danger">*</span></label> <select id="" class="form-control" data-placeholder="Seleccione el sector">
+																			<label class="form-control-label mg-b-0-force"> Sector <span class="tx-danger">*</span>
+																			</label> <select [(ngModel)]="informacionCliente.direccionCliente.sector" class="form-control" data-placeholder="Seleccione el sector">
 																				<option label="Seleccione el sector"></option>
-																				<option value="Quito">Quito</option>
-																				<option value="Quito">Quito</option>
-																				<option value="Quito">Quito</option>
-																				<option value="Quito">Quito</option>
+																				<option value="{{informacionCliente.direccionCliente.sector}}" selected>{{informacionCliente.direccionCliente.sector}}</option>
 																			</select>
 																		</div>
 																	</div>
-																	<!-- col-4 -->
+
+																	<div class="col-md-5">
+																		<div class="form-group">
+																			<label class="form-control-label"> Latitud: <span class="tx-danger">*</span>
+																			</label> <input class="form-control" type="text" [(ngModel)]="informacionCliente.direccionCliente.latitud" value="{{informacionCliente.direccionCliente.latitud}}" placeholder="Latitud">
+																		</div>
+																	</div>
+
+																	<div class="col-md-5">
+																		<div class="form-group">
+																			<label class="form-control-label"> Longitud: <span class="tx-danger">*</span>
+																			</label> <input class="form-control" type="text" [(ngModel)]="informacionCliente.direccionCliente.longitud" value="{{informacionCliente.direccionCliente.longitud}}" placeholder="Longitud">
+																		</div>
+																	</div>
+
+																	<div class="col-md-2">
+																		<div class="form-group text-center">
+																			<a (click)="getCurrentPosition()" class="btn btn-default btn-icon btn-rounded" style="margin-top: 10px;"> <i class="ei-antenna"></i>
+																			</a>
+																		</div>
+																	</div>
 
 																	<div class="col-md-12">
 																		<div class="form-group">
-																			<label class="form-control-label">Correo Electrónico<span class="tx-danger">*</span></label> <input class="form-control" type="email" name="email" value="" placeholder="Introduzca un correo electrónico">
+																			<label class="form-control-label"> Correo Electrónico <span class="tx-danger">*</span>
+																			</label> <input [(ngModel)]="informacionCliente.email" value="{{informacionCliente.email}}" class="form-control" type="email" placeholder="Introduzca un correo electrónico">
 																		</div>
 																	</div>
-																	<!-- col-4 -->
 
-
-
+																	<div class="col-md-12 text-right py-3">
+																		<span style="font-weight: bold; color: #f99a20;">{{saveResponseInfoCliente}}</span>
+																	</div>
 
 																</div>
 																<!-- row -->
 																<div class="form-layout-footer mrg-5top-10 bd pd-20 bd-t-0 pdd-top-10" style="float: right">
-
-																	<button class="btn btn-info">Guardar</button>
-																	<button class="btn btn-default" (click)="home()">Cancelar</button>
-
+																	<button (click)="saveInformacionCliente(informacionCliente)" class="btn btn-info">Guardar</button>
 																</div>
 																<!-- form-group -->
 															</div>
@@ -237,18 +218,18 @@
 														</div>
 														<!-- form-layout -->
 
-
 													</div>
 												</div>
-
-
-
 
 											</div>
 
 										</div>
 									</div>
 								</div>
+
+								<!--	.................................................................................. -->
+								<!--	.................................................................................. -->
+								<!--	.................................................................................. -->
 
 								<div id="step2" class="tab-pane fade {{step2Tab}}">
 									<div class="row">
@@ -263,32 +244,28 @@
 													<div class="col-12">
 
 														<div class="row">
-															<div class="padding-15 col-12">
-																<span>Seleccione el servicio que desea contratar</span>
-															</div>
-														</div>
-
-														<div class="row">
-															<div class="border col-6 border-radius-10" style="padding:10px 15px;">
-																<div class="row">
-																	<div class="col-10" style="padding:0px 30px;">
-																		<span class="strong font-size-17">1.- Servicios Fijos</span>
+															<div class="col-6" style="padding: 10px 15px;">
+																<div class="row border border-radius-10">
+																	<div class="col-10" style="padding: 10px 30px;">
+																		<span class="strong">Servicios Fijos</span>
 																	</div>
 
-																	<div class="radio col-2 no-pdd">
-																		<input style="float: right;" type="radio" name="form-3" id="___"> <label for="form-3-3"></label>
+																	<div class="radio col-2 no-pdd" style="padding-top: 10px !important;">
+																		<input type="radio" name="optradioSolicitudTipo" id="optradioSolicitudTipo1" checked>
+																		<label for="optradioSolicitudTipo1" (click)="toogleSolicitudF()"></label>
 																	</div>
 																</div>
 															</div>
 
-															<div class="border col-6 border-radius-10" style="padding:10px 15px;">
-																<div class="row">
-																	<div class="col-10" style="padding:0px 30px;">
-																		<span class="strong font-size-17">2.- Servicios Móviles</span>
+															<div class="col-6" style="padding: 10px 15px;">
+																<div class="row border border-radius-10">
+																	<div class="col-10" style="padding: 10px 30px;">
+																		<span class="strong">Servicios Móviles</span>
 																	</div>
 
-																	<div class="radio col-2 no-pdd">
-																		<input style="float: right;" type="radio" name="form-3" id="__"> <label for="form-3-3"></label>
+																	<div class="radio col-2 no-pdd" style="padding-top: 10px !important;">
+																		<input type="radio" name="optradioSolicitudTipo" id="optradioSolicitudTipo2">
+																		<label for="optradioSolicitudTipo2" (click)="toogleSolicitudF()"></label>
 																	</div>
 																</div>
 															</div>
@@ -299,48 +276,31 @@
 										</div>
 									</div>
 
-									<div style="height: 25px; background-color: #f6f7fb;"></div>
-
-
-
+									<div style="height: 25px; background-color: #f6f7fb; margin: 0px -20px; border-top: 1px solid #e6ecf5; border-bottom: 1px solid #e6ecf5;"></div>
 
 									<div class="card-block">
 
-										<div class="row">
-											<div class="col-md-12 row">
+										<div class="row" *ngIf="!toogleSolicitud">
+											<div class="col-md-12">
 
 												<div class="col-md-12 card-heading row">
 													<h3 class="card-title col-11 no-pdd">Servicios Fijos a Contratar</h3>
-
-													<a  class="btn btn-default btn-inverse" style="margin-bottom: 0px; float: right;"><i class="ti-save"></i></a>
-
 												</div>
-
 
 												<div class="col-12 no-pdd-left">
 													<p>Seleccione los servicios que desea contratar</p>
 												</div>
 
-
 												<div class="tab-info">
 													<ul class="nav nav-tabs" role="tablist">
 														<li class="nav-item"><a (click)="showTabServiciosFijos(1)" class="nav-link {{ssTelefoniaLink}}" role="tab" data-toggle="tab">
-
-															<div class="checkbox checkbox-inline checkbox-primary">
-																<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Telefonía Fija</label>
-															</div>
-
+																Telefonía Fija
 														</a></li>
 														<li class="nav-item"><a (click)="showTabServiciosFijos(2)" class="nav-link {{ssInternetLink}}" role="tab" data-toggle="tab">
-															<div class="checkbox checkbox-inline checkbox-primary">
-																<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Internet Fijo</label>
-															</div>
+																Internet Fijo
 														</a></li>
 														<li class="nav-item"><a (click)="showTabServiciosFijos(3)" class="nav-link {{ssTelevisionLink}}" role="tab" data-toggle="tab">
-															<div class="checkbox checkbox-inline checkbox-primary">
-																<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Televisión por Suscripción</label>
-															</div>
-
+																Televisión por Suscripción
 														</a></li>
 													</ul>
 													<div class="tab-content">
@@ -356,56 +316,68 @@
 																	<div class="form-layout form-layout-2">
 																		<div class="col-12 no-pdd-btm">
 																			<div class="row no-gutters">
-																				<div class="col-md-5">
+																				<div class="col-md-12">
 																					<div class="form-group">
-																						<label class="form-control-label">Fecha de la solicitud <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="date" value="" placeholder="Escriba la fecha y hora">
-																					</div>
-																				</div>
-																				<!-- col-4 -->
-																				<div class="col-md-7 ">
-																					<div class="form-group">
-																						<label class="form-control-label">No. de petición <span class="tx-danger">*</span></label>
-																						<input class="form-control" type="text" name="lastname" value="162528" placeholder="Escriba No. de Petición">
+																						<label class="form-control-label"> No. de petición <span class="tx-danger">*</span>
+																						</label> <input [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.noPeticion" value="{{informacionCliente.servicioFijo.telefoniaFija.noPeticion}}" class="form-control" type="text" placeholder="Escriba No. de Petición">
 																					</div>
 																				</div>
 																				<!-- col-4 -->
 																				<div class="col-md-8">
 																					<div class="form-group">
-																						<label class="form-control-label">Plan Contratado<span class="tx-danger">*</span></label>
+																						<label class="form-control-label"> Plan Contratado <span class="tx-danger">*</span>
+																						</label>
 																						<div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Residencial</label>
+																							<div class="radio radio-inline">
+																								<input name="radioTipoPlan" id="radioTipoPlan1" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.tipoPlanContratado" value="residencial" type="radio" checked="">
+																								<label for="radioTipoPlan1">Residencial</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Comercial</label>
+																							<div class="radio radio-inline">
+																								<input name="radioTipoPlan" id="radioTipoPlan2" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.tipoPlanContratado" value="comercial" type="radio">
+																								<label for="radioTipoPlan2">Comercial</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							<div class="radio radio-inline">
+																								<input name="radioTipoPlan" id="radioTipoPlan3" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.tipoPlanContratado" value="otros" type="radio">
+																								<label for="radioTipoPlan3">Otros</label>
 																							</div>
 																						</div>
-
-
 																					</div>
 																				</div>
 																				<!-- col-4 -->
 																				<div class="col-md-4">
 																					<div class="form-group">
-																						<label class="form-control-label mg-b-0-force">No. de Líneas<span class="tx-danger">*</span></label> <select id="select2-b" class="form-control" placeholder="Seleccione No. de Líneas">
-																							<option label="Seleccione número de Líneas"></option>
-																							<option value="">1</option>
-																							<option value="">2</option>
-																							<option value="">3</option>
-																							<option value="">4</option>
+																						<label class="form-control-label mg-b-0-force"> No. de Líneas <span class="tx-danger">*</span>
+																						</label> <select [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.noLineas" class="form-control" placeholder="Seleccione No. de Líneas">
+																							<option selected label="Seleccione número de Líneas"></option>
+																							<option value="1">1</option>
+																							<option value="2">2</option>
+																							<option value="3">3</option>
+																							<option value="4">4</option>
 																						</select>
 																					</div>
+																				</div>
+																				<div class="col-md-8" *ngIf="informacionCliente.servicioFijo.telefoniaFija.tipoPlanContratado=='otros'">
+																					<div class="form-group">
+																						<label class="form-control-label">Otro plan contratado</label>
+
+																						<div class=" input-icon ">
+																							<input [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.otroTipoPlanContratado" value="{{informacionCliente.servicioFijo.telefoniaFija.otroTipoPlanContratado}}" type="text" class="form-control datepicker-1" placeholder="Valor por cada línea">
+																						</div>
+
+																					</div>
+																				</div>
+																				<div class="col-md-4" *ngIf="informacionCliente.servicioFijo.telefoniaFija.tipoPlanContratado=='otros'">
+																					<div class="form-group"></div>
 																				</div>
 																				<!-- col-4 -->
 																				<div class="col-md-5">
 																					<div class="form-group">
-																						<label class="form-control-label">Pensión básica mensual sin impuestos <span class="tx-danger">*</span></label>
+																						<label class="form-control-label"> Pensión básica mensual sin impuestos <span class="tx-danger">*</span>
+																						</label>
 
 																						<div class=" input-icon ">
-																							<i class="ei-dollar"></i> <input type="number" class="form-control datepicker-1" placeholder="Valor por cada línea">
+																							<i class="ei-dollar"></i>
+																							<input [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.pensionBasicaPorLinea" value="{{informacionCliente.servicioFijo.telefoniaFija.pensionBasicaPorLinea}}" type="number" class="form-control datepicker-1" placeholder="Valor por cada línea">
 																						</div>
 
 																					</div>
@@ -413,95 +385,105 @@
 																				<!-- col-4 -->
 																				<div class="col-md-7">
 																					<div class="form-group">
-																						<label class="form-control-label">Descuento<span class="tx-danger">*</span></label>
+																						<label class="form-control-label"> Descuento <span class="tx-danger">*</span>
+																						</label>
 																						<div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id-="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Tercera edad</label>
+																							<div class="radio radio-inline">
+																								<input name="radioDescuento" id="radioDescuento1" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.descuento" value="terceraedad" type="radio" checked="">
+																								<label for="radioDescuento1">Tercera edad</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Discapacidad</label>
+																							<div class="radio radio-inline">
+																								<input name="radioDescuento" id="radioDescuento2" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.descuento" value="discapacidad" type="radio">
+																								<label for="radioDescuento3">Discapacidad</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							<div class="radio radio-inline">
+																								<input name="radioDescuento" id="radioDescuento3" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.descuento" value="otros" type="radio">
+																								<label for="radioDescuento3">Otros</label>
 																							</div>
 																						</div>
-
-
 																					</div>
 																				</div>
 																				<!-- col-8 -->
 																				<div class="col-md-8">
 																					<div class="form-group">
-																						<label class="form-control-label">Tipo de tecnología<span class="tx-danger">*</span></label>
+																						<label class="form-control-label"> Tipo de tecnología <span class="tx-danger">*</span>
+																						</label>
 																						<div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Cobre</label>
+																							<div class="radio radio-inline">
+																								<input name="radioTipoTecnologia" id="radioTipoTecnologia1" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.tipoTecnologia" value="cobre" type="radio" checked="">
+																								<label for="radioTipoTecnologia1">Cobre</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Fibra Óptica</label>
+																							<div class="radio radio-inline">
+																								<input name="radioTipoTecnologia" id="radioTipoTecnologia2" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.tipoTecnologia" value="fibraoptica" type="radio">
+																								<label for="radioTipoTecnologia2">Fibra Óptica</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							<div class="radio radio-inline">
+																								<input name="radioTipoTecnologia" id="radioTipoTecnologia3" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.tipoTecnologia" value="otros" type="radio">
+																								<label for="radioTipoTecnologia3">Otros</label>
 																							</div>
 																						</div>
-
-
 																					</div>
 																				</div>
 
 																				<div class="col-md-4">
 																					<div class="form-group">
-																						<label class="form-control-label">No. de Serie del Equipo <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el No. de Serie del equipo">
+																						<label class="form-control-label"> No. de Serie del Equipo <span class="tx-danger">*</span>
+																						</label>
+																						<input [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.serieEquipo" value="{{informacionCliente.servicioFijo.telefoniaFija.serieEquipo}}" class="form-control" type="text" placeholder="Escriba el No. de Serie del equipo">
 																					</div>
 																				</div>
-																				<!-- col-4 -->
-																				<div class="col-md-12">
+
+																				<div class="col-md-12" *ngIf="informacionCliente.servicioFijo.telefoniaFija.tipoTecnologia=='otros'">
 																					<div class="form-group">
-																						<label class="form-control-label">Valor de Inscripción <span class="tx-danger">*</span></label>
+																						<label class="form-control-label">Otro tipo de tecnología contratada</label>
+
+																						<div class="input-icon">
+																							<input [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.otroTipoTecnologia" value="{{informacionCliente.servicioFijo.telefoniaFija.otroTipoTecnologia}}" type="text" class="form-control datepicker-1" placeholder="Valor por cada línea">
+																						</div>
 
 																					</div>
 																				</div>
 
+																				<!-- col-4 -->
 																				<div class="col-md-8">
 																					<div class="form-group">
-																						<div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Prom $0</label>
-																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Contado</label>
-																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">3 m</label>
-																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">6 m</label>
-																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
-																							</div>
+																						<label class="form-control-label"> Valor de Inscripción <span class="tx-danger">*</span></label>
+																						<div class="radio radio-inline">
+																							<input name="radioValorInscripcion" id="radioValorInscripcion1" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.valorInscripcion" value="prom0" type="radio" checked="">
+																							<label for="radioValorInscripcion1">Prom $0</label>
 																						</div>
-
-
+																						<div class="radio radio-inline">
+																							<input name="radioValorInscripcion" id="radioValorInscripcion2" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.valorInscripcion" value="contado" type="radio">
+																							<label for="radioValorInscripcion2">Contado</label>
+																						</div>
+																						<div class="radio radio-inline">
+																							<input name="radioValorInscripcion" id="radioValorInscripcion3" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.valorInscripcion" value="3m" type="radio">
+																							<label for="radioValorInscripcion3">3 m</label>
+																						</div>
+																						<div class="radio radio-inline">
+																							<input name="radioValorInscripcion" id="radioValorInscripcion4" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.valorInscripcion" value="6m" type="radio">
+																							<label for="radioValorInscripcion4">6 m</label>
+																						</div>
+																						<div class="radio radio-inline">
+																							<input name="radioValorInscripcion" id="radioValorInscripcion5" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.valorInscripcion" value="otros" type="radio">
+																							<label for="radioValorInscripcion5">Otros</label>
+																						</div>
 																					</div>
 																				</div>
 
-
 																				<div class="col-md-4">
 																					<div class="form-group">
-
-
+																						<label class="form-control-label">Valor</label>
 																						<div class=" input-icon ">
-																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor">
+																							<i class="ei-dollar"></i>
+																							<input type="text" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.otroValorInscripcion" value="{{informacionCliente.servicioFijo.telefoniaFija.otroValorInscripcion}}" class="form-control" placeholder="Escriba el valor">
 																						</div>
-
 																					</div>
 																				</div>
 
 																				<div class="col-md-12">
 																					<div class="form-group">
-																						<label><strong>Nota:</strong> Costos de materiales de instalación no son financiables; valor a cobrarse en la primera planilla.</label>
-
+																						<label> <strong>Nota:</strong> Costos de materiales de instalación no son financiables; valor a cobrarse en la primera planilla.</label>
 																					</div>
 																				</div>
 
@@ -509,35 +491,37 @@
 																				<div class="col-md-12">
 																					<div class="form-group">
 																						<label>DATOS REFERENCIA INSTALACIÓN</label>
-
 																					</div>
 																				</div>
 
 																				<div class="col-md-4">
 																					<div class="form-group">
-
-																						<input class="form-control" type="text" name="lastname" value="" placeholder="Número de Referencia">
+																						<input [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.noReferenciaInstalacion" value="{{informacionCliente.servicioFijo.telefoniaFija.noReferenciaInstalacion}}" class="form-control" type="text" placeholder="Número de Referencia">
 																					</div>
 																				</div>
 																				<!-- col-4 -->
 
 																				<div class="col-md-4">
 																					<div class="form-group">
-
-																						<input class="form-control" type="text" name="lastname" value="" placeholder="Central">
+																						<input [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.centralInstalacion" value="{{informacionCliente.servicioFijo.telefoniaFija.centralInstalacion}}" class="form-control" type="text" placeholder="Central">
 																					</div>
 																				</div>
 																				<!-- col-4 -->
 
 																				<div class="col-md-4">
 																					<div class="form-group">
-
-																						<input class="form-control" type="text" name="lastname" value="" placeholder="Distrib">
+																						<input [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.distribInstalacion" value="{{informacionCliente.servicioFijo.telefoniaFija.distribInstalacion}}" class="form-control" type="text" placeholder="Distrib">
 																					</div>
 																				</div>
 																				<!-- col-4 -->
 
+																				<div class="col-md-12 text-right py-3">
+																					<span style="font-weight: bold; color: #f99a20;">{{saveResponseTelFija}}</span>
+																				</div>
 
+																				<div class="col-md-12 text-right py-3">
+																					<button (click)="saveTelefoniaFija(informacionCliente)" class="btn btn-info">Guardar</button>
+																				</div>
 
 																			</div>
 																			<!-- row -->
@@ -553,6 +537,10 @@
 															</div>
 														</div>
 
+														<!-- ................................................................................. -->
+														<!-- ................................................................................. -->
+														<!-- ................................................................................. -->
+
 														<div role="tabpanel" class="tab-pane fade {{ssInternetTab}}">
 															<div class="row">
 																<div class="col-md-12">
@@ -566,19 +554,22 @@
 																			<div class="row no-gutters">
 																				<div class="col-md-6">
 																					<div class="form-group">
-																						<label class="form-control-label">No. de Petición<span class="tx-danger">*</span></label> <input class="form-control" type="text" name="date" value="" placeholder="Escriba No. de Petición">
+																						<label class="form-control-label"> No. de Petición <span class="tx-danger">*</span>
+																						</label> <input [(ngModel)]="informacionCliente.servicioFijo.internetFijo.noPeticion" value="{{informacionCliente.servicioFijo.internetFijo.noPeticion}}" class="form-control" type="text" placeholder="Escriba No. de Petición">
 																					</div>
 																				</div>
 																				<!-- col-4 -->
 																				<div class="col-md-6 ">
 																					<div class="form-group">
-																						<label class="form-control-label">No. de Contrato <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba No. de Contrato">
+																						<label class="form-control-label"> No. de Contrato <span class="tx-danger">*</span>
+																						</label> <input [(ngModel)]="informacionCliente.servicioFijo.internetFijo.noContratoInternet" value="{{informacionCliente.servicioFijo.internetFijo.noContratoInternet}}" class="form-control" type="text" placeholder="Escriba No. de Contrato">
 																					</div>
 																				</div>
 																				<!-- col-4 -->
 																				<div class="col-md-12 ">
 																					<div class="form-group">
-																						<label class="form-control-label">Plan Contratado <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el plan solicitado por el suscriptor">
+																						<label class="form-control-label"> Plan Contratado <span class="tx-danger">*</span>
+																						</label> <input [(ngModel)]="informacionCliente.servicioFijo.internetFijo.planContratado" value="{{informacionCliente.servicioFijo.internetFijo.planContratado}}" class="form-control" type="text" placeholder="Escriba el plan solicitado por el suscriptor">
 																					</div>
 																				</div>
 																				<!-- col-4 -->
@@ -586,10 +577,12 @@
 																				<!-- col-4 -->
 																				<div class="col-md-6">
 																					<div class="form-group">
-																						<label class="form-control-label">Pensión básica mensual sin impuestos <span class="tx-danger">*</span></label>
+																						<label class="form-control-label"> Pensión básica mensual sin impuestos <span class="tx-danger">*</span>
+																						</label>
 
 																						<div class=" input-icon ">
-																							<i class="ei-dollar"></i> <input type="number" class="form-control datepicker-1" placeholder="Valor por cada línea">
+																							<i class="ei-dollar"></i>
+																							<input [(ngModel)]="informacionCliente.servicioFijo.internetFijo.pensionBasicaMensual" value="{{informacionCliente.servicioFijo.internetFijo.pensionBasicaMensual}}" type="number" class="form-control datepicker-1" placeholder="Valor por cada línea">
 																						</div>
 
 																					</div>
@@ -597,112 +590,119 @@
 																				<!-- col-4 -->
 																				<div class="col-md-6">
 																					<div class="form-group">
-																						<label class="form-control-label">Descuento<span class="tx-danger">*</span></label>
+																						<label class="form-control-label"> Descuento <span class="tx-danger">*</span>
+																						</label>
 																						<div>
-
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Discapacidad</label>
+																							<div class="radio radio-inline">
+																								<input name="radioDescuentoIntF" id="radioDescuentoIntF1" [(ngModel)]="informacionCliente.servicioFijo.internetFijo.descuento" value="discapacidad" type="radio" checked="">
+																								<label for="radioDescuentoIntF1">Discapacidad</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							<div class="radio radio-inline">
+																								<input name="radioDescuentoIntF" id="radioDescuentoIntF2" [(ngModel)]="informacionCliente.servicioFijo.internetFijo.descuento" value="otro" type="radio">
+																								<label for="radioDescuentoIntF2">Otro</label>
 																							</div>
 																						</div>
-
-
 																					</div>
 																				</div>
 																				<!-- col-8 -->
 																				<div class="col-md-12">
 																					<div class="form-group">
-																						<label class="form-control-label">Tipo de tecnología<span class="tx-danger">*</span></label>
+																						<label class="form-control-label"> Tipo de tecnología <span class="tx-danger">*</span>
+																						</label>
 																						<div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Cobre</label>
+																							<div class="radio radio-inline">
+																								<input name="radioTipoTecIntF" id="radioTipoTecIntF1" [(ngModel)]="informacionCliente.servicioFijo.internetFijo.tipoTecnologia" value="cobre" type="radio" checked="">
+																								<label for="radioTipoTecIntF1">Cobre</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Fibra Óptica</label>
+																							<div class="radio radio-inline">
+																								<input name="radioTipoTecIntF" id="radioTipoTecIntF2" [(ngModel)]="informacionCliente.servicioFijo.internetFijo.tipoTecnologia" value="fibraoptica" type="radio">
+																								<label for="radioTipoTecIntF2">Fibra Óptica</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							<div class="radio radio-inline">
+																								<input name="radioTipoTecIntF" id="radioTipoTecIntF3" [(ngModel)]="informacionCliente.servicioFijo.internetFijo.tipoTecnologia" value="otros" type="radio">
+																								<label for="radioTipoTecIntF3">Otros</label>
 																							</div>
 																						</div>
-
-
+																					</div>
+																				</div>
+																				<div class="col-md-12" *ngIf="informacionCliente.servicioFijo.internetFijo.tipoTecnologia=='otros'">
+																					<div class="form-group">
+																						<label class="form-control-label">Otro tipo de tecnología</label>
+																						<div class=" input-icon ">
+																							<input [(ngModel)]="informacionCliente.servicioFijo.internetFijo.otroTipoTecnologia" value="{{informacionCliente.servicioFijo.internetFijo.otroTipoTecnologia}}" type="text" class="form-control datepicker-1" placeholder="Valor por cada línea">
+																						</div>
+																					</div>
+																				</div>
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<label class="form-control-label"> No. de Conexión de Referencia (En el caso de tener línea fija) <span class="tx-danger">*</span>
+																						</label> <input [(ngModel)]="informacionCliente.servicioFijo.internetFijo.noConexionReferencia" value="{{informacionCliente.servicioFijo.internetFijo.noConexionReferencia}}" class="form-control" type="text" placeholder="Escriba el No. de referencia">
 																					</div>
 																				</div>
 
 																				<div class="col-md-6">
 																					<div class="form-group">
-																						<label class="form-control-label">No. de Conexión de Referencia (En el caso de tener línea fija) <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el No. de referencia">
+																						<label class="form-control-label"> No. a Facturar (No. Telefónico o Virtual) <span class="tx-danger">*</span>
+																						</label> <input [(ngModel)]="informacionCliente.servicioFijo.internetFijo.noFacturar" value="{{informacionCliente.servicioFijo.internetFijo.noFacturar}}" class="form-control" type="text" placeholder="Escriba el No. telefónico al que se facturará">
 																					</div>
 																				</div>
-																				<!-- col-4 -->
-
-																				<div class="col-md-6">
-																					<div class="form-group">
-																						<label class="form-control-label">No. a Facturar (No. Telefónico o Virtual) <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el No. telefónico al que se facturará">
-																					</div>
-																				</div>
-																				<!-- col-4 -->
-
 
 																				<div class="col-md-12">
 																					<div class="form-group">
 																						<label>VALOR DE INSCRIPCIÓN</label>
-
 																					</div>
 																				</div>
 
 																				<div class="col-md-8">
 																					<div class="form-group">
 																						<div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Prom $0</label>
+																							<div class="radio radio-inline">
+																								<input name="radioValorInscIntF" id="radioValorInscIntF1" [(ngModel)]="informacionCliente.servicioFijo.internetFijo.tipoValorInscripcion" value="prom0" type="radio" checked="">
+																								<label for="radioValorInscIntF1">Prom $0</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Contado</label>
+																							<div class="radio radio-inline">
+																								<input name="radioValorInscIntF" id="radioValorInscIntF2" [(ngModel)]="informacionCliente.servicioFijo.internetFijo.tipoValorInscripcion" value="contado" type="radio">
+																								<label for="radioValorInscIntF2">Contado</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">3 m</label>
+																							<div class="radio radio-inline">
+																								<input name="radioValorInscIntF" id="radioValorInscIntF3" [(ngModel)]="informacionCliente.servicioFijo.internetFijo.tipoValorInscripcion" value="3m" type="radio">
+																								<label for="radioValorInscIntF3">3 m</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">6 m</label>
+																							<div class="radio radio-inline">
+																								<input name="radioValorInscIntF" id="radioValorInscIntF4" [(ngModel)]="informacionCliente.servicioFijo.internetFijo.tipoValorInscripcion" value="6m" type="radio">
+																								<label for="radioValorInscIntF4">6 m</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							<div class="radio radio-inline">
+																								<input name="radioValorInscIntF" id="radioValorInscIntF5" [(ngModel)]="informacionCliente.servicioFijo.internetFijo.tipoValorInscripcion" value="otros" type="radio">
+																								<label for="radioValorInscIntF5">Otros</label>
 																							</div>
 																						</div>
-
-
 																					</div>
 																				</div>
-
 
 																				<div class="col-md-4">
 																					<div class="form-group">
-
-
 																						<div class=" input-icon ">
-																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor">
+																							<i class="ei-dollar"></i>
+																							<input [(ngModel)]="informacionCliente.servicioFijo.internetFijo.valorInscripcion" value="{{informacionCliente.servicioFijo.internetFijo.valorInscripcion}}" type="number" class="form-control" placeholder="Escriba el valor">
 																						</div>
-
 																					</div>
 																				</div>
 
+																				<div class="col-md-12 text-right py-3">
+																					<span style="font-weight: bold; color: #f99a20;">{{saveResponseInternetFijo}}</span>
+																				</div>
 
-
-
+																				<div class="col-md-12 text-right py-3">
+																					<button (click)="saveInternetFijo(informacionCliente)" class="btn btn-info">Guardar</button>
+																				</div>
 
 																			</div>
-																			<!-- row -->
 
 																		</div>
-																		<!-- form-group -->
 																	</div>
 
 																</div>
-																<!-- form-layout -->
-
 
 															</div>
 														</div>
@@ -720,48 +720,54 @@
 																			<div class="row no-gutters">
 																				<div class="col-md-6">
 																					<div class="form-group">
-																						<label class="form-control-label">No. de Petición<span class="tx-danger">*</span></label> <input class="form-control" type="text" name="date" value="" placeholder="Escriba No. de Petición">
+																						<label class="form-control-label"> No. de Petición <span class="tx-danger">*</span></label>
+																						<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.noPeticion" value="{{informacionCliente.servicioFijo.televisionSuscripcion.noPeticion}}" class="form-control" type="text" placeholder="Escriba No. de Petición">
 																					</div>
 																				</div>
 																				<!-- col-4 -->
 																				<div class="col-md-6 ">
 																					<div class="form-group">
-																						<label class="form-control-label">No. de Contrato <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba No. de Contrato">
+																						<label class="form-control-label"> No. de Contrato <span class="tx-danger">*</span></label>
+																						<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.noContratoTelevision" value="{{informacionCliente.servicioFijo.televisionSuscripcion.noContratoTelevision}}" class="form-control" type="text" placeholder="Escriba No. de Contrato">
 																					</div>
 																				</div>
 																				<!-- col-4 -->
 																				<div class="col-md-12 ">
 																					<div class="form-group">
-																						<label class="form-control-label">Plan Contratado <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el plan solicitado por el suscriptor">
+																						<label class="form-control-label"> Plan Contratado <span class="tx-danger">*</span></label>
+																						<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.planContratado" value="{{informacionCliente.servicioFijo.televisionSuscripcion.planContratado}}" class="form-control" type="text" placeholder="Escriba el plan solicitado por el suscriptor">
 																					</div>
 																				</div>
 																				<!-- col-4 -->
 
 																				<div class="col-md-12">
 																					<div class="form-group">
-																						<label class="form-control-label">Tipo de tecnología<span class="tx-danger">*</span></label>
+																						<label class="form-control-label"> Tipo de tecnología <span class="tx-danger">*</span></label>
 																						<div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">SD</label>
+																							<div class="radio radio-inline">
+																								<input name="radioTipoTecTv" id="radioTipoTecTv1" [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.tipoTecnologia" value="sd" type="radio" checked="">
+																								<label for="radioTipoTecTv1">SD</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">HD</label>
+																							<div class="radio radio-inline">
+																								<input name="radioTipoTecTv" id="radioTipoTecTv2" [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.tipoTecnologia" value="hd" type="radio">
+																								<label for="radioTipoTecTv2">HD</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">ZAPPER</label>
+																							<div class="radio radio-inline">
+																								<input name="radioTipoTecTv" id="radioTipoTecTv3" [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.tipoTecnologia" value="zapper" type="radio" checked="">
+																								<label for="radioTipoTecTv3">ZAPPER</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							<div class="radio radio-inline">
+																								<input name="radioTipoTecTv" id="radioTipoTecTv4" [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.tipoTecnologia" value="otros" type="radio">
+																								<label for="radioTipoTecTv4">Otros</label>
 																							</div>
 																						</div>
-
-
 																					</div>
 																				</div>
 
-																				<div class="col-md-12">
+																				<div class="col-md-6">
 																					<div class="form-group">
-																						<label class="form-control-label">No. a Facturar (No. Telefónico o Virtual) <span class="tx-danger">*</span></label> <input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el No. de Serie del equipo">
+																						<label class="form-control-label"> No. a Facturar (No. Telefónico o Virtual) <span class="tx-danger">*</span></label>
+																						<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.noFacturar" value="{{informacionCliente.servicioFijo.televisionSuscripcion.noFacturar}}" class="form-control" type="text" placeholder="Escriba el No. de Serie del equipo">
 																					</div>
 																				</div>
 																				<!-- col-4 -->
@@ -769,202 +775,232 @@
 																				<!-- col-4 -->
 																				<div class="col-md-6">
 																					<div class="form-group">
-																						<label class="form-control-label">Pensión básica mensual sin impuestos <span class="tx-danger">*</span></label>
-
+																						<label class="form-control-label"> Pensión básica mensual sin impuestos <span class="tx-danger">*</span></label>
 																						<div class=" input-icon ">
-																							<i class="ei-dollar"></i> <input type="number" class="form-control datepicker-1" placeholder="Valor por cada línea">
+																							<i class="ei-dollar"></i>
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.pensionBasicaMensual" value="{{informacionCliente.servicioFijo.televisionSuscripcion.pensionBasicaMensual}}" type="number" class="form-control datepicker-1" placeholder="Valor por cada línea">
 																						</div>
-
 																					</div>
 																				</div>
-																				<!-- col-4 -->
-																				<div class="col-md-6">
-																					<div class="form-group">
-																						<label class="form-control-label">Descuento<span class="tx-danger">*</span></label>
-																						<div>
-
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">Discapacidad</label>
-																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
-																							</div>
-																						</div>
-
-
-																					</div>
-																				</div>
-																				<!-- col-8 -->
 
 																				<div class="col-md-12">
 																					<div class="form-group">
 																						<label>PLANES ADICIONALES SIN IMPUESTOS</label>
-
 																					</div>
 																				</div>
 
-
 																				<div class="col-md-6">
 																					<div class="form-group">
-
-																						<input class="form-control" type="text" name="lastname" value="" placeholder="Escriba el nombre del Plan Adicional">
+																						<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalDesc1" value="{{informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalDesc1}}" class="form-control" type="text" placeholder="Escriba el nombre del Plan Adicional">
 																					</div>
 																				</div>
-																				<!-- col-4 -->
-
 																				<div class="col-md-6">
 																					<div class="form-group">
-
-
 																						<div class=" input-icon ">
-																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor del Plan Adicional">
+																							<i class="ei-dollar"></i>
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalTarifa1" value="{{informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalTarifa1}}" type="number" class="form-control" placeholder="Escriba el valor del Plan Adicional">
 																						</div>
-
+																					</div>
+																				</div>
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalDesc2" value="{{informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalDesc2}}" class="form-control" type="text" placeholder="Escriba el nombre del Plan Adicional">
+																					</div>
+																				</div>
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i>
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalTarifa2" value="{{informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalTarifa2}}" type="number" class="form-control" placeholder="Escriba el valor del Plan Adicional">
+																						</div>
+																					</div>
+																				</div>
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalDesc3" value="{{informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalDesc3}}" class="form-control" type="text" placeholder="Escriba el nombre del Plan Adicional">
+																					</div>
+																				</div>
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i>
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalTarifa3" value="{{informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalTarifa3}}" type="number" class="form-control" placeholder="Escriba el valor del Plan Adicional">
+																						</div>
+																					</div>
+																				</div>
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalDesc4" value="{{informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalDesc4}}" class="form-control" type="text" placeholder="Escriba el nombre del Plan Adicional">
+																					</div>
+																				</div>
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i>
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalTarifa4" value="{{informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalTarifa4}}" type="number" class="form-control" placeholder="Escriba el valor del Plan Adicional">
+																						</div>
+																					</div>
+																				</div>
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalDesc5" value="{{informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalDesc5}}" class="form-control" type="text" placeholder="Escriba el nombre del Plan Adicional">
+																					</div>
+																				</div>
+																				<div class="col-md-6">
+																					<div class="form-group">
+																						<div class=" input-icon ">
+																							<i class="ei-dollar"></i>
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalTarifa5" value="{{informacionCliente.servicioFijo.televisionSuscripcion.planAdicionalTarifa5}}" type="number" class="form-control" placeholder="Escriba el valor del Plan Adicional">
+																						</div>
 																					</div>
 																				</div>
 
 																				<div class="col-md-12">
 																					<div class="form-group">
 																						<label>VALOR DE INSTALACIÓN DEL SERVICIO SIN IMPUESTOS</label>
-
 																					</div>
 																				</div>
 
 																				<div class="col-md-4">
 																					<div class="form-group">
-																						<label class="form-control-label">Decodificador Principal<span class="tx-danger">*</span></label>
-
+																						<label class="form-control-label"> Decodificador Principal <span class="tx-danger">*</span></label>
 																						<div class=" input-icon ">
-																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor">
+																							<i class="ei-dollar"></i>
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.decodificadorPrincipalInstalacion" value="{{informacionCliente.servicioFijo.televisionSuscripcion.decodificadorPrincipalInstalacion}}" type="number" class="form-control" placeholder="Escriba el valor">
 																						</div>
-
 																					</div>
 																				</div>
 
 																				<div class="col-md-4">
 																					<div class="form-group">
-																						<label class="form-control-label">Decodificador Adicional<span class="tx-danger">*</span></label>
-
+																						<label class="form-control-label"> Decodificador Adicional <span class="tx-danger">*</span></label>
 																						<div class=" input-icon ">
-																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor">
+																							<i class="ei-dollar"></i>
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.decodificadorAdicionalInstalacion" value="{{informacionCliente.servicioFijo.televisionSuscripcion.decodificadorAdicionalInstalacion}}" type="number" class="form-control" placeholder="Escriba el valor">
 																						</div>
-
 																					</div>
 																				</div>
 
 																				<div class="col-md-4">
 																					<div class="form-group">
-																						<label class="form-control-label">Garantía Extendida<span class="tx-danger">*</span></label>
-
+																						<label class="form-control-label"> Garantía Extendida <span class="tx-danger">*</span></label>
 																						<div class=" input-icon ">
-																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor">
+																							<i class="ei-dollar"></i>
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.garantiaExtendidaInstalacion" value="{{informacionCliente.servicioFijo.televisionSuscripcion.garantiaExtendidaInstalacion}}" type="number" class="form-control" placeholder="Escriba el valor">
 																						</div>
-
 																					</div>
 																				</div>
 
 																				<div class="col-md-12">
 																					<div class="form-group">
-																						<label class="form-control-label">Prom $0<span class="tx-danger">*</span></label> <input type="text" class="form-control" placeholder="Detallar tipo de promoción">
-
-
+																						<label class="form-control-label"> Prom $0 <span class="tx-danger">*</span></label>
+																						<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.promoInstalacion" value="{{informacionCliente.servicioFijo.televisionSuscripcion.promoInstalacion}}" type="text" class="form-control" placeholder="Detallar tipo de promoción">
 																					</div>
 																				</div>
 
 																				<div class="col-md-12">
 																					<div class="form-group">
 																						<label>TARIFA MENSUAL DE DECODIFICADORES ADICIONALES SIN IMPUESTOS</label>
-
 																					</div>
 																				</div>
 
 																				<div class="col-md-12">
 																					<div class="form-group">
-																						<label class="form-control-label">Tipo de tecnología<span class="tx-danger">*</span></label>
+																						<label class="form-control-label"> Tipo de tecnología <span class="tx-danger">*</span></label>
 																						<div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">SD</label>
+																							<div class="checkbox checkbox-inline">
+																								<input name="checkboxTipoTecTvAdic1" id="checkboxTipoTecTvAdic1" [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.decodificadorAdicionalSd" value="true" type="checkbox">
+																								<label for="checkboxTipoTecTvAdic1">SD</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">HD</label>
+																							<div class="checkbox checkbox-inline">
+																								<input name="checkboxTipoTecTvAdic2" id="checkboxTipoTecTvAdic2" [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.decodificadorAdicionalHd" value="true" type="checkbox">
+																								<label for="checkboxTipoTecTvAdic2">HD</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">ZAPPER</label>
+																							<div class="checkbox checkbox-inline">
+																								<input name="checkboxTipoTecTvAdic3" id="checkboxTipoTecTvAdic3" [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.decodificadorAdicionalZapper" value="true" type="checkbox">
+																								<label for="checkboxTipoTecTvAdic3">ZAPPER</label>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
+																							<div class="checkbox checkbox-inline">
+																								<input name="checkboxTipoTecTvAdic4" id="checkboxTipoTecTvAdic4" [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.decodificadorAdicionalOtros" value="true" type="checkbox">
+																								<label for="checkboxTipoTecTvAdic4">Otros</label>
 																							</div>
 																						</div>
-
-
 																					</div>
 																				</div>
 
 																				<div class="col-md-6">
 																					<div class="form-group">
-																						<label class="form-control-label">Decodificador Principal<span class="tx-danger">*</span></label>
-
+																						<label class="form-control-label"> Decodificador Principal <span class="tx-danger">*</span></label>
 																						<div class=" input-icon ">
-																							<i class="ei-dollar"></i> <input type="number" class="form-control" placeholder="Escriba el valor">
+																							<i class="ei-dollar"></i>
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.decodificadoresAdicionalesTarifa" value="{{informacionCliente.servicioFijo.televisionSuscripcion.decodificadoresAdicionalesTarifa}}" type="number" class="form-control" placeholder="Escriba el valor">
 																						</div>
-
 																					</div>
 																				</div>
 
 																				<div class="col-md-6">
 																					<div class="form-group">
-																						<label class="form-control-label">Prom $0<span class="tx-danger">*</span></label>
-
+																						<label class="form-control-label"> Prom $0 <span class="tx-danger">*</span></label>
 																						<div class=" input-icon ">
-
-																							<input type="text" class="form-control" placeholder="Detallar tipo de promoción">
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.decodificadoresAdicionalesPromo" value="{{informacionCliente.servicioFijo.televisionSuscripcion.decodificadoresAdicionalesPromo}}" type="text" class="form-control" placeholder="Detallar tipo de promoción">
 																						</div>
-
 																					</div>
 																				</div>
 
 																				<div class="col-md-12">
 																					<div class="form-group">
 																						<label>No. DE DECODIFICADORES ADICIONALES</label>
-
 																					</div>
 																				</div>
 
-																				<div class="col-md-12">
+																				<div class="col-md-3">
 																					<div class="form-group">
-																						<label class="form-control-label">Tipo de tecnología<span class="tx-danger">*</span></label>
-																						<div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">SD</label>
-																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">HD</label>
-																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">ZAPPER</label>
-																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-3" type="checkbox"> <label for="form-4-3">Otros</label>
-																							</div>
+																						<label class="form-control-label"> SD <span class="tx-danger">*</span></label>
+																						<div class=" input-icon ">
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.noDecodificadorAdicionalSd" value="{{informacionCliente.servicioFijo.televisionSuscripcion.noDecodificadorAdicionalSd}}" type="number" class="form-control" placeholder="SD">
 																						</div>
-
-
+																					</div>
+																				</div>
+																				<div class="col-md-3">
+																					<div class="form-group">
+																						<label class="form-control-label"> HD <span class="tx-danger">*</span></label>
+																						<div class=" input-icon ">
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.noDecodificadorAdicionalHd" value="{{informacionCliente.servicioFijo.televisionSuscripcion.noDecodificadorAdicionalHd}}" type="number" class="form-control" placeholder="HD">
+																						</div>
+																					</div>
+																				</div>
+																				<div class="col-md-3">
+																					<div class="form-group">
+																						<label class="form-control-label"> ZAPPER <span class="tx-danger">*</span></label>
+																						<div class=" input-icon ">
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.noDecodificadorAdicionalZapper" value="{{informacionCliente.servicioFijo.televisionSuscripcion.noDecodificadorAdicionalZapper}}" type="number" class="form-control" placeholder="ZAPPER">
+																						</div>
+																					</div>
+																				</div>
+																				<div class="col-md-3">
+																					<div class="form-group">
+																						<label class="form-control-label"> OTROS <span class="tx-danger">*</span></label>
+																						<div class=" input-icon ">
+																							<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.noDecodificadorAdicionalOtros" value="{{informacionCliente.servicioFijo.televisionSuscripcion.noDecodificadorAdicionalOtros}}" type="number" class="form-control" placeholder="OTROS">
+																						</div>
 																					</div>
 																				</div>
 
 																				<div class="col-md-12">
 																					<div class="form-group">
 
-
 																						<div>
 																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<label class="pdd-right-10"><strong>Aplica: </strong></label> <input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">CNT Dúo Pack</label>
+																								<label class="pdd-right-10"> <strong>Aplica: </strong></label>
+																								<div class="checkbox checkbox-inline">
+																									<input name="checkboxCntDuoPack" id="checkboxCntDuoPack" [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.cntDuoPack" value="true" type="checkbox">
+																									<label for="checkboxCntDuoPack">CNT Dúo Pack</label>
+																								</div>
+																								<div class="checkbox checkbox-inline">
+																									<input name="checkboxCntTriplePack" id="checkboxCntTriplePack" [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.cntTriplePack" value="true" type="checkbox">
+																									<label for="checkboxCntTriplePack">CNT Triple Pack</label>
+																								</div>
 																							</div>
-																							<div class="checkbox checkbox-inline checkbox-primary">
-																								<input id="" name="form-4-2" type="checkbox"> <label for="form-4-2">CNT Triple Pack</label>
-																							</div>
-
-
 																						</div>
 
 																					</div>
@@ -972,762 +1008,1373 @@
 
 																				<div class="col-md-12">
 																					<div class="form-group form-inline">
-																						<label class="pdd-right-10"><strong>Requisitos: </strong></label>
+																						<label class="pdd-right-10"> <strong>Requisitos: </strong>
+																						</label>
 																						<p class="no-mrg-btm">Persona Jurídica: RUC, nombramiento del representante legal, cédula de identidad del representante legal</p>
 																						<p class="no-mrg-btm">Persona Natural: Cédula de identidad</p>
 
 																					</div>
 																				</div>
 
+																				<div class="col-md-12 text-right py-3">
+																					<span style="font-weight: bold; color: #f99a20;">{{saveResponseTelevisionSuscripcion}}</span>
+																				</div>
 
-
-
-
-
-
-
-
+																				<div class="col-md-12 text-right py-3">
+																					<button (click)="saveTelevisionSuscripcion(informacionCliente)" class="btn btn-info">Guardar</button>
+																				</div>
 
 																			</div>
-																			<!-- row -->
 
 																		</div>
-																		<!-- form-group -->
 																	</div>
-
 																</div>
-																<!-- form-layout -->
 
 
 															</div>
 														</div>
 
-														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-									</div>
 
-									<div id="step3" class="tab-pane fade {{step3Tab}}">
-										<div class="row">
+
+
+										<div class="row" *ngIf="toogleSolicitud">
 											<div class="col-md-12">
-												<div class="card-heading row border bottom">
-													<h3 class="card-title col-11">Forma de Pago</h3>
-													<a  class="btn btn-default btn-inverse" style="margin-bottom: 0px; float: right;"><i class="ti-save"></i></a>
+
+												<div class="col-md-12 card-heading row">
+													<h3 class="card-title col-11 no-pdd">Servicios Móviles a Contratar</h3>
 												</div>
 
-												<div class="card-block">
-
-													<div class="row">
-														<div class="col-md-12 row">
-
-															<div class="padding-15">
-																<span>Seleccione el servicio que desea contratar</span>
-															</div>
-
-															<div class="tab-info col-12 no-pdd">
-																<ul class="nav nav-tabs" role="tablist">
-																	<li class="nav-item"><a (click)="showTabFormaPago(1)" class="nav-link {{fpTelefoniaLink}}" style="padding:10px 5px;" role="tab" data-toggle="tab"><div class="checkbox checkbox-inline checkbox-primary">
-																		<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Telefonía Fija</label>
-																	</div> </a></li>
-																	<li class="nav-item"><a (click)="showTabFormaPago(2)" class="nav-link {{fpInternetLink}}" style="padding:10px 5px;" role="tab" data-toggle="tab"><div class="checkbox checkbox-inline checkbox-primary">
-																		<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Internet Fijo</label>
-																	</div></a></li>
-																	<li class="nav-item"><a (click)="showTabFormaPago(3)" class="nav-link {{fpTelevisionLink}}" style="padding:10px 5px;" role="tab" data-toggle="tab"><div class="checkbox checkbox-inline checkbox-primary">
-																		<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Televisión por Suscripción</label>
-																	</div></a></li>
-																	<li class="nav-item"><a (click)="showTabFormaPago(4)" class="nav-link {{fpAutorizacionLink}}" style="padding:10px 5px;" role="tab" data-toggle="tab"><div class="checkbox checkbox-inline checkbox-primary">
-																		<input id="" name="form-4-1" type="checkbox" checked=""> <label for="form-4-1">Autorización de Débito</label>
-																	</div></a></li>
-																</ul>
-																<div class="tab-content">
-																	<div role="tabpanel" class="tab-pane fade {{fpTelefoniaTab}}" id="card-tab-1">
-																		<div class="pdd-horizon-15 pdd-vertical-20">
-
-																			<div class="row">
-																				<div class="col-md-12 no-pdd">
-																					<div id="accordion-1" class="accordion panel-group" role="tablist" aria-multiselectable="true">
-																						<div class="panel panel-default">
-																							<div class="panel-heading" role="tab" id="headingOne">
-																								<h4 class="panel-title">
-																									<a data-toggle="collapse" data-parent="#accordion-1" (click)="isCollapsedTelefoniaVentanilla = !isCollapsedTelefoniaVentanilla"
-          [attr.aria-expanded]="!isCollapsedTelefoniaVentanilla"> <span>Ventanilla</span> <i class="icon ti-arrow-circle-down"></i>
-																									</a>
-																								</h4>
-																							</div>
-
-																							<div class="collapse panel-collapse show" [ngbCollapse]="isCollapsedTelefoniaVentanilla">
-																								<div class="panel-body">
-
-																									<div class="form-group">
-																										<label>Teléfono</label> <input type="text" placeholder="Escriba No. Telefónico o Virtual" class="form-control">
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																						<div class="panel panel-default">
-																							<div class="panel-heading" role="tab" id="headingTwo">
-																								<h4 class="panel-title">
-																									<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" (click)="isCollapsedTelefoniaDebito = !isCollapsedTelefoniaDebito"
-          [attr.aria-expanded]="!isCollapsedTelefoniaDebito"> <span>Tarjeta de débito</span>
-																										 <i class="icon ti-arrow-circle-down"></i>
-																									</a>
-																								</h4>
-																							</div>
-																							<div class="collapse panel-collapse" role="tabpanel" [ngbCollapse]="isCollapsedTelefoniaDebito">
-																								<div class="panel-body">
-
-																									<div class="mrg-top-10">
-																										<div class="radio radio-inline radio-primary">
-																											<input type="radio" name="form-5" id="form-5-1"> <label for="form-5-1">Ahorros</label>
-																										</div>
-																										<div class="radio radio-inline radio-primary">
-																											<input type="radio" name="form-5" id="form-5-2" checked=""> <label for="form-5-2">Corriente</label>
-																										</div>
-																									</div>
-
-																									<div class="form-group">
-																										<label>No. de Cuenta</label> <input type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
-																									</div>
-																									<div class="form-group">
-																										<label>Entidad Financiera</label> <input type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																						<div class="panel panel-default">
-																							<div class="panel-heading" role="tab" id="headingThree">
-																								<h4 class="panel-title">
-																									<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" (click)="isCollapsedTelefoniaCredito = !isCollapsedTelefoniaCredito"
-          [attr.aria-expanded]="!isCollapsedTelefoniaCredito"> <span>Tarjeta de crédito </span> <i class="icon ti-arrow-circle-down"></i>
-																									</a>
-																								</h4>
-																							</div>
-																							<div class="collapse panel-collapse" role="tabpanel" [ngbCollapse]="isCollapsedTelefoniaCredito">
-																								<div class="panel-body">
-
-																									<div class="mrg-top-10">
-																										<div class="radio radio-inline radio-primary">
-																											<input type="radio" name="form-5" id="form-5-1"> <label for="form-5-1">Ahorros</label>
-																										</div>
-																										<div class="radio radio-inline radio-primary">
-																											<input type="radio" name="form-5" id="form-5-2" checked=""> <label for="form-5-2">Corriente</label>
-																										</div>
-																									</div>
-
-																									<div class="form-group">
-																										<label>No. de Cuenta</label> <input type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
-																									</div>
-																									<div class="form-group">
-																										<label>Entidad Financiera</label> <input type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-
-
-
-
-																			</div>
-																		</div>
-																	</div>
-																	<div role="tabpanel" class="tab-pane fade {{fpInternetTab}}" id="card-tab-2">
-																		<div class="pdd-horizon-15 pdd-vertical-20">
-
-																			<div class="row">
-																				<div class="col-md-12 no-pdd">
-																					<div id="accordion-1" class="accordion panel-group" role="tablist" aria-multiselectable="true">
-																						<div class="panel panel-default">
-																							<div class="panel-heading" role="tab" id="headingOne">
-																								<h4 class="panel-title">
-																									<a data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne"> <span>Ventanilla</span> <i class="icon ti-arrow-circle-down"></i>
-																									</a>
-																								</h4>
-																							</div>
-
-																							<div id="collapseOne" class="collapse panel-collapse show">
-																								<div class="panel-body">
-
-																									<div class="form-group">
-																										<label>Teléfono</label> <input type="text" placeholder="Escriba No. Telefónico o Virtual" class="form-control">
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																						<div class="panel panel-default">
-																							<div class="panel-heading" role="tab" id="headingTwo">
-																								<h4 class="panel-title">
-																									<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapseTwo"> <span>Tarjeta de débito</span> <i class="icon ti-arrow-circle-down"></i>
-																									</a>
-																								</h4>
-																							</div>
-																							<div id="collapseTwo" class="collapse panel-collapse" role="tabpanel">
-																								<div class="panel-body">
-
-																									<div class="mrg-top-10">
-																										<div class="radio radio-inline radio-primary">
-																											<input type="radio" name="form-5" id="form-5-1"> <label for="form-5-1">Ahorros</label>
-																										</div>
-																										<div class="radio radio-inline radio-primary">
-																											<input type="radio" name="form-5" id="form-5-2" checked=""> <label for="form-5-2">Corriente</label>
-																										</div>
-																									</div>
-
-																									<div class="form-group">
-																										<label>No. de Cuenta</label> <input type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
-																									</div>
-																									<div class="form-group">
-																										<label>Entidad Financiera</label> <input type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																						<div class="panel panel-default">
-																							<div class="panel-heading" role="tab" id="headingThree">
-																								<h4 class="panel-title">
-																									<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree"> <span>Tarjeta de crédito </span> <i class="icon ti-arrow-circle-down"></i>
-																									</a>
-																								</h4>
-																							</div>
-																							<div id="collapseThree" class="collapse panel-collapse" role="tabpanel">
-																								<div class="panel-body">
-
-																									<div class="mrg-top-10">
-																										<div class="radio radio-inline radio-primary">
-																											<input type="radio" name="form-5" id="form-5-1"> <label for="form-5-1">Ahorros</label>
-																										</div>
-																										<div class="radio radio-inline radio-primary">
-																											<input type="radio" name="form-5" id="form-5-2" checked=""> <label for="form-5-2">Corriente</label>
-																										</div>
-																									</div>
-
-																									<div class="form-group">
-																										<label>No. de Cuenta</label> <input type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
-																									</div>
-																									<div class="form-group">
-																										<label>Entidad Financiera</label> <input type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-
-
-
-
-																			</div>
-
-																		</div>
-																	</div>
-																	<div role="tabpanel" class="tab-pane fade {{fpTelevisionTab}}" id="card-tab-3">
-																		<div class="pdd-horizon-15 pdd-vertical-20">
-																			<div class="row">
-																				<div class="col-md-12 no-pdd">
-																					<div id="accordion-1" class="accordion panel-group" role="tablist" aria-multiselectable="true">
-																						<div class="panel panel-default">
-																							<div class="panel-heading" role="tab" id="headingOne">
-																								<h4 class="panel-title">
-																									<a data-toggle="collapse" data-parent="#accordion-1" href="#collapseOne"> <span>Ventanilla</span> <i class="icon ti-arrow-circle-down"></i>
-																									</a>
-																								</h4>
-																							</div>
-
-																							<div id="collapseOne" class="collapse panel-collapse show">
-																								<div class="panel-body">
-
-																									<div class="form-group">
-																										<label>Teléfono</label> <input type="text" placeholder="Escriba No. Telefónico o Virtual" class="form-control">
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																						<div class="panel panel-default">
-																							<div class="panel-heading" role="tab" id="headingTwo">
-																								<h4 class="panel-title">
-																									<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapseTwo"> <span>Tarjeta de débito</span> <i class="icon ti-arrow-circle-down"></i>
-																									</a>
-																								</h4>
-																							</div>
-																							<div id="collapseTwo" class="collapse panel-collapse" role="tabpanel">
-																								<div class="panel-body">
-
-																									<div class="mrg-top-10">
-																										<div class="radio radio-inline radio-primary">
-																											<input type="radio" name="form-5" id="form-5-1"> <label for="form-5-1">Ahorros</label>
-																										</div>
-																										<div class="radio radio-inline radio-primary">
-																											<input type="radio" name="form-5" id="form-5-2" checked=""> <label for="form-5-2">Corriente</label>
-																										</div>
-																									</div>
-
-																									<div class="form-group">
-																										<label>No. de Cuenta</label> <input type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
-																									</div>
-																									<div class="form-group">
-																										<label>Entidad Financiera</label> <input type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																						<div class="panel panel-default">
-																							<div class="panel-heading" role="tab" id="headingThree">
-																								<h4 class="panel-title">
-																									<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapseThree"> <span>Tarjeta de crédito </span> <i class="icon ti-arrow-circle-down"></i>
-																									</a>
-																								</h4>
-																							</div>
-																							<div id="collapseThree" class="collapse panel-collapse" role="tabpanel">
-																								<div class="panel-body">
-
-																									<div class="mrg-top-10">
-																										<div class="radio radio-inline radio-primary">
-																											<input type="radio" name="form-5" id="form-5-1"> <label for="form-5-1">Ahorros</label>
-																										</div>
-																										<div class="radio radio-inline radio-primary">
-																											<input type="radio" name="form-5" id="form-5-2" checked=""> <label for="form-5-2">Corriente</label>
-																										</div>
-																									</div>
-
-																									<div class="form-group">
-																										<label>No. de Cuenta</label> <input type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
-																									</div>
-																									<div class="form-group">
-																										<label>Entidad Financiera</label> <input type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-
-
-
-
-																			</div>
-																		</div>
-																	</div>
-																	<div role="tabpanel" class="tab-pane fade {{fpAutorizacionTab}}" id="card-tab-4">
-																		<div class="pdd-horizon-15 pdd-vertical-20">
-																			<div class="row">
-																				<div class="col-md-12 no-pdd">
-																					<form class="form-horizontal mrg-left-20">
-
-
-
-																						<div class="form-group row mrg-top-20 mrg-left-20 ">
-
-																							<p class="col-md-2">Aplica:</p>
-
-																							<div class="radio col-md-1">
-																								<input id="si1" name="si1" type="radio"> <label for="si1">Si</label>
-																							</div>
-
-																							<div class="radio col-md-1">
-																								<input id="no1" name="no1" type="radio"> <label for="no1">No</label>
-																							</div>
-																						</div>
-
-																					</form>
-
-																					<!--TEXTO AUTORIZACIÓN DEBITO-->
-
-																					<p class="col-md-12 pdd-right-0 pdd-left-0">Como cliente de la CNT EP , adicionalmente ratiﬁco mi compromiso de mantener los pagos de mi Tarjeta de Crédito al día y los fondos suﬁcientes en mi Cuenta Corriente o de Ahorros dentro de los plazos estipulados, a ﬁn de cubrir los
-																						valores cuyos débitos automáticos autorizo a través del presente documento.</p>
-
-																						<p class="col-md-12 pdd-right-0 pdd-left-0">Así mismo, expresamente me obligo a no renovar la presente autorización sin el previo consentimiento por escrito de la CNT EP, por lo que libero de toda responsabilidad a la entidad ﬁnanciera: Banco o, a la emisora de la Tarjeta de
-																							Crédito por los débitos o cargos efectuados en base a la presente autorización.</p>
-
-																							<p class="col-md-12 pdd-right-0 pdd-left-0">De igual manera, autorizo a que, en caso de pérdida, o cualquier circunstancia por la cual fuera cambiado el número de Tarjeta de Crédito, o de la cuenta antes mencionada; en caso de pérdida; retiro; expiración; o, cambio de número,
-																								me comprometo a notiﬁcar en forma inmediata a la CNT EP, sobre el número asignado. De tal manera que el cambio de número indicado no será causa para no cancelar los valores que adeude a la CNT EP, por los conceptos mencionados. La CNT EP no asume ninguna responsabilidad sobre
-																								los cargos que la Institución Financiera por Usted seleccionada le cobre por prestar este servicio a su Cliente.</p>
-
-																								<p class="col-md-12 pdd-right-0 pdd-left-0">El cliente, usuario o consumidor declara conocer que la información suministrada es verídica y maniﬁesta su consentimiento expreso e irrevocable a la CNT EP, a posible cesionaria de sus derechos y obligaciones o, a quien pudiese
-																									ostentar a futuro a cualquier título, la calidad de acreedor de los valores adeudados por el cliente, usuario o consumidor por concepto de los servicios prestados, para:</p>
-
-																									<p class="col-md-12 pdd-right-0 pdd-left-0">1. Consultar, en cualquier tiempo, en los burós de información crediticia, toda la información relevante que permita a la CNT EP conocer el desempeño del cliente, usuario o consumidor como deudor y su capacidad de pago, valorar el
-																										riesgo futuro en caso de concederle un crédito por el servicio a prestarse.</p>
-
-																										<p class="col-md-12 pdd-right-0 pdd-left-0">2. Reportar en los burós de información crediticia en forma directa o por intermedio de la Superintendencia de Bancos y Seguros, datos referidos a:</p>
-
-																										<p class="col-md-12 pdd-right-0 pdd-left-0">2.1 Cumplimiento oportuno o incumplimiento, de las obligaciones crediticias pasadas, presentes o futuras del cliente.</p>
-
-																										<p class="col-md-12 pdd-right-0 pdd-left-0">2.2 Información comercial, ﬁnanciera y socioeconómica que el cliente haya entregado o que consten en registros públicos, bases de datos públicos o documentos públicos.</p>
-
-																										<p class="col-md-12 pdd-right-0 pdd-left-0">3. Conservar, tanto en la CNT EP como en los burós de información crediticia, con las debidas autorizaciones y durante el período necesario, la información detallada en el numeral 2 de esta declaración.</p>
-
-																										<p class="col-md-12 pdd-right-0 pdd-left-0">Ésta autorización expresa del cliente, usuario o consumidor permitirá a la CNT EP y a los burós de información crediticia, divulgar la información mencionada para evaluar los riesgos de conceder al cliente, usuario o consumidor un
-																											crédito por el servicio a prestar, elaborar estadísticas y derivar, mediante modelos matemáticos, conclusiones de ellas y demás ﬁnes autorizados por la ley. Si a pesar de existir la factibilidad técnica y comercial para prestar el servicio solicitado por el cliente, usuario
-																											consumidor, de la CNT EP se reserva la facultad de negar la solicitud del servicio.</p>
-
-																											<!--FIN DE TEXTO AUTORIZACIÓN DEBITO-->
-
-
-																										</div>
-
-
-
-
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-
-
-																				</div>
-
-
-																			</div>
-
-
-
-
-																		</div>
-
-
-																	</div>
-
+												<div class="col-12 no-pdd-left">
+													<p>Complete el siguiente formulario para la contratación de servicios Móviles</p>
+												</div>
+
+												<div class="padding-15">
+													<span>Por favor complete el siguiente formulario para la contratación de Telefonía Móvil</span>
+												</div>
+
+												<div class="form-layout form-layout-2" *ngFor="let smc of informacionCliente.servicioMovil.servicioMovilContratado">
+
+													<div class="col-12 no-pdd-btm">
+														<div style="height:25px;background-color:#f6f7fb;margin:10px -55px 20px;border-top:1px solid #e6ecf5;border-bottom:1px solid #e6ecf5;"></div>
+													</div>
+
+													<div class="col-12 no-pdd-btm">
+														<div class="row no-gutters">
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label class="form-control-label mg-b-0-force"> Seleccione un plan <span class="tx-danger">*</span>
+																	</label>
+																	<select [(ngModel)]="smc.planContratado" value="{{smc.planContratado}}" class="form-control" placeholder="Seleccione No. de Líneas">
+																		<option label="Seleccione el plan a contratar" selected></option>
+																		<option value="">1</option>
+																		<option value="">2</option>
+																		<option value="">3</option>
+																		<option value="">4</option>
+																	</select>
 																</div>
 															</div>
-															<div id="step4" class="tab-pane fade {{step4Tab}}">
-																<div class="row">
-																	<div class="col-md-12">
-																		<div class="card-heading row border bottom">
-																			<h3 class="card-title col-11">Política de buen uso de los Servicios Fijos de CNT EP</h3>
+
+															<div class="col-md-2">
+																<div class="form-group">
+																	<label class="form-control-label"> Minutos <span class="tx-danger">*</span>
+																	</label> <input [(ngModel)]="smc.planContratadoMin" value="{{smc.planContratadoMin}}" class="form-control" type="text" placeholder="Minutos">
+																</div>
+															</div>
+
+															<div class="col-md-2">
+																<div class="form-group">
+																	<label class="form-control-label"> Gigas <span class="tx-danger">*</span>
+																	</label> <input [(ngModel)]="smc.planContratadoGigas" value="{{smc.planContratadoGigas}}" class="form-control" type="text" placeholder="Gigas">
+																</div>
+															</div>
+
+															<div class="col-md-2 ">
+																<div class="form-group">
+																	<label class="form-control-label"> SMS <span class="tx-danger">*</span>
+																	</label> <input [(ngModel)]="smc.planContratadoSms" value="{{smc.planContratadoSms}}" class="form-control" type="text" placeholder="SMS">
+																</div>
+															</div>
+
+															<div class="col-md-4">
+																<div class="form-group">
+																	<label class="form-control-label"> Valor en dólares <span class="tx-danger">*</span>
+																	</label>
+																	<div class=" input-icon ">
+																		<i class="ei-dollar"></i> <input [(ngModel)]="smc.valorPlan" value="{{smc.valorPlan}}" type="number" class="form-control" placeholder="Escriba el valor">
+																	</div>
+																</div>
+															</div>
+
+
+															<div class="col-md-5">
+																<div class="form-group">
+																	<label class="form-control-label"> Bono promocional <span class="tx-danger">*</span>
+																	</label>
+																	<div>
+																		<div class="checkbox checkbox-inline">
+																			<input name="checkboxBonoLlamadas" id="checkboxBonoLlamadas" [(ngModel)]="smc.bonoPromocionalLlamadas" value="true" type="checkbox">
+																			<label for="checkboxBonoLlamadas">Llamadas ilimitadas</label>
 																		</div>
+																		<div class="checkbox checkbox-inline">
+																			<input name="checkboxBonoGigas" id="checkboxBonoGigas" [(ngModel)]="smc.bonoPromocionalGigas" value="true" type="checkbox">
+																			<label for="checkboxBonoGigas">Gigas</label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															<div class="col-md-3">
+																<div class="form-group">
+																	<label class="form-control-label"> Vigencia (bono) <span class="tx-danger">*</span>
+																	</label> <input [(ngModel)]="smc.bonoVigencia" value="{{smc.bonoVigencia}}" type="number" class="form-control datepicker-1" placeholder="Ingrese una fecha">
+																</div>
+															</div>
+
+															<div class="col-md-12">
+																<div class="form-group">
+																	<label class="form-control-label"> Redes sociales Libres <span class="tx-danger">*</span>
+																	</label>
+																	<div>
+																		<div class="checkbox checkbox-inline">
+																			<input name="checkboxRedFacebook" id="checkboxRedFacebook" [(ngModel)]="smc.redSocialLibre1" value="true" type="checkbox">
+																			<label for="checkboxRedFacebook">Facebook</label>
+																		</div>
+																		<div class="checkbox checkbox-inline">
+																			<input name="checkboxRedTwitter" id="checkboxRedTwitter" [(ngModel)]="smc.redSocialLibre2" value="true" type="checkbox">
+																			<label for="checkboxRedTwitter">Twitter</label>
+																		</div>
+																		<div class="checkbox checkbox-inline">
+																			<input name="checkboxRedWhatsapp" id="checkboxRedWhatsapp" [(ngModel)]="smc.redSocialLibre3" value="true" type="checkbox">
+																			<label for="checkboxRedWhatsapp">Whatsapp</label>
+																		</div>
+																		<div class="checkbox checkbox-inline">
+																			<input name="checkboxRedInstagram" id="checkboxRedInstagram" [(ngModel)]="smc.redSocialLibre4" value="true" type="checkbox">
+																			<label for="checkboxRedInstagram">Instagram</label>
+																		</div>
+																		<div class="checkbox checkbox-inline">
+																			<input name="checkboxRedSnapchat" id="checkboxRedSnapchat" [(ngModel)]="smc.redSocialLibre5" value="true" type="checkbox">
+																			<label for="checkboxRedSnapchat">Snapchat</label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															<div class="col-md-12">
+																<div class="form-group">
+																	<label>NÚMEROS FAVORITOS</label>
+																</div>
+															</div>
+
+															<div class="col-md-4">
+																<div class="form-group">
+																	<label class="form-control-label"> Favorito 1 <span class="tx-danger">*</span>
+																	</label> <input [(ngModel)]="smc.numeroFavorito1" value="{{smc.numeroFavorito1}}" class="form-control" type="text"  placeholder="Ingrese un número favorito">
+																</div>
+															</div>
+
+															<div class="col-md-4">
+																<div class="form-group">
+																	<label class="form-control-label"> Favorito 2 <span class="tx-danger">*</span>
+																	</label> <input [(ngModel)]="smc.numeroFavorito2" value="{{smc.numeroFavorito2}}" class="form-control" type="text"  placeholder="Ingrese un número favorito">
+																</div>
+															</div>
+
+															<div class="col-md-4">
+																<div class="form-group">
+																	<label class="form-control-label"> Favorito 3 <span class="tx-danger">*</span>
+																	</label> <input [(ngModel)]="smc.numeroFavorito3" value="{{smc.numeroFavorito3}}" class="form-control" type="text"  placeholder="Ingrese un número favorito">
+																</div>
+															</div>
+
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label class="form-control-label"> Aplicaciones incluidas <span class="tx-danger">*</span>
+																	</label>
+																	<div>
+																		<div class="checkbox checkbox-inline">
+																			<input name="checkboxApp1" id="checkboxApp1" [(ngModel)]="smc.aplicacionIncluida1" value="true" type="checkbox">
+																			<label for="checkboxApp1">App 1</label>
+																		</div>
+																		<div class="checkbox checkbox-inline">
+																			<input name="checkboxApp2" id="checkboxApp2" [(ngModel)]="smc.aplicacionIncluida2" value="true" type="checkbox">
+																			<label for="checkboxApp2">App 2</label>
+																		</div>
+																		<div class="checkbox checkbox-inline">
+																			<input name="checkboxApp3" id="checkboxApp3" [(ngModel)]="smc.aplicacionIncluid3" value="true" type="checkbox">
+																			<label for="checkboxApp3">App 3</label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label class="form-control-label"> Paquetes adicionales <span class="tx-danger">*</span>
+																	</label>
+																	<div>
+																		<div class="checkbox checkbox-inline">
+																			<input name="checkboxPaq1" id="checkboxPaq1" [(ngModel)]="smc.paqueteAdicional1" value="true" type="checkbox">
+																			<label for="checkboxPaq1">Paquete 1</label>
+																		</div>
+																		<div class="checkbox checkbox-inline">
+																			<input name="checkboxPaq2" id="checkboxPaq2" [(ngModel)]="smc.paqueteAdicional2" value="true" type="checkbox">
+																			<label for="checkboxPaq2">Paquete 2</label>
+																		</div>
+																		<div class="checkbox checkbox-inline">
+																			<input name="checkboxPaq3" id="checkboxPaq3" [(ngModel)]="smc.paqueteAdicional3" value="true" type="checkbox">
+																			<label for="checkboxPaq3">Paquete 3</label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															<div class="col-md-12">
+																<div class="form-group">
+																	<label>EQUIPO</label>
+																</div>
+															</div>
+
+															<div class="col-md-8">
+																<div class="form-group">
+																	<label class="form-control-label"> Marca / Modelo<span class="tx-danger">*</span>
+																	</label> <input [(ngModel)]="smc.marcaModelo" value="{{smc.marcaModelo}}" class="form-control" type="text" placeholder="Escriba la marca del equipo">
+																</div>
+															</div>
+
+															<div class="col-md-4">
+																<div class="form-group">
+																	<div>
+																		<div class="radio radio-inline">
+																			<input name="radioEqIncluido" id="radioEqIncluido" [(ngModel)]="smc.equipoIncluido" value="true" type="radio">
+																			<label for="radioEqIncluido">Incluido</label>
+																		</div>
+																		<div class="radio radio-inline">
+																			<input name="radioEqIncluido" id="radioEqNoIncluido" [(ngModel)]="smc.equipoIncluido" value="false" type="radio">
+																			<label for="radioEqNoIncluido">No incluido</label>
+																		</div>
+																	</div>
+																</div>
+															</div>
+
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label class="form-control-label"> IMEI <span class="tx-danger">*</span>
+																	</label> <input [(ngModel)]="smc.imei" value="{{smc.imei}}" class="form-control" type="text" placeholder="Introduzca el IMEI">
+																</div>
+															</div>
+
+															<div class="col-md-6">
+																<div class="form-group">
+																	<label class="form-control-label"> ICCID/IMSI <span class="tx-danger">*</span>
+																	</label> <input [(ngModel)]="smc.iccidImsi" value="{{smc.iccidImsi}}" class="form-control" type="text" placeholder="Introduzca el ICCID/IMSI">
+																</div>
+															</div>
+
+															<div class="col-md-12">
+																<div class="form-group">
+																	<label>TOTAL ACUMULADO</label>
+																</div>
+															</div>
 
 
+															<div class="col-md-4">
+																<div class="form-group">
+																	<label class="form-control-label"> PVP sin impuestos <span class="tx-danger">*</span>
+																	</label>
+																	<div class=" input-icon ">
+																		<i class="ei-dollar"></i>
+																		<input [(ngModel)]="smc.pvp" value="{{smc.pvp}}" type="number" class="form-control" placeholder="Escriba el valor">
+																	</div>
+																</div>
+															</div>
 
-																		<div class="card-block">
+															<div class="col-md-4">
+																<div class="form-group">
+																	<label class="form-control-label"> Valor Financiamiento <span class="tx-danger">*</span>
+																	</label>
+																	<div class=" input-icon ">
+																		<i class="ei-dollar"></i>
+																		<input [(ngModel)]="smc.valorFinanciamiento" value="{{smc.valorFinanciamiento}}" type="number" class="form-control" placeholder="Escriba el valor">
+																	</div>
+																</div>
+															</div>
 
-																			<div class="row">
+															<div class="col-md-4">
+																<div class="form-group">
+																	<label class="form-control-label"> Saldo a pagar $ sin impuestos <span class="tx-danger">*</span>
+																	</label>
+																	<div class=" input-icon ">
+																		<i class="ei-dollar"></i>
+																		<input [(ngModel)]="smc.saldoPagar" value="{{smc.saldoPagar}}" type="number" class="form-control" placeholder="Escriba el valor">
+																	</div>
+																</div>
+															</div>
 
+															<div class="col-md-12 text-right py-3">
+																<span style="font-weight: bold; color: #f99a20;">{{saveResponseServicioMovilContratado}}</span>
+															</div>
 
+															<div class="col-md-12 text-right py-3">
+																<button (click)="saveServicioMovilContratado(informacionCliente)" class="btn btn-info">Guardar</button>
+															</div>
 
-																				<div class="col-md-12 mrg-left-20">
+														</div>
 
-																					<form class="form-horizontal">
+													</div>
+												</div>
+											</div>
+										</div>
 
+									</div>
+								</div>
 
-																						<div class="form-group row mrg-top-10 ">
+								<!--	.................................................................................. -->
+								<!--	.................................................................................. -->
+								<!--	.................................................................................. -->
 
-																							<div class="checkbox col-md-4">
-																								<input id="intfij" name="intfij" type="checkbox"> <label for="intfij">Internet Fijo</label>
-																							</div>
+								<div id="step3" class="tab-pane fade {{step3Tab}}">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="card-heading row border bottom">
+												<h3 class="card-title col-11">Forma de Pago</h3>
+											</div>
 
-																							<div class="checkbox col-md-4">
-																								<input id="tesus" name="tesus" type="checkbox"> <label for="tesus">Televisión por Suscripción</label>
-																							</div>
+											<div class="card-block">
 
-																							<div class="checkbox col-md-4">
-																								<input id="telfij" name="telfij" type="checkbox"> <label for="telfij">Telefonía Fija</label>
+												<div class="row">
+													<div class="col-md-12 row">
+
+														<div class="padding-15">
+															<span>Seleccione el servicio que desea contratar</span>
+														</div>
+
+														<div class="tab-info col-12 no-pdd">
+															<ul class="nav nav-tabs" role="tablist">
+																<li class="nav-item"><a (click)="showTabFormaPago(1)" class="nav-link {{fpTelefoniaLink}}" style="padding: 10px 5px;" role="tab" data-toggle="tab">
+																		Telefonía Fija
+																</a></li>
+																<li class="nav-item"><a (click)="showTabFormaPago(2)" class="nav-link {{fpInternetLink}}" style="padding: 10px 5px;" role="tab" data-toggle="tab">
+																		Internet Fijo
+																</a></li>
+																<li class="nav-item"><a (click)="showTabFormaPago(3)" class="nav-link {{fpTelevisionLink}}" style="padding: 10px 5px;" role="tab" data-toggle="tab">
+																		Televisión Suscripción
+																</a></li>
+																<li class="nav-item"><a (click)="showTabFormaPago(4)" class="nav-link {{fpServicioMovilLink}}" style="padding: 10px 5px;" role="tab" data-toggle="tab">
+																		Servicios Moviles
+																</a></li>
+															</ul>
+															<div class="tab-content">
+																<!-- ............................................................................... -->
+																<div role="tabpanel" class="tab-pane fade {{fpTelefoniaTab}}" id="card-tab-1">
+																	<div class="pdd-horizon-15 pdd-vertical-20">
+
+																		<div class="row">
+																			<div class="col-md-12 no-pdd">
+																				<div class="accordion panel-group" role="tablist" aria-multiselectable="true">
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingOne">
+																							<h4 class="panel-title">
+																								<a (click)="isCollapsedTelefoniaVentanilla = !isCollapsedTelefoniaVentanilla" [attr.aria-expanded]="!isCollapsedTelefoniaVentanilla">
+																									<span>Ventanilla</span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+
+																						<div class="collapse panel-collapse show" [ngbCollapse]="isCollapsedTelefoniaVentanilla">
+																							<div class="panel-body">
+
+																								<div class="form-group">
+																									<label>Teléfono</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.formaPago.ventanilla" value="{{informacionCliente.servicioFijo.telefoniaFija.formaPago.ventanilla}}" type="text" placeholder="Escriba No. Telefónico o Virtual" class="form-control">
+																								</div>
 																							</div>
 																						</div>
-																					</form>
+																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab">
+																							<h4 class="panel-title">
+																								<a (click)="isCollapsedTelefoniaDebito = !isCollapsedTelefoniaDebito" [attr.aria-expanded]="!isCollapsedTelefoniaDebito">
+																									<span>Tarjeta de débito</span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+																						<div class="collapse panel-collapse" role="tabpanel" [ngbCollapse]="isCollapsedTelefoniaDebito">
+																							<div class="panel-body">
 
+																								<div class="mrg-top-10">
 
-																					<p class="col-md-12 pdd-right-40 pdd-left-0">
+																									<div class="radio radio-inline">
+																										<input name="radioTipoTarjetaTFFP" id="radioTipoTarjetaTFFP1" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.formaPago.tipoCuenta" value="ahorros" type="radio">
+																										<label for="radioTipoTarjetaTFFP1">Ahorros</label>
+																									</div>
+																									<div class="radio radio-inline">
+																										<input name="radioTipoTarjetaTFFP" id="radioTipoTarjetaTFFP2" [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.formaPago.tipoCuenta" value="corriente" type="radio">
+																										<label for="radioTipoTarjetaTFFP2">Corriente</label>
+																									</div>
+																								</div>
 
-																						Mediante la presente, declaro que he sido informado por la operadora sobre las características, tarifas ﬁnales del servicio y plan contratado a la fecha de suscripción de este anexo. Me comprometo a informarme periódicamente de las políticas, condiciones comerciales, contractuales,
-																						condiciones de uso del servicio y plan contratado, promociones, tarifas y políticas de prevención de fraude que se encuentran publicadas en la página web de la operadora: <a href="www.cnt.gob.ec"> www.cnt.gob.ec </a>
-
-																					</p>
-
-																					<p class="col-md-12 pdd-right-40 pdd-left-0">Acepto que la operadora, con el afán de no atentar al derecho de todos los usuarios al acceso igualitario al servicio prestado y prevenir usos fraudulentos y abusos en los planes y servicios de telecomunicaciones, ha establecido la
-																						siguiente diferenciación para el uso de planes residenciales y comerciales, acorde la siguiente política:</p>
-
-																						<p class="col-md-12 pdd-right-40 pdd-left-0">• Planes Residenciales: únicamente para uso personal en el hogar, este servicio no podrá ser utilizado para actividades comerciales, de lucro o de comunicación masiva, ni para cometer actos no autorizados que vayan en contra de los
-																							intereses económicos, de imagen o cualquier otro perjuicio que afecte a la CNT EP.</p>
-
-
-																							<p class="col-md-12 pdd-right-40 pdd-left-0">• Planes Comerciales/Corporativos: para uso comercial en actividades diferentes al uso residencial, con ﬁnes de lucro o comunicación masiva; no se podra utilizar estas líneas para cometer actos no autorizados que vayan en contra de los
-																								intereses económicos, de imagen o cualquier otro perjuicio que afecte a la CNT EP.</p>
-
-																								<p class="col-md-12 pdd-right-40 pdd-left-0">
-																									En caso que se compruebe el uso no autorizado del servicio, la operadora podrá tomar las acciones pertinentes conforme a lo establecido a la normativa vigente y las disposiciones contractuales pactadas e informadas mediante la página web:<a href="www.cnt.gob.ec"> www.cnt.gob.ec </a>
-																								</p>
-
-
-
-
-
-
-
-
+																								<div class="form-group">
+																									<label>No. de Cuenta</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.formaPago.noCuenta" value="{{informacionCliente.servicioFijo.telefoniaFija.formaPago.noCuenta}}" type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Entidad Financiera</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.formaPago.entidadFinanciera" value="{{informacionCliente.servicioFijo.telefoniaFija.formaPago.entidadFinanciera}}" type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
 																							</div>
 																						</div>
-
+																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab">
+																							<h4 class="panel-title">
+																								<a (click)="isCollapsedTelefoniaCredito = !isCollapsedTelefoniaCredito" [attr.aria-expanded]="!isCollapsedTelefoniaCredito">
+																									<span>Tarjeta de crédito </span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+																						<div class="collapse panel-collapse" role="tabpanel" [ngbCollapse]="isCollapsedTelefoniaCredito">
+																							<div class="panel-body">
+																								<div class="form-group">
+																									<label>No. de Tarjeta</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.formaPago.noTarjetaCredito" value="{{informacionCliente.servicioFijo.telefoniaFija.formaPago.noTarjetaCredito}}" type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Tipo de Tarjeta / Entidad Financiera</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.telefoniaFija.formaPago.tipoTarjetaEntidadFinanciera" value="{{informacionCliente.servicioFijo.telefoniaFija.formaPago.tipoTarjetaEntidadFinanciera}}" type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
+																							</div>
+																						</div>
 																					</div>
 
+																					<div class="col-md-12 text-right py-3">
+																						<span style="font-weight: bold; color: #f99a20;">{{saveResponseTelFijaFormaPago}}</span>
+																					</div>
+
+																					<div class="col-md-12 text-right py-3">
+																						<button (click)="saveFormaPago(informacionCliente,'telefoniaFija')" class="btn btn-info">Guardar</button>
+																					</div>
 
 																				</div>
-
 																			</div>
 																		</div>
 
-																		<div id="step5" class="tab-pane fade {{step5Tab}}">
-																			<div class="row">
-																				<div class="col-md-12">
-																					<div class="card-heading row border bottom">
-																						<h3 class="card-title col-11">Autorización para el envío de Información</h3>
-																					</div>
+																	</div>
+																</div>
+																<!-- ............................................................................... -->
+																<div role="tabpanel" class="tab-pane fade {{fpInternetTab}}" id="card-tab-2">
+																	<div class="pdd-horizon-15 pdd-vertical-20">
 
+																		<div class="row">
+																			<div class="col-md-12 no-pdd">
+																				<div class="accordion panel-group" role="tablist" aria-multiselectable="true">
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingOne">
+																							<h4 class="panel-title">
+																								<a (click)="isCollapsedInternetVentanilla = !isCollapsedInternetVentanilla" [attr.aria-expanded]="!isCollapsedInternetVentanilla">
+																									<span>Ventanilla</span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
 
+																						<div class="collapse panel-collapse show" [ngbCollapse]="isCollapsedInternetVentanilla">
+																							<div class="panel-body">
 
-																					<div class="card-block no-pdd-btm">
-
-																						<p>Autorizo a la Corporación Nacional de Telecomunicaciones CNT EP. a enviar la siguiente información:</p>
-
-																						<div class="row">
-																							<div class="col-md-12 mrg-left-20">
-
-
-
-
-																								<form class="form-horizontal">
-
-
-																									<div class="form-group row mrg-top-20 ">
-
-																										<div class="checkbox col-md-4">
-																											<input id="facel" name="facel" type="checkbox"> <label for="facel">Facturas electrónicas en mi correo</label>
-																										</div>
-
-																										<div class="checkbox col-md-8">
-																											<input id="infco" name="infco" type="checkbox"> <label for="infco"> Información comercial de la CNT E.P. a través de los diferentes medios </label>
-																										</div>
-																									</div>
-																								</form>
-
-
-
+																								<div class="form-group">
+																									<label>Teléfono</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.internetFijo.formaPago.ventanilla" value="{{informacionCliente.servicioFijo.internetFijo.formaPago.ventanilla}}" type="text" placeholder="Escriba No. Telefónico o Virtual" class="form-control">
+																								</div>
 																							</div>
+																						</div>
+																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingTwo">
+																							<h4 class="panel-title">
+																								<a (click)="isCollapsedTelefoniaDebito = !isCollapsedTelefoniaDebito" [attr.aria-expanded]="!isCollapsedTelefoniaDebito">
+																									<span>Tarjeta de débito</span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+																						<div class="collapse panel-collapse" role="tabpanel" [ngbCollapse]="isCollapsedTelefoniaDebito">
+																							<div class="panel-body">
 
+																								<div class="mrg-top-10">
+
+																									<div class="radio radio-inline">
+																										<input name="radioTipoTarjetaIFFP" id="radioTipoTarjetaIFFP1" [(ngModel)]="informacionCliente.servicioFijo.internetFijo.formaPago.tipoCuenta" value="ahorros" type="radio">
+																										<label for="radioTipoTarjetaIFFP1">Ahorros</label>
+																									</div>
+																									<div class="radio radio-inline">
+																										<input name="radioTipoTarjetaIFFP" id="radioTipoTarjetaIFFP2" [(ngModel)]="informacionCliente.servicioFijo.internetFijo.formaPago.tipoCuenta" value="corriente" type="radio">
+																										<label for="radioTipoTarjetaIFFP2">Corriente</label>
+																									</div>
+																								</div>
+
+																								<div class="form-group">
+																									<label>No. de Cuenta</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.internetFijo.formaPago.noCuenta" value="{{informacionCliente.servicioFijo.internetFijo.formaPago.noCuenta}}" type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Entidad Financiera</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.internetFijo.formaPago.entidadFinanciera" value="{{informacionCliente.servicioFijo.internetFijo.formaPago.entidadFinanciera}}" type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingThree">
+																							<h4 class="panel-title">
+																								<a (click)="isCollapsedTelefoniaCredito = !isCollapsedTelefoniaCredito" [attr.aria-expanded]="!isCollapsedTelefoniaCredito">
+																									<span>Tarjeta de crédito </span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+																						<div class="collapse panel-collapse" role="tabpanel" [ngbCollapse]="isCollapsedTelefoniaCredito">
+																							<div class="panel-body">
+																								<div class="form-group">
+																									<label>No. de Tarjeta</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.internetFijo.formaPago.noTarjetaCredito" value="{{informacionCliente.servicioFijo.internetFijo.formaPago.noTarjetaCredito}}" type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Tipo de Tarjeta / Entidad Financiera</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.internetFijo.formaPago.tipoTarjetaEntidadFinanciera" value="{{informacionCliente.servicioFijo.internetFijo.formaPago.tipoTarjetaEntidadFinanciera}}" type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+
+																						<div class="col-md-12 text-right py-3">
+																							<span style="font-weight: bold; color: #f99a20;">{{saveResponseInternetFijoFormaPago}}</span>
+																						</div>
+
+																						<div class="col-md-12 text-right py-3">
+																							<button (click)="saveFormaPago(informacionCliente,'internetFijo')" class="btn btn-info">Guardar</button>
 																						</div>
 
 																					</div>
-
-
 																				</div>
-
 																			</div>
 																		</div>
 
-																		<div id="step6" class="tab-pane fade {{step6Tab}}">
-																			<div class="row">
-																				<div class="col-md-12">
-																					<div class="card-heading row border bottom">
-																						<h3 class="card-title col-11">Autorización para el envío de información</h3>
+																	</div>
+																</div>
+																<!-- ............................................................................... -->
+																<div role="tabpanel" class="tab-pane fade {{fpTelevisionTab}}" id="card-tab-3">
+																	<div class="pdd-horizon-15 pdd-vertical-20">
+																		<div class="row">
+																			<div class="col-md-12 no-pdd">
+																				<div class="accordion panel-group" role="tablist" aria-multiselectable="true">
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingOne">
+																							<h4 class="panel-title">
+																								<a (click)="isCollapsedTelevisionVentanilla = !isCollapsedTelevisionVentanilla" [attr.aria-expanded]="!isCollapsedTelevisionVentanilla">
+																									<span>Ventanilla</span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+
+																						<div class="collapse panel-collapse show" [ngbCollapse]="isCollapsedTelevisionVentanilla">
+																							<div class="panel-body">
+
+																								<div class="form-group">
+																									<label>Teléfono</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.formaPago.ventanilla" value="{{informacionCliente.servicioFijo.televisionSuscripcion.formaPago.ventanilla}}" type="text" placeholder="Escriba No. Telefónico o Virtual" class="form-control">
+																								</div>
+																							</div>
+																						</div>
 																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingTwo">
+																							<h4 class="panel-title">
+																								<a (click)="isCollapsedTelefoniaDebito = !isCollapsedTelefoniaDebito" [attr.aria-expanded]="!isCollapsedTelefoniaDebito">
+																									<span>Tarjeta de débito</span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+																						<div class="collapse panel-collapse" role="tabpanel" [ngbCollapse]="isCollapsedTelefoniaDebito">
+																							<div class="panel-body">
 
+																								<div class="mrg-top-10">
 
-
-																					<div class="card-block">
-
-																						<p>Autorizo a la Corporación Nacional de Telecomunicaciones CNT RP a enviar la siguiente información:</p>
-
-																						<form class="form-horizontal mrg-top-40 pdd-right-30">
-
-																							<div class="form-group row">
-
-																								<div class="col-md-6">
-																									<label for="form-1-1" class="control-label">Lugar</label> <input type="text" class="form-control" id="form-1-1" placeholder="Ingrese el lugar">
-																								</div>
-
-																								<div class="col-md-6">
-																									<label for="form-1-1" class="control-label">Fecha</label> <input type="text" class="form-control" id="form-1-1" placeholder="Ingrese la fecha">
-																								</div>
-
-																							</div>
-
-																							<div class="border bottom">
-
-																								<p class="border bottom pdd-btm-10">Anexar documentación o archivos</p>
-
-																								<button type="button" class="btn btn-default mrg-btm-15">Agregar Archivo</button>
-
-																							</div>
-
-																							<div class="form-group row">
-
-																								<div class="col-md-6  padding-25">
-																									<div class="col-md-12 border border-radius-10" style="width: 100%; height: 200px;"></div>
-																									<label style="text-align: center;" for="form-1-1" class="col-md-12 control-label tac pdd-top-10">Firma Cliente/Abonado/Suscriptor </label>
-
-																								</div>
-
-																								<div class="col-md-6  padding-25">
-																									<div class="col-md-12 border border-radius-10" style="width: 100%; height: 200px;"></div>
-																									<label style="text-align: center;" for="form-1-1" class="col-md-12 control-label tac pdd-top-10">Firma Vendedor</label>
-
-																								</div>
-																							</div>
-
-
-
-
-
-																							<div class="form-group row">
-
-																								<div class="col-md-6 no-pdd">
-																									<label for="form-1-1" class="col-md-12 control-label tac">Nombre Completo</label>
-																									<div class="col-md-12">
-																										<input type="text" class="form-control" id="form-1-1" placeholder="Ingrese nombre(s) y apellido(s) del cliente">
+																									<div class="radio radio-inline">
+																										<input name="radioTipoTarjetaTSFP" id="radioTipoTarjetaTSFP1" [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.formaPago.tipoCuenta" value="ahorros" type="radio">
+																										<label for="radioTipoTarjetaTSFP1">Ahorros</label>
+																									</div>
+																									<div class="radio radio-inline">
+																										<input name="radioTipoTarjetaTSFP" id="radioTipoTarjetaTSFP2" [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.formaPago.tipoCuenta" value="corriente" type="radio">
+																										<label for="radioTipoTarjetaTSFP2">Corriente</label>
 																									</div>
 																								</div>
 
-																								<div class="col-md-6 no-pdd">
-																									<label for="form-1-1" class="col-md-12 control-label tac">Nombre Completo</label>
-																									<div class="col-md-12">
-																										<input type="text" class="form-control" id="form-1-1" placeholder="Ingrese nombre(s) y apellido(s) del vendedor">
+																								<div class="form-group">
+																									<label>No. de Cuenta</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.formaPago.noCuenta" value="{{informacionCliente.servicioFijo.televisionSuscripcion.formaPago.noCuenta}}" type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Entidad Financiera</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.formaPago.entidadFinanciera" value="{{informacionCliente.servicioFijo.televisionSuscripcion.formaPago.entidadFinanciera}}" type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingThree">
+																							<h4 class="panel-title">
+																								<a (click)="isCollapsedTelefoniaCredito = !isCollapsedTelefoniaCredito" [attr.aria-expanded]="!isCollapsedTelefoniaCredito">
+																									<span>Tarjeta de crédito </span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+																						<div class="collapse panel-collapse" role="tabpanel" [ngbCollapse]="isCollapsedTelefoniaCredito">
+																							<div class="panel-body">
+																								<div class="form-group">
+																									<label>No. de Tarjeta</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.formaPago.noTarjetaCredito" value="{{informacionCliente.servicioFijo.televisionSuscripcion.formaPago.noTarjetaCredito}}" type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Tipo de Tarjeta / Entidad Financiera</label>
+																									<input [(ngModel)]="informacionCliente.servicioFijo.televisionSuscripcion.formaPago.tipoTarjetaEntidadFinanciera" value="{{informacionCliente.servicioFijo.televisionSuscripcion.formaPago.tipoTarjetaEntidadFinanciera}}" type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+
+																						<div class="col-md-12 text-right py-3">
+																							<span style="font-weight: bold; color: #f99a20;">{{saveResponseTelevisionSuscripcionFormaPago}}</span>
+																						</div>
+
+																						<div class="col-md-12 text-right py-3">
+																							<button (click)="saveFormaPago(informacionCliente,'televisionSuscripcion')" class="btn btn-info">Guardar</button>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+																<!-- ............................................................................... -->
+																<div role="tabpanel" class="tab-pane fade {{fpServicioMovilTab}}" id="card-tab-4">
+																	<div class="pdd-horizon-15 pdd-vertical-20">
+																		<div class="row">
+																			<div class="col-md-12 no-pdd">
+																				<div id="accordion-4" class="accordion panel-group" role="tablist" aria-multiselectable="true">
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingOne">
+																							<h4 class="panel-title">
+																								<a data-toggle="collapse" data-parent="#accordion-4" (click)="isCollapsedServiciosMovilesVentanilla = !isCollapsedServiciosMovilesVentanilla" [attr.aria-expanded]="!isCollapsedServiciosMovilesVentanilla"> <span>Ventanilla</span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+
+																						<div class="collapse panel-collapse show" [ngbCollapse]="isCollapsedServiciosMovilesVentanilla">
+																							<div class="panel-body">
+
+																								<div class="form-group">
+																									<label>Teléfono</label>
+																									<input [(ngModel)]="informacionCliente.servicioMovil.formaPago.ventanilla" value="{{informacionCliente.servicioMovil.formaPago.ventanilla}}" type="text" placeholder="Escriba No. Telefónico o Virtual" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingTwo">
+																							<h4 class="panel-title">
+																								<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" (click)="isCollapsedTelefoniaDebito = !isCollapsedTelefoniaDebito" [attr.aria-expanded]="!isCollapsedTelefoniaDebito"> <span>Tarjeta de débito</span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+																						<div class="collapse panel-collapse" role="tabpanel" [ngbCollapse]="isCollapsedTelefoniaDebito">
+																							<div class="panel-body">
+
+																								<div class="mrg-top-10">
+
+																									<div class="radio radio-inline">
+																										<input name="radioTipoTarjetaSMFP" id="radioTipoTarjetaSMFP1" [(ngModel)]="informacionCliente.servicioMovil.formaPago.tipoCuenta" value="ahorros" type="radio">
+																										<label for="radioTipoTarjetaSMFP1">Ahorros</label>
 																									</div>
+																									<div class="radio radio-inline">
+																										<input name="radioTipoTarjetaSMFP" id="radioTipoTarjetaSMFP2" [(ngModel)]="informacionCliente.servicioMovil.formaPago.tipoCuenta" value="corriente" type="radio">
+																										<label for="radioTipoTarjetaSMFP2">Corriente</label>
+																									</div>
+																								</div>
+
+																								<div class="form-group">
+																									<label>No. de Cuenta</label>
+																									<input [(ngModel)]="informacionCliente.servicioMovil.formaPago.noCuenta" value="{{informacionCliente.servicioMovil.formaPago.noCuenta}}" type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Entidad Financiera</label>
+																									<input [(ngModel)]="informacionCliente.servicioMovil.formaPago.entidadFinanciera" value="{{informacionCliente.servicioMovil.formaPago.entidadFinanciera}}" type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																					<div class="panel panel-default">
+																						<div class="panel-heading" role="tab" id="headingThree">
+																							<h4 class="panel-title">
+																								<a class="collapsed" data-toggle="collapse" data-parent="#accordion-1" (click)="isCollapsedTelefoniaCredito = !isCollapsedTelefoniaCredito" [attr.aria-expanded]="!isCollapsedTelefoniaCredito"> <span>Tarjeta de crédito </span> <i class="icon ti-arrow-circle-down"></i>
+																								</a>
+																							</h4>
+																						</div>
+																						<div class="collapse panel-collapse" role="tabpanel" [ngbCollapse]="isCollapsedTelefoniaCredito">
+																							<div class="panel-body">
+																								<div class="form-group">
+																									<label>No. de Tarjeta</label>
+																									<input [(ngModel)]="informacionCliente.servicioMovil.formaPago.noTarjetaCredito" value="{{informacionCliente.servicioMovil.formaPago.noTarjetaCredito}}" type="text" placeholder="Escriba No. de cuenta bancaria" class="form-control">
+																								</div>
+																								<div class="form-group">
+																									<label>Tipo de Tarjeta / Entidad Financiera</label>
+																									<input [(ngModel)]="informacionCliente.servicioMovil.formaPago.tipoTarjetaEntidadFinanciera" value="{{informacionCliente.servicioMovil.formaPago.tipoTarjetaEntidadFinanciera}}" type="text" placeholder="Escriba nombre de la identidad financiera" class="form-control">
+																								</div>
+																							</div>
+																						</div>
+
+																						<div class="col-md-12 text-right py-3">
+																							<span style="font-weight: bold; color: #f99a20;">{{saveResponseServicioMovilFormaPago}}</span>
+																						</div>
+
+																						<div class="col-md-12 text-right py-3">
+																							<button (click)="saveFormaPago(informacionCliente,'servicioMovil')" class="btn btn-info">Guardar</button>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+																<!-- ............................................................................... -->
+
+																<div style="height: 25px; background-color: #f6f7fb; margin:0px -55px 0px -25px; border-top: 1px solid #e6ecf5; border-bottom: 1px solid #e6ecf5;"></div>
+
+																<div class="row" style="margin-top:20px;margin-left:10px;">
+																	<div class="col-md-12 no-pdd">
+																		<div id="accordion-5" class="accordion panel-group" role="tablist" aria-multiselectable="true">
+																			<div class="panel panel-default">
+																				<div class="panel-heading" role="tab" id="headingTwo">
+																					<h4 class="panel-title">
+																						<a class="collapsed" data-toggle="collapse" data-parent="#accordion-5" (click)="isCollapsedTelefoniaDebito = !isCollapsedTelefoniaDebito" [attr.aria-expanded]="!isCollapsedTelefoniaDebito">
+																							<span>Autorización de dèbito</span> <i class="icon ti-arrow-circle-down"></i>
+																						</a>
+																					</h4>
+																				</div>
+																				<div class="collapse panel-collapse" role="tabpanel" [ngbCollapse]="isCollapsedTelefoniaDebito">
+																					<div class="panel-body">
+
+																						<form class="form-horizontal mrg-left-20">
+
+																							<div class="form-group row mrg-top-20 mrg-left-20 ">
+
+																								<p class="col-5">Servicios Fijos:</p>
+
+																								<div class="radio radio-inline">
+																									<input name="radioAutoDebitoSF" id="radioAutoDebitoSF1" [(ngModel)]="informacionCliente.servicioFijo.autorizacionDebito" [value]="true" type="radio">
+																									<label for="radioAutoDebitoSF1">Si</label>
+																								</div>
+																								<div class="radio radio-inline">
+																									<input name="radioAutoDebitoSF" id="radioAutoDebitoSF2" [(ngModel)]="informacionCliente.servicioFijo.autorizacionDebito" [value]="false" type="radio">
+																									<label for="radioAutoDebitoSF2">No</label>
 																								</div>
 																							</div>
 
-																							<div class="form-group row">
+																							<div class="form-group row mrg-top-20 mrg-left-20 ">
 
-																								<div class="col-md-6 no-pdd">
-																									<label for="form-1-1" class="col-md-12 control-label tac">No. de Cédula</label>
-																									<div class="col-md-12">
-																										<input type="text" class="form-control" id="form-1-1" placeholder="Ingrese el número de cédula del cliente">
-																									</div>
+																								<p class="col-5">Servicios Moviles:</p>
+
+																								<div class="radio radio-inline">
+																									<input name="radioAutoDebitoSM" id="radioAutoDebitoSM1" [(ngModel)]="informacionCliente.servicioMovil.autorizacionDebito" [value]="true" type="radio">
+																									<label for="radioAutoDebitoSM1">Si</label>
 																								</div>
-
-																								<div class="col-md-6 no-pdd">
-																									<label for="form-1-1" class="col-md-12 control-label tac">Código del vendedor</label>
-																									<div class="col-md-12">
-																										<input type="text" class="form-control" id="form-1-1" placeholder="Ingrese código del vendedor">
-																									</div>
+																								<div class="radio radio-inline">
+																									<input name="radioAutoDebitoSM" id="radioAutoDebitoSM2" [(ngModel)]="informacionCliente.servicioMovil.autorizacionDebito" [value]="false" type="radio">
+																									<label for="radioAutoDebitoSM2">No</label>
 																								</div>
 																							</div>
+
 																						</form>
 
+																						<div class="col-md-12 text-right py-3">
+																							<span style="font-weight: bold; color: #f99a20;">{{saveResponseAutorizacionDebito}}</span>
+																						</div>
 
+																						<div class="col-md-12 text-right py-3">
+																							<button (click)="saveAutorizacionDebito(informacionCliente)" class="btn btn-info">Guardar</button>
+																						</div>
 
+																						<!--TEXTO AUTORIZACIÓN DEBITO-->
+
+																						<p class="col-md-12 pdd-right-0 pdd-left-0 text-justify">Como cliente de la CNT EP , adicionalmente ratiﬁco mi compromiso de mantener los pagos de mi Tarjeta de Crédito al día y los fondos suﬁcientes en mi Cuenta Corriente o de Ahorros dentro de los plazos estipulados, a ﬁn de cubrir los
+																							valores cuyos débitos automáticos autorizo a través del presente documento.</p>
+
+																						<p class="col-md-12 pdd-right-0 pdd-left-0 text-justify">Así mismo, expresamente me obligo a no renovar la presente autorización sin el previo consentimiento por escrito de la CNT EP, por lo que libero de toda responsabilidad a la entidad ﬁnanciera: Banco o, a la emisora de la Tarjeta de
+																							Crédito por los débitos o cargos efectuados en base a la presente autorización.</p>
+
+																						<p class="col-md-12 pdd-right-0 pdd-left-0 text-justify">De igual manera, autorizo a que, en caso de pérdida, o cualquier circunstancia por la cual fuera cambiado el número de Tarjeta de Crédito, o de la cuenta antes mencionada; en caso de pérdida; retiro; expiración; o, cambio de número,
+																							me comprometo a notiﬁcar en forma inmediata a la CNT EP, sobre el número asignado. De tal manera que el cambio de número indicado no será causa para no cancelar los valores que adeude a la CNT EP, por los conceptos mencionados. La CNT EP no asume ninguna responsabilidad sobre
+																							los cargos que la Institución Financiera por Usted seleccionada le cobre por prestar este servicio a su Cliente.</p>
+
+																						<p class="col-md-12 pdd-right-0 pdd-left-0 text-justify">El cliente, usuario o consumidor declara conocer que la información suministrada es verídica y maniﬁesta su consentimiento expreso e irrevocable a la CNT EP, a posible cesionaria de sus derechos y obligaciones o, a quien pudiese
+																							ostentar a futuro a cualquier título, la calidad de acreedor de los valores adeudados por el cliente, usuario o consumidor por concepto de los servicios prestados, para:</p>
+
+																						<p class="col-md-12 pdd-right-0 pdd-left-0 text-justify">1. Consultar, en cualquier tiempo, en los burós de información crediticia, toda la información relevante que permita a la CNT EP conocer el desempeño del cliente, usuario o consumidor como deudor y su capacidad de pago, valorar el
+																							riesgo futuro en caso de concederle un crédito por el servicio a prestarse.</p>
+
+																						<p class="col-md-12 pdd-right-0 pdd-left-0 text-justify">2. Reportar en los burós de información crediticia en forma directa o por intermedio de la Superintendencia de Bancos y Seguros, datos referidos a:</p>
+
+																						<p class="col-md-12 pdd-right-0 pdd-left-0 text-justify">2.1 Cumplimiento oportuno o incumplimiento, de las obligaciones crediticias pasadas, presentes o futuras del cliente.</p>
+
+																						<p class="col-md-12 pdd-right-0 pdd-left-0 text-justify">2.2 Información comercial, ﬁnanciera y socioeconómica que el cliente haya entregado o que consten en registros públicos, bases de datos públicos o documentos públicos.</p>
+
+																						<p class="col-md-12 pdd-right-0 pdd-left-0 text-justify">3. Conservar, tanto en la CNT EP como en los burós de información crediticia, con las debidas autorizaciones y durante el período necesario, la información detallada en el numeral 2 de esta declaración.</p>
+
+																						<p class="col-md-12 pdd-right-0 pdd-left-0 text-justify">Ésta autorización expresa del cliente, usuario o consumidor permitirá a la CNT EP y a los burós de información crediticia, divulgar la información mencionada para evaluar los riesgos de conceder al cliente, usuario o consumidor un
+																							crédito por el servicio a prestar, elaborar estadísticas y derivar, mediante modelos matemáticos, conclusiones de ellas y demás ﬁnes autorizados por la ley. Si a pesar de existir la factibilidad técnica y comercial para prestar el servicio solicitado por el cliente, usuario
+																							consumidor, de la CNT EP se reserva la facultad de negar la solicitud del servicio.</p>
 
 																					</div>
-
-
 																				</div>
-
 																			</div>
 																		</div>
 
 																	</div>
-
-
 																</div>
 
+																<!-- ............................................................................... -->
+																<!-- ............................................................................... -->
+																<!-- ............................................................................... -->
 
 															</div>
-
 														</div>
-
-
-													</div>
-
-													<div class="col-md-3">
-														<div class="card">
-															<div class="card-block no-pdd-btm">
-
-																<div class="col-12 no-pdd">
-																	<div class="card no-pdd no-mrg-btm">
-																		<div class="card-block padding-10">
-																			<div>
-																				<span class="thumb-sm bg-primary"> <span class="text-white">JD</span>
-																			</span><strong>ASIGNACIÓN #5678927</strong><br> <span>21 Junio 2018 13:51 P.M.</span>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-
-														<div class="card-block no-pdd-btm">
-
-															<div class="col-12 no-pdd">
-																<div class="card no-pdd no-mrg-btm">
-																	<div class="card-block padding-10">
-																		<div>
-																			<strong>Fecha Solicitud</strong><br> <span>21 Junio 2018 13:51 P.M.</span>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-
-
-														<div class="card-block no-pdd-btm">
-
-															<div class="col-12 no-pdd">
-																<div class="card">
-																	<div class="card-block padding-10">
-
-																		<div class="card-heading col-12 row border bottom ml-auto mr-auto no-pdd-left no-pdd-right padding-10">
-																			<h5 class="card-title mr-auto ml-auto">Servicios a Contratar</h5>
-
-																		</div>
-
-																		<div class="col-md-12">
-																			<p class="mrg-top-10 no-mrg-btm">
-																				<span class="status away"></span> <span class="mrg-left-10 "><strong>Telefonía Fija </strong></span>
-																				<i class="ti-trash font-size-18 mrg-top-5" style="float: right;"></i>
-																			</p>
-																			<p class="font-size-13 no-mrg">No. de Petición: #162528</p>
-
-																		</div>
-
-																		<div class="col-md-12">
-																			<p class="mrg-top-10 no-mrg-btm">
-																				<span class="status away"></span> <span class="mrg-left-10 "><strong>Internet Fijo </strong></span>
-																				<i class="ti-trash font-size-18 mrg-top-5" style="float: right;"></i>
-																			</p>
-																			<p class="font-size-13 no-mrg">No. de Petición: #162528</p>
-																			<p class="font-size-13 no-mrg">No. de Contrato: #162528</p>
-
-																		</div>
-
-																		<div class="col-md-12">
-																			<p class="mrg-top-10 no-mrg-btm">
-																				<span class="status away"></span> <span class="mrg-left-10 font-size-10 "><strong>Televisión por Suscripción </strong></span>
-																				<i class="ti-trash font-size-18 mrg-top-5" style="float: right;"></i>
-																			</p>
-																			<p class="font-size-13 no-mrg">No. de Petición: #162528</p>
-																			<p class="font-size-13 no-mrg">No. de Contrato: #162528</p>
-
-																		</div>
-
-
-
-																	</div>
-																</div>
-															</div>
-														</div>
-
-
 
 													</div>
 												</div>
 
 											</div>
-											<!--row-->
+
 
 										</div>
 
+									</div>
+								</div>
 
-										<div class="wizard-pager">
-											<div class="">
-												<button type="button" class="btn btn-default button-previous" (click)="home()">
-													<i class="ti-angle-left pdd-right-10"></i>Anterior
-												</button>
-												<button type="button" class="btn btn-info button-next pull-right">
-													Siguiente<i class="ti-angle-right pdd-left-10"></i>
-												</button>
+								<!-- ............................................................................... -->
+								<!-- ............................................................................... -->
+								<!-- ............................................................................... -->
+
+								<div id="step4" class="tab-pane fade {{step4Tab}}">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="card-heading row border bottom">
+												<h3 class="card-title col-11">Política de buen uso de los Servicios Fijos de CNT EP</h3>
+											</div>
+
+											<div class="card-block">
+
+												<div class="row">
+
+													<div class="col-md-12 mrg-left-20">
+
+														<form class="form-horizontal">
+															<div class="form-group row mrg-top-10 ">
+
+																<div class="checkbox checkbox-inline">
+																	<input name="checkboxPoliticaBuenUsoInternetFijo" id="checkboxPoliticaBuenUsoInternetFijo" [(ngModel)]="informacionCliente.servicioFijo.politicaBuenUsoInternetFijo" value="true" type="checkbox">
+																	<label for="checkboxPoliticaBuenUsoInternetFijo">Internet Fijo</label>
+																</div>
+																<div class="checkbox checkbox-inline">
+																	<input name="checkboxPoliticaBuenUsoTelevisionSuscripcion" id="checkboxPoliticaBuenUsoTelevisionSuscripcion" [(ngModel)]="informacionCliente.servicioFijo.politicaBuenUsoTelevisionSuscripcion" value="true" type="checkbox">
+																	<label for="checkboxPoliticaBuenUsoTelevisionSuscripcion">Televisión por Suscripción</label>
+																</div>
+																<div class="checkbox checkbox-inline">
+																	<input name="checkboxPoliticaBuenUsoTelefoniaFija" id="checkboxPoliticaBuenUsoTelefoniaFija" [(ngModel)]="informacionCliente.servicioFijo.politicaBuenUsoTelefoniaFija" value="true" type="checkbox">
+																	<label for="checkboxPoliticaBuenUsoTelefoniaFija">Telefonía Fija</label>
+																</div>
+
+															</div>
+														</form>
+
+														<p class="col-md-12 pdd-right-40 pdd-left-0 text-justify">
+															Mediante la presente, declaro que he sido informado por la operadora sobre las características, tarifas ﬁnales del servicio y plan contratado a la fecha de suscripción de este anexo. Me comprometo a informarme periódicamente de las políticas, condiciones comerciales, contractuales,
+															condiciones de uso del servicio y plan contratado, promociones, tarifas y políticas de prevención de fraude que se encuentran publicadas en la página web de la operadora: <a href="www.cnt.gob.ec"> www.cnt.gob.ec </a>
+														</p>
+
+														<p class="col-md-12 pdd-right-40 pdd-left-0 text-justify">Acepto que la operadora, con el afán de no atentar al derecho de todos los usuarios al acceso igualitario al servicio prestado y prevenir usos fraudulentos y abusos en los planes y servicios de telecomunicaciones, ha establecido la
+															siguiente diferenciación para el uso de planes residenciales y comerciales, acorde la siguiente política:</p>
+
+														<p class="col-md-12 pdd-right-40 pdd-left-0 text-justify">• Planes Residenciales: únicamente para uso personal en el hogar, este servicio no podrá ser utilizado para actividades comerciales, de lucro o de comunicación masiva, ni para cometer actos no autorizados que vayan en contra de los
+															intereses económicos, de imagen o cualquier otro perjuicio que afecte a la CNT EP.</p>
+
+														<p class="col-md-12 pdd-right-40 pdd-left-0 text-justify">• Planes Comerciales/Corporativos: para uso comercial en actividades diferentes al uso residencial, con ﬁnes de lucro o comunicación masiva; no se podra utilizar estas líneas para cometer actos no autorizados que vayan en contra de los
+															intereses económicos, de imagen o cualquier otro perjuicio que afecte a la CNT EP.</p>
+
+														<p class="col-md-12 pdd-right-40 pdd-left-0 text-justify">
+															En caso que se compruebe el uso no autorizado del servicio, la operadora podrá tomar las acciones pertinentes conforme a lo establecido a la normativa vigente y las disposiciones contractuales pactadas e informadas mediante la página web: <a href="www.cnt.gob.ec"> www.cnt.gob.ec </a>
+														</p>
+
+													</div>
+
+													<div class="col-md-12 text-right py-3">
+														<span style="font-weight: bold; color: #f99a20;">{{saveResponsePoliticaBuenUso}}</span>
+													</div>
+
+													<div class="col-md-12 text-right py-3">
+														<button (click)="savePoliticaBuenUso(informacionCliente)" class="btn btn-info">Guardar</button>
+													</div>
+
+												</div>
+
+											</div>
+
+
+										</div>
+
+									</div>
+								</div>
+
+								<div id="step5" class="tab-pane fade {{step5Tab}}">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="card-heading row border bottom">
+												<h3 class="card-title col-11">Autorización para el envío de Información</h3>
+											</div>
+
+											<div class="card-block no-pdd-btm">
+
+												<p>Autorizo a la Corporación Nacional de Telecomunicaciones CNT EP. a enviar la siguiente información:</p>
+
+												<div class="row">
+
+													<div class="form-group row mrg-top-20 mrg-left-20 ">
+
+														<p class="col-12 font-weight-bold">Servicios Fijos:</p><br/>
+
+														<div class="checkbox col-12">
+															<input name="checkboxAutorizacionEnvioSF" id="checkboxAutorizacionEnvioSF" [(ngModel)]="informacionCliente.servicioFijo.autorizacionEnvioFacturasElectronicas" value="true" type="checkbox">
+															<label for="checkboxAutorizacionEnvioSF">Facturas electrónicas en mi correo</label>
+														</div>
+														<div class="checkbox col-12">
+															<input name="checkboxAutorizacionInformacionSF" id="checkboxAutorizacionInformacionSF" [(ngModel)]="informacionCliente.servicioFijo.autorizacionEnvioInformacionComercial" value="true" type="checkbox">
+															<label for="checkboxAutorizacionInformacionSF">Información comercial de la CNT E.P. a través de los diferentes medios</label>
+														</div>
+													</div>
+
+													<div class="form-group row mrg-top-20 mrg-left-20 ">
+
+														<p class="col-12 font-weight-bold">Servicios Moviles:</p><br/>
+
+														<div class="checkbox col-12">
+															<input name="checkboxAutorizacionEnvioSM" id="checkboxAutorizacionEnvioSM" [(ngModel)]="informacionCliente.servicioMovil.autorizacionEnvioFacturasElectronicas" value="true" type="checkbox">
+															<label for="checkboxAutorizacionEnvioSM">Facturas electrónicas en mi correo</label>
+														</div>
+														<div class="checkbox col-12">
+															<input name="checkboxAutorizacionInformacionSM" id="checkboxAutorizacionInformacionSM" [(ngModel)]="informacionCliente.servicioMovil.autorizacionEnvioInformacionComercial" value="true" type="checkbox">
+															<label for="checkboxAutorizacionInformacionSM">Información comercial de la CNT E.P. a través de los diferentes medios</label>
+														</div>
+													</div>
+
+													<div class="col-md-12 text-right py-3">
+														<span style="font-weight: bold; color: #f99a20;">{{saveResponseAutorizacionEnvioInformacion}}</span>
+													</div>
+
+													<div class="col-md-12 text-right py-3">
+														<button (click)="saveAutorizacionEnvioInformacion(informacionCliente)" class="btn btn-info">Guardar</button>
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+								<div id="step6" class="tab-pane fade {{step6Tab}}">
+									<div class="row">
+										<div class="col-md-12">
+
+									<div class="row">
+										<div class="col-md-12">
+											<div class="card-heading row border bottom">
+												<h3 class="card-title col-11">Anexos / Firma</h3>
+											</div>
+
+											<div class="card-block">
+
+												<div class="row">
+													<div class="col-12">
+
+														<div class="row">
+															<div class="col-6" style="padding: 10px 15px;">
+																<div class="row border border-radius-10">
+																	<div class="col-10" style="padding: 10px 30px;">
+																		<span class="strong">Servicios Fijos</span>
+																	</div>
+
+																	<div class="radio col-2 no-pdd" style="padding-top: 10px !important;">
+																		<input type="radio" name="optradioAnexosFirma" id="optradioAnexosFirma1" checked>
+																		<label for="optradioAnexosFirma1" (click)="toogleAnexosF()"></label>
+																	</div>
+																</div>
+															</div>
+
+															<div class="col-6" style="padding: 10px 15px;">
+																<div class="row border border-radius-10">
+																	<div class="col-10" style="padding: 10px 30px;">
+																		<span class="strong">Servicios Móviles</span>
+																	</div>
+
+																	<div class="radio col-2 no-pdd" style="padding-top: 10px !important;">
+																		<input type="radio" name="optradioAnexosFirma" id="optradioAnexosFirma2">
+																		<label for="optradioAnexosFirma2" (click)="toogleAnexosF()"></label>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div style="height: 25px; background-color: #f6f7fb; margin: 0px -20px; border-top: 1px solid #e6ecf5; border-bottom: 1px solid #e6ecf5;"></div>
+
+									<div class="card-block">
+
+										<div class="row" *ngIf="!toogleAnexos" id="anexosServiciosFijos" style="margin-top:20px;">
+											<div class="col-md-12">
+
+													<div class="form-group row">
+
+														<div class="col-md-6">
+															<label for="form-1-1" class="control-label">Lugar</label>
+															<input [(ngModel)]="informacionCliente.servicioFijo.lugarRegistro" value="{{informacionCliente.servicioFijo.lugarRegistro}}" type="text" class="form-control" placeholder="Ingrese el lugar">
+														</div>
+
+														<div class="col-md-6">
+															<label for="form-1-1" class="control-label">Fecha</label>
+															<input [(ngModel)]="informacionCliente.servicioFijo.fechaRegistro" value="{{informacionCliente.servicioFijo.fechaRegistro}}" type="text" class="form-control" placeholder="Ingrese la fecha" disabled>
+														</div>
+
+													</div>
+
+													<div class="form-group row">
+
+														<div class="col-md-6 no-pdd">
+															<label for="form-1-1" class="col-md-12 control-label tac">Nombre Completo del Cliente</label>
+															<div class="col-md-12">
+																<input [(ngModel)]="informacionCliente.servicioFijo.firmaClienteNombreApellido" value="{{informacionCliente.servicioFijo.firmaClienteNombreApellido}}" type="text" class="form-control" placeholder="Ingrese nombre(s) y apellido(s) del cliente">
+															</div>
+														</div>
+
+														<div class="col-md-6 no-pdd">
+															<label for="form-1-1" class="col-md-12 control-label tac">Nombre Completo del Vendedor</label>
+															<div class="col-md-12">
+																<input [(ngModel)]="informacionCliente.servicioFijo.firmaVendedorNombreApellido" value="{{informacionCliente.servicioFijo.firmaVendedorNombreApellido}}" type="text" class="form-control" placeholder="Ingrese nombre(s) y apellido(s) del vendedor">
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group row">
+
+														<div class="col-md-6 no-pdd">
+															<label for="form-1-1" class="col-md-12 control-label tac">No. de Cédula</label>
+															<div class="col-md-12">
+																<input [(ngModel)]="informacionCliente.servicioFijo.firmaClienteNoCedula" value="{{informacionCliente.servicioFijo.firmaClienteNoCedula}}" type="text" class="form-control" placeholder="Ingrese el número de cédula del cliente">
+															</div>
+														</div>
+
+														<div class="col-md-6 no-pdd">
+															<label for="form-1-1" class="col-md-12 control-label tac">Código del vendedor</label>
+															<div class="col-md-12">
+																<input [(ngModel)]="informacionCliente.servicioFijo.firmaVendedorCodVendedor" value="{{informacionCliente.servicioFijo.firmaVendedorCodVendedor}}" type="text" class="form-control" placeholder="Ingrese código del vendedor">
+															</div>
+														</div>
+													</div>
+
+													<div class="col-md-12 text-right py-3">
+														<span style="font-weight: bold; color: #f99a20;">{{saveResponseAnexosServFijoFirma}}</span>
+													</div>
+
+													<div class="col-md-12 text-right py-3">
+														<button (click)="saveAnexosServFijoFirma(informacionCliente)" class="btn btn-info">Guardar</button>
+													</div>
+
+													<div class="border bottom">
+
+														<p class="border bottom pdd-btm-10">Anexar documentación o archivos</p>
+
+														<button (click)="takePhoto('servicioFijo')" class="btn btn-default mrg-btm-15">Agregar Archivo</button>
+
+														<div class="col-12" *ngFor="let solicitud of solicitudesAnexoServFijos; let i = index" id="solicitud_{{solicitud.idSolicitudAnexos}}">
+															<div class="">
+																<div class="display-block">
+																	<div class="btn-group">
+																		<a (click)="openFile(solicitud.urlArchivo)" class="btn btn-default">
+																			<span><strong>{{solicitud.nombreArchivo}}</strong></span>
+																		</a>
+																		<a (click)="deleteSolicitudAnexo(solicitud)" class="btn btn-default">
+																			<i class="ti-trash"></i>
+																		</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+													</div>
+
+													<div class="form-group row">
+
+														<div class="col-md-6  padding-25">
+															<div class="col-md-12 border border-radius-10" style="width: 100%; height: 200px;"></div>
+															<label style="text-align: center;" for="form-1-1" class="col-md-12 control-label tac pdd-top-10">Firma Cliente/Abonado/Suscriptor </label>
+
+														</div>
+
+														<div class="col-md-6  padding-25">
+															<div class="col-md-12 border border-radius-10" style="width: 100%; height: 200px;"></div>
+															<label style="text-align: center;" for="form-1-1" class="col-md-12 control-label tac pdd-top-10">Firma Vendedor</label>
+
+														</div>
+													</div>
+
 											</div>
 										</div>
 
 
+										<div class="row" *ngIf="toogleAnexos" id="anexosServiciosMoviles" style="margin-top:20px;">
+											<div class="col-md-12">
+
+													<div class="form-group row">
+
+														<div class="col-md-6">
+															<label for="form-1-1" class="control-label">Lugar</label>
+															<input [(ngModel)]="informacionCliente.servicioMovil.lugarRegistro" value="{{informacionCliente.servicioMovil.lugarRegistro}}" type="text" class="form-control" placeholder="Ingrese el lugar">
+														</div>
+
+														<div class="col-md-6">
+															<label for="form-1-1" class="control-label">Fecha</label>
+															<input [(ngModel)]="informacionCliente.servicioMovil.fechaRegistro" value="{{informacionCliente.servicioMovil.fechaRegistro}}" type="text" class="form-control" placeholder="Ingrese la fecha" disabled>
+														</div>
+
+													</div>
+
+													<div class="form-group row">
+
+														<div class="col-md-6 no-pdd">
+															<label for="form-1-1" class="col-md-12 control-label tac">Nombre Completo del Cliente</label>
+															<div class="col-md-12">
+																<input [(ngModel)]="informacionCliente.servicioMovil.firmaClienteNombreApellido" value="{{informacionCliente.servicioMovil.firmaClienteNombreApellido}}" type="text" class="form-control" placeholder="Ingrese nombre(s) y apellido(s) del cliente">
+															</div>
+														</div>
+
+														<div class="col-md-6 no-pdd">
+															<label for="form-1-1" class="col-md-12 control-label tac">Nombre Completo del Vendedor</label>
+															<div class="col-md-12">
+																<input [(ngModel)]="informacionCliente.servicioMovil.firmaVendedorNombreApellido" value="{{informacionCliente.servicioMovil.firmaVendedorNombreApellido}}" type="text" class="form-control" placeholder="Ingrese nombre(s) y apellido(s) del vendedor">
+															</div>
+														</div>
+													</div>
+
+													<div class="form-group row">
+
+														<div class="col-md-6 no-pdd">
+															<label for="form-1-1" class="col-md-12 control-label tac">No. de Cédula</label>
+															<div class="col-md-12">
+																<input [(ngModel)]="informacionCliente.servicioMovil.firmaClienteNoCedula" value="{{informacionCliente.servicioMovil.firmaClienteNoCedula}}" type="text" class="form-control" placeholder="Ingrese el número de cédula del cliente">
+															</div>
+														</div>
+
+														<div class="col-md-6 no-pdd">
+															<label for="form-1-1" class="col-md-12 control-label tac">Código del vendedor</label>
+															<div class="col-md-12">
+																<input [(ngModel)]="informacionCliente.servicioMovil.firmaVendedorCodVendedor" value="{{informacionCliente.servicioMovil.firmaVendedorCodVendedor}}" type="text" class="form-control" placeholder="Ingrese código del vendedor">
+															</div>
+														</div>
+													</div>
+
+													<div class="col-md-12 text-right py-3">
+														<span style="font-weight: bold; color: #f99a20;">{{saveResponseAnexosServMovilFirma}}</span>
+													</div>
+
+													<div class="col-md-12 text-right py-3">
+														<button (click)="saveAnexosServMovilFirma(informacionCliente)" class="btn btn-info">Guardar</button>
+													</div>
+
+													<div class="border bottom">
+
+														<p class="border bottom pdd-btm-10">Anexar documentación o archivos</p>
+
+														<button (click)="takePhoto('servicioMovil')" class="btn btn-default mrg-btm-15">Agregar Archivo</button>
+
+														<div class="col-12" *ngFor="let solicitud of solicitudesAnexoServMoviles; let i = index" id="solicitud_{{solicitud.idSolicitudAnexos}}">
+															<div class="">
+																<div class="display-block">
+																	<div class="btn-group">
+																		<a (click)="openFile(solicitud.urlArchivo)" class="btn btn-default">
+																			<span><strong>{{solicitud.nombreArchivo}}</strong></span>
+																		</a>
+																		<a (click)="deleteSolicitudAnexo(solicitud)" class="btn btn-default">
+																			<i class="ti-trash"></i>
+																		</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+													</div>
+
+													<div class="form-group row">
+
+														<div class="col-md-6  padding-25">
+															<div class="col-md-12 border border-radius-10" style="width: 100%; height: 200px;"></div>
+															<label style="text-align: center;" for="form-1-1" class="col-md-12 control-label tac pdd-top-10">Firma Cliente/Abonado/Suscriptor </label>
+
+														</div>
+
+														<div class="col-md-6  padding-25">
+															<div class="col-md-12 border border-radius-10" style="width: 100%; height: 200px;"></div>
+															<label style="text-align: center;" for="form-1-1" class="col-md-12 control-label tac pdd-top-10">Firma Vendedor</label>
+
+														</div>
+													</div>
+
+											</div>
+										</div>
+
 									</div>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+
+			<div class="col-md-3">
+
+				<div class="card" style="margin-bottom:5px;background-color: #f6f7fb;">
+					<div class="card-block" style="padding: 0px 10px;">
+						<div class="card-heading" style="padding: 0px; padding-top: 10px;">
+							<button type="button" class="btn btn-default button-previous" (click)="dashboardVendedor()" style="width: 100%;">
+								<i class="ti-angle-left pdd-right-10"></i> Regresar
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="card" style="margin-bottom:15px;background-color: #f6f7fb;">
+					<div class="card-block" style="padding: 0px 10px;">
+						<div class="card-heading" style="padding: 0px; padding-top: 10px;">
+							<button type="button" class="btn btn-default" (click)="exportSolicitud()" style="width: 100%;">
+								<i class="ei-goal pdd-right-10"></i> Exportar
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-block no-pdd-btm">
+
+						<div class="col-12 no-pdd">
+							<div class="card no-pdd no-mrg-btm">
+								<div class="card-block padding-10">
+									<div class="text-center">
+										<strong style="color: #1080c3;">ASIGNACIÓN #{{informacionCliente.idCliente}}</strong> <br> <span>{{informacionCliente.prospectoE.fechaAsignacion}}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="card-block no-pdd-btm">
+
+						<div class="col-12 no-pdd">
+							<div class="card no-pdd no-mrg-btm">
+								<div class="card-block padding-10">
+									<div class="text-center">
+										<strong style="color: #c36410;">FECHA REGISTRO</strong> <br> <span>{{informacionCliente.prospectoE.fechaRegistro}}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="card-block no-pdd-btm">
+
+						<div class="col-12 no-pdd">
+
+							<div class="card">
+								<div class="card-block padding-10">
+
+									<div class="card-heading col-12 row border bottom ml-auto mr-auto no-pdd-left no-pdd-right padding-10">
+										<h5 class="card-title mr-auto ml-auto">Servicios a Contratar</h5>
+
+									</div>
+
+									<div class="col-md-12" *ngIf="informacionCliente.servicioFijo.telefoniaFija.noPeticion != null">
+										<p class="mrg-top-10 no-mrg-btm">
+											<span class="status away"></span> <span class="mrg-left-10 "> <strong>Telefonía Fija </strong></span>
+										</p>
+										<p class="font-size-13 no-mrg">No. de Petición: #{{informacionCliente.servicioFijo.telefoniaFija.noPeticion}}</p>
+									</div>
+
+									<div class="col-md-12" *ngIf="informacionCliente.servicioFijo.internetFijo.noPeticion != null">
+										<p class="mrg-top-10 no-mrg-btm">
+											<span class="status away"></span> <span class="mrg-left-10 "> <strong>Internet Fijo </strong></span>
+										</p>
+										<p class="font-size-13 no-mrg">No. de Petición: #{{informacionCliente.servicioFijo.internetFijo.noPeticion}}</p>
+										<p class="font-size-13 no-mrg">No. de Contrato: #{{informacionCliente.servicioFijo.internetFijo.noContratoInternet}}</p>
+									</div>
+
+									<div class="col-md-12" *ngIf="informacionCliente.servicioFijo.televisionSuscripcion.noPeticion != null">
+										<p class="mrg-top-10 no-mrg-btm">
+											<span class="status away"></span> <span class="mrg-left-10"> <strong>Televisión Suscripción </strong></span>
+										</p>
+										<p class="font-size-13 no-mrg">No. de Petición: #{{informacionCliente.servicioFijo.televisionSuscripcion.noPeticion}}</p>
+										<p class="font-size-13 no-mrg">No. de Contrato: #{{informacionCliente.servicioFijo.televisionSuscripcion.noContratoTelevision}}</p>
+									</div>
+
+									<div class="col-md-12" *ngIf="informacionCliente.servicioMovil != null">
+										<p class="mrg-top-10 no-mrg-btm">
+											<span class="status away"></span> <span class="mrg-left-10"> <strong>Servicio Movil </strong></span>
+										</p>
+										<p class="font-size-13 no-mrg">No. de Contrato: #{{informacionCliente.servicioMovil.noContrato}}</p>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+
+		</div>
+		<!--row-->
+
+	</div>
+
+
+	<div class="wizard-pager">
+		<div class="">
+			<button type="button" class="btn btn-default button-previous" (click)="move(false)">
+				<i class="ti-angle-left pdd-right-10"></i> Anterior
+			</button>
+			<button type="button" class="btn btn-info button-next pull-right" (click)="move(true)">
+				Siguiente <i class="ti-angle-right pdd-left-10"></i>
+			</button>
+		</div>
+	</div>
+
+
+</div>

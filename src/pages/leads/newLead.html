@@ -1,0 +1,146 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12 ">
+			<div class="card col-md-12">
+				<div class="card-heading row border bottom">
+					<h3 class="card-title col-10">Editar Lead #{{informacionCliente.idCliente}}</h3>
+				</div>
+
+				<div class="card-block">
+
+					<div class="row">
+						<div class="col-md-12">
+
+							<div class="form-layout form-layout-2">
+								<div class="col-12">
+									<div class="row no-gutters">
+
+										<!-- <div class="col-md-12">
+											<div class="form-group">
+												<label class="form-control-label">Título: <span class="tx-danger">*</span></label>
+												<input class="form-control" type="text" name="title" value="{{informacionCliente.idCliente}}" placeholder="Enter firstname">
+											</div>
+										</div> -->
+
+										<div class="col-md-8 ">
+											<div class="form-group">
+												<label class="form-control-label">Nombre completo: <span class="tx-danger">*</span></label>
+												<input class="form-control" type="text" [(ngModel)]="informacionCliente.nombreApellidosRazonSocial" value="{{informacionCliente.nombreApellidosRazonSocial}}" placeholder="Ingrese los apellidos">
+											</div>
+										</div>
+
+										<div class="col-md-4">
+											<div class="form-group">
+												<label class="form-control-label">Teléfono: <span class="tx-danger">*</span></label>
+												<input class="form-control" type="text" [(ngModel)]="informacionCliente.telefonoContacto" value="{{informacionCliente.telefonoContacto}}" placeholder="Ingrese un número telefónico">
+											</div>
+										</div>
+
+										<div class="col-md-12">
+											<div class="form-group">
+												<label class="form-control-label">E-Mail: <span class="tx-danger">*</span></label>
+												<input class="form-control" type="email" [(ngModel)]="informacionCliente.email" value="{{informacionCliente.email}}" placeholder="Introduzca un correo electrónico">
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="form-control-label">Calle principal: <span class="tx-danger">*</span></label>
+												<input class="form-control" type="text" [(ngModel)]="informacionCliente.prospectoE.direccionProspecto.callePrincipal" placeholder="Ingresa tu calle principal" disabled
+													value="{{informacionCliente.prospectoE.direccionProspecto.callePrincipal | trim}}">
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<div class="form-group">
+												<label class="form-control-label">Número: <span class="tx-danger">*</span></label>
+												<input class="form-control" type="text" [(ngModel)]="informacionCliente.prospectoE.direccionProspecto.numero" placeholder="Ingresa tu número" disabled
+													value="{{informacionCliente.prospectoE.direccionProspecto.numero}}">
+											</div>
+										</div>
+
+										<div class="col-md-3">
+											<div class="form-group">
+												<label class="form-control-label mg-b-0-force">Ciudad: <span class="tx-danger">*</span></label>
+												<select class="form-control" data-placeholder="Escoja una ciudad" [(ngModel)]="informacionCliente.prospectoE.direccionProspecto.ciudad">
+													<option label="Choose country"></option>
+													<option value="{{informacionCliente.prospectoE.direccionProspecto.ciudad}}" selected>{{informacionCliente.prospectoE.direccionProspecto.ciudad}}</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="form-control-label mg-b-0-force">Provincia: <span class="tx-danger">*</span></label>
+												<select class="form-control" data-placeholder="Escoja una provincia" [(ngModel)]="informacionCliente.prospectoE.direccionProspecto.provincia">
+													<option value="{{informacionCliente.prospectoE.direccionProspecto.provincia | trim}}" selected>{{informacionCliente.prospectoE.direccionProspecto.provincia | trim}}</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label class="form-control-label mg-b-0-force">Sector: <span class="tx-danger">*</span></label>
+												<select class="form-control" data-placeholder="Escoja un sector" [(ngModel)]="informacionCliente.prospectoE.direccionProspecto.sector">
+													<option value="{{informacionCliente.prospectoE.direccionProspecto.sector | trim}}" selected>{{informacionCliente.prospectoE.direccionProspecto.sector | trim}}</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="col-md-5">
+											<div class="form-group">
+												<label class="form-control-label">Latitud: <span class="tx-danger">*</span></label>
+												<input class="form-control" type="text" [(ngModel)]="informacionCliente.prospectoE.direccionProspecto.latitud" value="{{informacionCliente.prospectoE.direccionProspecto.latitud}}" placeholder="Latitud">
+											</div>
+										</div>
+
+										<div class="col-md-5">
+											<div class="form-group">
+												<label class="form-control-label">Longitud: <span class="tx-danger">*</span></label>
+												<input class="form-control" type="text" [(ngModel)]="informacionCliente.prospectoE.direccionProspecto.longitud" value="{{informacionCliente.prospectoE.direccionProspecto.longitud}}" placeholder="Longitud">
+											</div>
+										</div>
+
+										<div class="col-md-2">
+											<div class="form-group text-center">
+												<a (click)="getCurrentPosition()" class="btn btn-default btn-icon btn-rounded" style="margin-top:10px;">
+	                          <i class="ei-antenna"></i>
+	                      </a>
+											</div>
+										</div>
+
+										<div class="col-md-12">
+											<div class="form-group">
+												<label class="form-control-label">Comentario: <span class="tx-danger">*</span></label>
+												<input class="form-control" type="text" [(ngModel)]="informacionCliente.prospectoE.estatusComentario" value="{{informacionCliente.prospectoE.estatusComentario}}" placeholder="Introduzca un comentario">
+											</div>
+										</div>
+
+										<div class="col-md-12 text-right py-3">
+											<span style="font-weight: bold;color: #f99a20;">{{saveResponse}}</span>
+										</div>
+
+									</div>
+
+									<div class="form-layout-footer mrg-5top-10 bd pd-20 bd-t-0 pdd-top-10" style="float: right">
+
+										<button (click)="saveLead()" class="btn btn-info">Guardar</button>
+										<button (click)="cardLead()" class="btn btn-default">{{cancelarRegresarBtn}}</button>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+</div>

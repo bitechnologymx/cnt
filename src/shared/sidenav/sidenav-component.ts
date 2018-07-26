@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { LoginPage } from '../../pages/login/login';
-import { HomePage } from '../../pages/home/home';
+import { HomeVendedorPage } from '../../pages/home-vendedor/home-vendedor';
 
 @Component({
   selector: 'side-nav',
@@ -15,7 +15,7 @@ export class SideNavComponent {
     }
 
     goTo(){
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.setRoot(HomeVendedorPage);
     }
 
     login(){

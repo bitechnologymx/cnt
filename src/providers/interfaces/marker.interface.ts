@@ -4,5 +4,5 @@ export interface Marker{
   latitud: string;
   longitud: string;
   position: {};
-  asignacion: any;
+  informacionCliente: any;
 }

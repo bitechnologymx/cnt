@@ -27,7 +27,8 @@
 
 										<div class="form-group">
 											<div class="input-icon form-group">
-												<i class="ti-user"></i> <input name="usuarioLogin" class="form-control m-b  border" placeholder="Usuario" [(ngModel)]="usuario" type="text" (keyup)="changeUser($event);">
+												<i class="ti-user"></i>
+												<input name="usuarioLogin" class="form-control m-b  border" placeholder="Usuario" [(ngModel)]="usuario" type="text" (ngModelChange)="changeUser($event);">
 											</div>
 										</div>
 
@@ -36,15 +37,20 @@
 										<div class="form-group">
 
 											<div class="input-icon form-group">
-												<i class="ti-lock"></i> <input  class="form-control m-b border" placeholder="Contraseña" type="password">
+												<i class="ti-lock"></i>
+												<input name="passwordLogin" class="form-control m-b border" placeholder="Contraseña" [(ngModel)]="password" type="password">
 											</div>
 
+										</div>
+
+										<div class="form-group text-center">
+											<span style="font-weight: bold;color: #f99a20;">{{authResponse}}</span>
 										</div>
 
 										<div class="checkbox font-size-12">
 											<input id="agreement" name="agreement" type="checkbox"> <label for="agreement">Mantenerme conectado</label>
 										</div>
-										<a (click)="goToDashboard()" class="btn btn-info col-12 border" style="color:white;">Ingresar</a>
+										<a (click)="login()" class="btn btn-info col-12 border" style="color:white;">Ingresar</a>
 									</form>
 								</div>
 							</div>

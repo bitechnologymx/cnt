@@ -3,22 +3,22 @@
 		<div class="col-lg-12">
 
 
-			<h4 class="card-title">Adrián Ayala <span style="color: #b1b1b1;font-size: 15px;">bienvenido a CNT Dashboard</span></h4>
+			<h4 class="card-title">{{usuario.nombreCompleto}} <span style="color: #b1b1b1;font-size: 15px;">bienvenido a CNT Dashboard</span></h4>
 
 			<div class="row">
-				<div class="col-lg-3">
+				<div class="col-6 col-sm-3">
 					<div class="card">
 						<div class="card-block">
 							<p class="mrg-btm-5">Leads Asignados</p>
 							<div class="mrg-top-10">
-								<h2 class="no-mrg-btm">39</h2>
+								<h2 class="no-mrg-btm">{{leadsAsignados}}</h2>
 
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="col-lg-3">
+				<div class="col-6 col-sm-3">
 					<div class="card">
 						<div class="card-block">
 							<p class="mrg-btm-5">Leads Ganados</p>
@@ -26,7 +26,7 @@
 								<div class="row">
 
 									<div class="col-4">
-										<h2 class="no-mrg-btm">09</h2>
+										<h2 class="no-mrg-btm">{{leadsGanados}}</h2>
 									</div>
 
 									<div class="col-8 mrg-top-15">
@@ -40,7 +40,7 @@
 					</div>
 				</div>
 
-				<div class="col-lg-3">
+				<div class="col-6 col-sm-3">
 					<div class="card">
 						<div class="card-block">
 							<p class="mrg-btm-5">En Stand By</p>
@@ -48,7 +48,7 @@
 								<div class="row">
 
 									<div class="col-4">
-										<h2 class="no-mrg-btm">12</h2>
+										<h2 class="no-mrg-btm">{{leadsStandBy}}</h2>
 									</div>
 
 									<div class="col-8 mrg-top-15">
@@ -62,7 +62,7 @@
 					</div>
 				</div>
 
-				<div class="col-lg-3">
+				<div class="col-6 col-sm-3">
 					<div class="card">
 						<div class="card-block">
 							<p class="mrg-btm-5">Leads Perdidos</p>
@@ -70,7 +70,7 @@
 								<div class="row">
 
 									<div class="col-4">
-										<h2 class="no-mrg-btm">05</h2>
+										<h2 class="no-mrg-btm">{{leadsPerdidos}}</h2>
 									</div>
 
 									<div class="col-8 mrg-top-15">
@@ -126,7 +126,13 @@
 					<div id="collapse-2-Two" class="collapse panel-collapse show" [ngbCollapse]="isCollapsedAsignaciones">
 						<div class="panel-body row">
 
-							<div class="col-md-4 row">
+							<div class="col-md-12 text-right">
+								<button (click)="newCardLead()" class="btn btn-default btn-inverse" type="button">
+			            <span class="ei-addthis"> Nuevo Lead </span>
+			          </button>
+							</div>
+
+							<!--<div class="col-md-4 row">
 								<label for="form-1-1" class="mrg-top-10 col-md-3 control-label">Mostrar</label>
 								<div class="col-md-5">
 									<select class="form-control" id="form-1-1" placeholder="Seleccione una provincia">
@@ -148,7 +154,7 @@
 								<label for="form-1-1" class="text-right mrg-top-10 col-md-4 control-label">Buscar: </label> <input type="text" class="form-control col-md-8" id="form-1-1" placeholder="Búsqueda">
 
 
-							</div>
+							</div>-->
 
 							<div class="card-block col-12">
 								<nuevas-asignaciones></nuevas-asignaciones>
@@ -156,7 +162,7 @@
 
 						</div>
 
-						<div class="row col-12">
+						<!--<div class="row col-12">
 							<div class="col-6 pdd-btm-10">
 								<label class="mrg-top-20  control-label">Mostrando 1 a 3 de 39 registros</label>
 
@@ -173,7 +179,8 @@
 								<a href="#"><label class="mrg-top-20 col-3 control-label">Siguiente</label></a>
 
 							</div>
-						</div>
+						</div>-->
+
 					</div>
 				</div>
 			</div>

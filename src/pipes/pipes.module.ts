@@ -1,13 +1,34 @@
 import { NgModule } from '@angular/core';
 
-import { AsignacionesGridEstatusPipe } from './asignaciones-grid/asignaciones-grid-estatus';
+import { AsignacionesGridEstatusClassPipe } from './asignaciones-grid/asignaciones-grid-estatus-class';
+import { AsignacionesGridEstatusTextPipe } from './asignaciones-grid/asignaciones-grid-estatus-text';
 import { AsignacionesGridFechaPipe } from './asignaciones-grid/asignaciones-grid-fecha';
+import { AsignacionesGridRandomColorPipe } from './asignaciones-grid/asignaciones-grid-random-color';
+import { AsignacionesGridEtapaTextPipe } from './asignaciones-grid/asignaciones-grid-etapa-text';
+
+import { ActividadUsuarioPipe } from './actividad-usuario/actividad-usuario';
+
+import { TrimTextPipe } from './common/trim-text';
 
 @NgModule({
-	declarations: [AsignacionesGridEstatusPipe,
-    AsignacionesGridFechaPipe],
+	declarations: [
+		AsignacionesGridEstatusTextPipe,
+		AsignacionesGridEstatusClassPipe,
+    AsignacionesGridFechaPipe,
+		AsignacionesGridRandomColorPipe,
+		AsignacionesGridEtapaTextPipe,
+    ActividadUsuarioPipe,
+		TrimTextPipe
+	],
 	imports: [],
-	exports: [AsignacionesGridEstatusPipe,
-    AsignacionesGridFechaPipe]
+	exports: [
+		AsignacionesGridEstatusTextPipe,
+		AsignacionesGridEstatusClassPipe,
+    AsignacionesGridFechaPipe,
+		AsignacionesGridRandomColorPipe,
+		AsignacionesGridEtapaTextPipe,
+    ActividadUsuarioPipe,
+		TrimTextPipe
+	]
 })
 export class PipesModule {}

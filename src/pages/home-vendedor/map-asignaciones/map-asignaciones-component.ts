@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { AppContants } from "../../../providers/app.constants";
+import { CacheProvider } from "../../../providers/services/cache.services";
+
 import { SolicitudPage } from '../../../pages/solicitud/solicitud';
-import { CardLeadPage } from '../../../pages/leads/cardLead';
+import { EditCardLeadPage } from '../../../pages/leads/editCardLead';
 
 import { Marker } from "../../../providers/interfaces/marker.interface";
 
 import { ASIGNACIONES } from "../../../providers/data/data.asignaciones";
 import { Asignacion } from "../../../providers/interfaces/asignacion.interface";
+
+import { InformacionCliente } from "../../../providers/interfaces/informacionCliente.interface";
 
 @Component({
   selector: 'map-asignaciones',
@@ -15,76 +20,89 @@ import { Asignacion } from "../../../providers/interfaces/asignacion.interface";
 })
 export class MapAsignacionesComponent {
 
-    markers: Marker[] = [];
-    asignaciones: Asignacion[] = [];
+  markers: Marker[] = [];
 
-    activeMarker = {
-      display: true,
-      nombre: "",
-      noAsignacion: "",
-      asignacion: null,
-      lat: null,
-      lng: null,
-    };
+  activeMarker = {
+    display: true,
+    nombre: "",
+    noAsignacion: "",
+    asignacion: null,
+    lat: null,
+    lng: null,
+  };
 
-    constructor(public navCtrl: NavController) {
-      this.asignaciones = ASIGNACIONES.slice(0);
+  constructor(public navCtrl: NavController, public appContants: AppContants, private cacheProvider: CacheProvider) {
+    console.log("Map Asignaciones Component");
+  }
 
-      let randomLat: number, randomLng: number;
-      this.markers = [];
+  public initMapAndMarkers(informacionClientes:InformacionCliente[]){
 
-      for( let asignacion of this.asignaciones ){
-        let marker:Marker = this.getMarker(asignacion);
-        console.log(marker);
+    console.log("Map Asignaciones initMapAndMarkers ");
+
+    let randomLat: number, randomLng: number;
+    this.markers = [];
+
+    for (let informacionCliente of informacionClientes) {
+
+      //console.log(informacionCliente);
+      if (informacionCliente.prospectoE!=null && informacionCliente.prospectoE.direccionProspecto!=null){
+        let marker: Marker = this.getMarker(informacionCliente);
         this.markers.push(marker);
       }
     }
+  }
 
-    private getMarker(asignacion:Asignacion){
+  private getMarker(informacionCliente: InformacionCliente) {
 
-      let marker:Marker = {} as Marker;
+    let marker: Marker = {} as Marker;
 
-      marker.title = asignacion.noAsignacion;
-      marker.position = [asignacion.latitud,asignacion.longitud];
-      marker.latitud = asignacion.latitud;
-      marker.longitud = asignacion.longitud;
+    marker.title = informacionCliente.nombreApellidosRazonSocial;
 
-      marker.asignacion = asignacion;
+    //console.log("getMarkert : "); console.log(informacionCliente);
 
-      if (asignacion.etapa=="Por contactar"){
-        marker.icon = "assets/images/inactivoL.png";
-      } else if (asignacion.etapa=="Contactado"){
-        marker.icon = "assets/images/activoL.png";
-      } else if (asignacion.etapa=="Solicitud"){
-        marker.icon = "assets/images/sinasignarL.png";
-      } else {
-        marker.icon = "assets/images/sinasignarL.png";
-      }
+    let latitud = informacionCliente.prospectoE.direccionProspecto.latitud;
+    let longitud = informacionCliente.prospectoE.direccionProspecto.longitud;
 
-      return marker;
+    marker.position = [latitud, longitud];
+    marker.latitud = latitud;
+    marker.longitud = longitud;
+
+    marker.informacionCliente = informacionCliente;
+
+    if (informacionCliente.prospectoE.etapa == this.appContants.ETAPA_PROSPECTO_POR_CONTACTAR) {
+      marker.icon = "assets/images/inactivoL.png";
+    } else if (informacionCliente.prospectoE.etapa == this.appContants.ETAPA_PROSPECTO_CONTACTADO) {
+      marker.icon = "assets/images/activoL.png";
+    } else if (informacionCliente.prospectoE.etapa == this.appContants.ETAPA_PROSPECTO_SOLICITUD) {
+      marker.icon = "assets/images/sinasignarL.png";
+    } else {
+      marker.icon = "assets/images/sinasignarL.png";
     }
 
-    showInfoWindow({target: marker}, mr:Marker) {
+    return marker;
+  }
 
-      //this.activeMarker.lat = marker.getPosition().lat();
-      //this.activeMarker.lng = marker.getPosition().lng();
-      this.activeMarker.noAsignacion = mr.title;
-      this.activeMarker.asignacion = mr.asignacion;
-      this.activeMarker.nombre = mr.asignacion.nombre;
+  showInfoWindow({ target: marker }, mr: Marker) {
 
-      marker.nguiMapComponent.openInfoWindow('iw', marker);
-    }
+    //this.activeMarker.lat = marker.getPosition().lat();
+    //this.activeMarker.lng = marker.getPosition().lng();
+    this.activeMarker.noAsignacion = mr.title;
+    this.activeMarker.asignacion = mr.informacionCliente;
+    this.activeMarker.nombre = mr.informacionCliente.noCedula;
 
-    hideMarkerInfo() {
-      this.activeMarker.display = !this.activeMarker.display;
-    }
+    marker.nguiMapComponent.openInfoWindow('iw', marker);
+  }
 
-    public cardLead(asignacion:Asignacion){
-      this.navCtrl.push(CardLeadPage, {'asignacion':asignacion});
-    }
+  hideMarkerInfo() {
+    this.activeMarker.display = !this.activeMarker.display;
+  }
 
-    public solicitud(asignacion:Asignacion){
-      this.navCtrl.push(SolicitudPage, {'asignacion':asignacion});
-    }
+  public cardLead(informacionCliente: InformacionCliente) {
+    this.navCtrl.push(EditCardLeadPage, { 'informacionCliente': informacionCliente });
+  }
+
+  public solicitud(informacionCliente: InformacionCliente) {
+    this.navCtrl.push(SolicitudPage, { 'informacionCliente': informacionCliente });
+  }
 
 }

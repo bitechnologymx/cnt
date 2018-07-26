@@ -20,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let asignacion of asignaciones; let i = index" id="asignacion_{{asignacion.noAsignacion}}">
+    <tr *ngFor="let informacionCliente of informacionClientes; let i = index" id="asignacion_{{informacionCliente.idCliente}}">
       <td>
         <div class="checkbox">
           <input id="task10" name="task10" type="checkbox"> <label for="task10"></label>
@@ -30,21 +30,21 @@
         <div class="list-info mrg-top-10">
 
           <div class="">
-            <span class="thumb-sm bg-primary"> <span class="text-white">{{asignacion.nombre.substr(0,2)}}</span>
-          </span>{{asignacion.nombre}}
+            <span class="thumb-sm {{ informacionCliente.prospectoE.estatus | asignacionesGridEstatusClass }}"> <span class="text-white">{{informacionCliente.nombreApellidosRazonSocial.substr(0,2)}}</span>
+          </span>{{informacionCliente.nombreApellidosRazonSocial}}
         </div>
       </div>
     </td>
     <td>
       <div class="relative mrg-top-15">
-        <span># {{asignacion.noAsignacion}}</span>
+        <span># {{informacionCliente.idCliente}}</span>
       </div>
     </td>
     <td>
       <div class="mrg-top-15">
         <div class="dropdown inline-block" ngbDropdown #estatusDropdown="ngbDropdown">
-          <button class="btn {{ asignacion.estatus | asignacionesGridEstatus}} btn-inverse dropdown-toggle" type="button" data-toggle="dropdown" ngbDropdownAnchor (focus)="estatusDropdown.open()">
-            <span class="ei-alarm"> {{ asignacion.estatus }}</span> <i class="ti-angle-down font-size-9"></i>
+          <button class="btn {{ informacionCliente.prospectoE.estatus | asignacionesGridEstatusClass }} btn-inverse dropdown-toggle" type="button" data-toggle="dropdown" ngbDropdownAnchor (focus)="estatusDropdown.open()">
+            <span class="ei-alarm"> {{ informacionCliente.prospectoE.estatus | asignacionesGridEstatusText }} </span> <i class="ti-angle-down font-size-9"></i>
           </button>
           <ul class="dropdown-menu status_box estatusGrid" ngbDropdownMenu>
             <li class="col-12">
@@ -53,37 +53,25 @@
                 <label class="mrg-top-10 text-right gray control-label">Cambiar estatus de la asignación</label>
 
                 <div class="mrg-top-10">
-                  <a  class="padding-10 no-mrg-right btn btn-default ei-alarm"> Para hoy</a>
-                  <a  class="padding-10 no-mrg-right btn btn-default ei-time-left"> Stand by</a>
-                  <a  class="padding-10 no-mrg-right btn btn-default ei-smiley"> Ganado</a>
-                  <a  class="padding-10 no-mrg-right btn btn-default ei-sad"> Perdido</a>
-                  <a  class="padding-10 no-mrg-right btn btn-default ei-straight"> Cancelado</a>
+                  <a (click)="informacionCliente.prospectoE.estatus = 1" class="{{informacionCliente.prospectoE.estatus == 1 ? 'active' : ''}} padding-10 no-mrg-right btn btn-default btn-inverse btn-primary ei-alarm"> Para hoy</a>
+                  <a (click)="informacionCliente.prospectoE.estatus = 2" class="{{informacionCliente.prospectoE.estatus == 2 ? 'active' : ''}} padding-10 no-mrg-right btn btn-default btn-inverse btn-info ei-time-left"> Stand by</a>
+                  <a (click)="informacionCliente.prospectoE.estatus = 3" class="{{informacionCliente.prospectoE.estatus == 3 ? 'active' : ''}} padding-10 no-mrg-right btn btn-default btn-inverse btn-success ei-smiley"> Ganado</a>
+                  <a (click)="informacionCliente.prospectoE.estatus = 4" class="{{informacionCliente.prospectoE.estatus == 4 ? 'active' : ''}} padding-10 no-mrg-right btn btn-default btn-inverse btn-warning ei-sad"> Perdido</a>
+                  <a (click)="informacionCliente.prospectoE.estatus = 5" class="{{informacionCliente.prospectoE.estatus == 5 ? 'active' : ''}} padding-10 no-mrg-right btn btn-default btn-inverse btn-danger ei-straight"> Cancelado</a>
                 </div>
                 <label class="mrg-top-10 text-right gray control-label">Describe lo que hiciste (Opcional) </label>
 
                 <div class="col-12" style="padding-left: 0px !important">
-                  <textarea class="form-control col-12 no-pdd"></textarea>
+                  <textarea class="form-control col-12" [(ngModel)]="informacionCliente.prospectoE.estatusComentario">{{informacionCliente.prospectoE.estatusComentario}}</textarea>
                 </div>
 
+                <div class="col-8 mrg-top-15 mrg-btm-15" style="padding-left: 0px !important"></div>
 
-                <div class="col-8 mrg-top-15 mrg-btm-15" style="padding-left: 0px !important">
-                  <select class="form-control" id="" placeholder="Última actividad...">
-                    <option value="">Última actividad...</option>
-                    <option value="UA1">1</option>
-                    <option value="UA2">2</option>
-                    <option value="UA3">3</option>
-                    <option value="UA4">4</option>
-                  </select>
-
-                </div>
-
-                <div class="col-1 mrg-top-15 mrg-btm-15" style="padding-left: 0px !important"></div>
-
-                <div class="col-3 mrg-btm-15" style="padding-left: 0px !important">
+                <div class="col-4 mrg-btm-15" style="padding-left: 0px !important">
 
                   <div class="mrg-top-10">
-                    <a  class=" mrg-right-15 btn btn-default ei-save font-size-15"></a>
-                    <a (click)="$event.stopPropagation(); estatusDropdown.close();" class=" no-mrg-right btn btn-default ei-close" style="padding-top: 12px; padding-bottom: 12px;"></a>
+                    <a (click)="selectDropEstatus(estatusDropdown,informacionCliente)" class=" mrg-right-15 btn btn-default ei-save font-size-15"></a>
+                    <a (click)="estatusDropdown.close()" class=" no-mrg-right btn btn-default ei-close" style="padding-top:12px;padding-bottom:6px;"></a>
                   </div>
 
                 </div>
@@ -98,9 +86,9 @@
     </td>
     <td>
       <div class="mrg-top-15">
-        <div class="dropdown inline-block" ngbDropdown>
-          <button class="btn btn-default btn-inverse dropdown-toggle" type="button" data-toggle="dropdown" style="border: none;" ngbDropdownToggle>
-            <span> {{ asignacion.probabilidad }}%</span>
+        <div class="dropdown inline-block" ngbDropdown #probabilidadDropdown="ngbDropdown">
+          <button class="btn btn-default btn-inverse dropdown-toggle" type="button" data-toggle="dropdown" ngbDropdownAnchor (focus)="probabilidadDropdown.open()" style="border: none;">
+            <span> {{ informacionCliente.prospectoE.probabilidad }}%</span>
           </button>
           <ul class="dropdown-menu status_box" style="width:200px;" ngbDropdownMenu>
             <li class="col-12">
@@ -109,30 +97,21 @@
                 <label class="mrg-top-10 text-right gray control-label">Posibilidad de Cierre</label>
 
                 <div class="col-10" style="padding-left: 0px !important">
-                  <input type="text" class="form-control" id="" value="{{ asignacion.probabilidad }}" placeholder="Escriba el porcentaje">
+                  <input type="text" class="form-control" [(ngModel)]="informacionCliente.prospectoE.probabilidad" placeholder="Escriba el porcentaje">
                 </div>
-
                 <div class="col-2 no-pdd mrg-top-5 font-size-18">
                   <label>%</label>
                 </div>
 
                 <div class="row col-12 mrg-btm-15">
-
                   <div class="mrg-top-10">
-
                     <div class="display-block">
                       <div class="btn-group">
-                        <button type="button" class="btn btn-default">
-                          <i class="ei-save"></i>
-                        </button>
-                        <button type="button" class="btn btn-default" ngbDropdownToggle>
-                          <i class="ei-close"></i>
-                        </button>
-
+                        <button (click)="selectDropProbabilidad(probabilidadDropdown,informacionCliente)" type="button" class="btn btn-default"><i class="ei-save"></i></button>
+                        <button (click)="probabilidadDropdown.close()" type="button" class="btn btn-default" style="margin-bottom:10px;" ngbDropdownToggle><i class="ei-close"></i></button>
                       </div>
                     </div>
                   </div>
-
                 </div>
 
               </div>
@@ -149,48 +128,53 @@
       </div>
     </td>
     <td>
+
       <div class="mrg-top-10 text-center">
-        <div class="dropdown inline-block" ngbDropdown>
-          <button class="btn  btn-default btn-inverse dropdown-toggle no-pdd-right no-pdd-left" type="button" style="border: none; width: 125px; text-align: left;" data-toggle="dropdown" ngbDropdownToggle>
-            {{ asignacion.etapa }}
+        <div class="dropdown inline-block" ngbDropdown #etapaDrop="ngbDropdown">
+
+          <button class="btn btn-default btn-inverse dropdown-toggle no-pdd-right no-pdd-left" type="button" ngbDropdownAnchor (focus)="etapaDrop.open()" style="border: none; width: 125px; text-align: left;">
+            {{ informacionCliente.prospectoE.etapa | asignacionesGridEtapaText }}
             <div class="progress mrg-top-5">
               <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 30%"></div>
             </div>
           </button>
+
           <ul class="dropdown-menu" ngbDropdownMenu>
-            <li><a >Por Contactar</a></li>
-            <li><a >Contactado</a></li>
-            <li><a >Solicitud</a></li>
-            <li><a >Negociación</a></li>
+            <li><a (click)="selectDropEtapa(etapaDrop,informacionCliente,1);">Por Contactar</a></li>
+            <li><a (click)="selectDropEtapa(etapaDrop,informacionCliente,2);">Contactado</a></li>
+            <li><a (click)="selectDropEtapa(etapaDrop,informacionCliente,3);">Solicitud</a></li>
+            <li><a (click)="selectDropEtapa(etapaDrop,informacionCliente,4);">Negociación</a></li>
           </ul>
+
         </div>
       </div>
+
     </td>
     <td>
-      <div class="mrg-top-10 text-center" [innerHTML]="asignacion.fechaAsignacion | asignacionesGridFecha"></div>
+      <div class="mrg-top-10 text-center" [innerHTML]="informacionCliente.prospectoE.fechaAsignacion | asignacionesGridFecha"></div>
     </td>
     <td>
-      <div class="mrg-top-10 text-center" [innerHTML]="asignacion.ultimaActualizacion | asignacionesGridFecha"></div>
+      <div class="mrg-top-10 text-center" [innerHTML]="informacionCliente.prospectoE.ultimaActualizacion | asignacionesGridFecha"></div>
     </td>
     <td>
+
       <div class="mrg-top-10 text-center" ngbDropdown>
+
         <button class="btn btn-icon btn-flat btn-rounded dropdown-toggle" data-toggle="dropdown" ngbDropdownToggle>
           <i class="ti-more-alt"></i>
         </button>
+
         <ul class="dropdown-menu" ngbDropdownMenu>
-          <li><a (click)="cardLead(asignacion)"><i class="ei-file-edit pdd-right-10"></i>Editar lead</a></li>
-          <li><a ><i class="ti-layers-alt pdd-right-10"></i>Cambiar Estatus</a></li>
-          <li><a ><i class="ei-timer pdd-right-10"></i>Recordatorio</a></li>
-
-          <li><a ><i class="fa fa-flag pdd-right-10"></i>Probabilidad</a></li>
-
-          <li><a (click)="solicitud(asignacion)"><i class="ei-file-blank pdd-right-10"></i>Crear Solicitud</a></li>
+          <li><a (click)="cardLead(informacionCliente)"><i class="ei-file-edit pdd-right-10"></i>Lead</a></li>
+          <li><a (click)="$event.stopPropagation();probabilidadDropdown.close();estatusDropdown.open()"><i class="ti-layers-alt pdd-right-10"></i>Estatus</a></li>
+          <!--<li><a ><i class="ei-timer pdd-right-10"></i>Recordatorio</a></li>-->
+          <li><a (click)="$event.stopPropagation();estatusDropdown.close();probabilidadDropdown.open()"><i class="fa fa-flag pdd-right-10"></i>Probabilidad</a></li>
+          <li><a (click)="solicitud(informacionCliente)"><i class="ei-file-blank pdd-right-10"></i>Solicitud</a></li>
+          <li><a (click)="borrarAsignacion(informacionCliente)"><i class="ei-eraser pdd-right-10"></i>Borrar</a></li>
         </ul>
-
-
       </div>
-    </td>
 
+    </td>
   </tr>
 
 </tbody>

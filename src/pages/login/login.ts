@@ -5,6 +5,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { DashboardPage } from '../../shared/dashboard/dashboard';
 
+import { AppContants } from "../../providers/app.constants";
+import { AutenticacionProvider } from "../../providers/services/autenticacion.services";
+
 @IonicPage()
 @Component({
   selector: 'page-login',
@@ -12,38 +15,88 @@ import { DashboardPage } from '../../shared/dashboard/dashboard';
 })
 export class LoginPage {
 
-  public usuarioImage = "assets/images/foto_login2.jpg";
-  public usuario:string = "user";
+  public IMAGE_URL = "assets/images/avatars/";
 
-  constructor(public navCtrl: NavController, public splashScreen: SplashScreen) {
-    splashScreen.hide();
-  }
+  public existUsuario = false;
+  public usuarioImage = this.IMAGE_URL + "foto_login_b.jpg";
 
-  public goToDashboard(){
-    var usuarioLogin = this.usuario;
-    if (usuarioLogin=="super" || usuarioLogin=="user"){
-      //$("#video-background").hide();
-      //$("#divVideo").css('background-image', 'url("assets/images/others/img-29.jpg")');
-      if (usuarioLogin=="super"){
-        this.navCtrl.push(DashboardPage);
-      } else if (usuarioLogin=="user"){
-        this.navCtrl.push(DashboardPage);
-      }
-      return false;
-    }
+  public usuario:string = "";
+  public password:string = "";
+
+  public authResponse:string = "";
+
+  constructor(public navCtrl: NavController, public splashScreen: SplashScreen,
+              private autenticacionProvider: AutenticacionProvider, public appContants: AppContants) {
+
   }
 
   public changeUser(ev){
-    var usuarioInput = ev.target.value;
+    var usuarioInput = this.usuario;
     usuarioInput = usuarioInput.toLowerCase();
-    console.log(usuarioInput);
-    if (usuarioInput=="super"){
-      this.usuarioImage = "assets/images/foto_login.jpg";
-    } else if (usuarioInput=="user"){
-      this.usuarioImage = "assets/images/foto_login2.jpg";
+    console.log("ChangeUser : " + this.usuario);
+    //this.authResponse = usuarioInput;
+
+    this.autenticacionProvider.getImage(usuarioInput).subscribe( result => {
+       console.log(result);
+
+       if (result==null){
+         this.existUsuario = false;
+         this.usuarioImage = this.IMAGE_URL + "foto_login_b.jpg";
+       } else {
+         this.existUsuario = true;
+         this.usuarioImage = this.IMAGE_URL + result;
+       }
+
+       //this.authResponse = result.toString();
+      },
+      error => {
+          console.log(this.appContants.inspect(error));
+          this.authResponse = this.appContants.inspect(error);
+      }
+    );
+
+    /**this.autenticacionProvider.getImage(usuarioInput).subscribe( data =>
+      {
+        if (data==null){
+          this.existUsuario = false;
+          this.usuarioImage = this.IMAGE_URL + "foto_login_b.jpg";
+        } else {
+          this.existUsuario = true;
+          this.usuarioImage = this.IMAGE_URL + data;
+        }
+      });*/
+  }
+
+  public login(){
+    var usuarioLogin = this.usuario;
+    var passwordLogin = this.password;
+
+    if(usuarioLogin == ""){
+      this.authResponse = "Por favor, ingresa tu usuario";
     } else {
-      this.usuarioImage = "assets/images/foto_login_b.jpg";
+
+      if (this.existUsuario){
+        this.auth(usuarioLogin,passwordLogin);
+      } else {
+          this.authResponse = "Por favor, revisa tu usuario";
+      }
+
     }
+  }
+
+  public auth(username,password){
+    this.autenticacionProvider.authentication(username,password).subscribe( data =>
+      {
+        if (data==null){
+          this.authResponse = "Revisa tus credenciales";
+        } else {
+          console.log("auth : ");console.log(data);
+
+          this.appContants.ACTIVE_USER = data;
+          this.autenticacionProvider.updateLogin(data.idUsuario).subscribe( data => {} );
+          this.navCtrl.push(DashboardPage, {'usuario':data});
+        }
+      });
   }
 
 }

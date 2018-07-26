@@ -1,0 +1,250 @@
+<div class="container-fluid cardLead" id="cardLead_{{informacionCliente.idCliente}}">
+	<div class="container-fluid">
+		<div class="page-title">
+			<div class="row py-2">
+				<div class="col-12">
+					<a (click)="home()" class="btn btn-default btn-inverse" style="margin-bottom: 0px;"><i class="ti-angle-left pdd-right-10"></i>Regresar</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-heading border bottom">
+						<h4 class="card-title">Información del Lead</h4>
+					</div>
+					<div class="card-block no-pdd-top">
+						<div class="pdd-vertical-10" style="padding-bottom:20px;">
+
+							<div class="dropdown inline-block" ngbDropdown #estatusDropdown="ngbDropdown">
+			          <button class="btn {{ informacionCliente.prospectoE.estatus | asignacionesGridEstatusClass }} btn-inverse dropdown-toggle" type="button" data-toggle="dropdown" ngbDropdownAnchor (focus)="estatusDropdown.open()">
+			            <span class="ei-alarm"> {{ informacionCliente.prospectoE.estatus | asignacionesGridEstatusText }} </span> <i class="ti-angle-down font-size-9"></i>
+			          </button>
+			          <ul class="dropdown-menu status_box estatusGrid" ngbDropdownMenu>
+			            <li class="col-12">
+			              <div class="row col-12 no-pdd mrg-left-10">
+
+			                <label class="mrg-top-10 text-right gray control-label">Cambiar estatus de la asignación</label>
+
+			                <div class="mrg-top-10">
+			                  <a (click)="informacionCliente.prospectoE.estatus = 1" class="{{informacionCliente.prospectoE.estatus == 1 ? 'active' : ''}} padding-10 no-mrg-right btn btn-default btn-inverse btn-primary ei-alarm"> Para hoy</a>
+			                  <a (click)="informacionCliente.prospectoE.estatus = 2" class="{{informacionCliente.prospectoE.estatus == 2 ? 'active' : ''}} padding-10 no-mrg-right btn btn-default btn-inverse btn-info ei-time-left"> Stand by</a>
+			                  <a (click)="informacionCliente.prospectoE.estatus = 3" class="{{informacionCliente.prospectoE.estatus == 3 ? 'active' : ''}} padding-10 no-mrg-right btn btn-default btn-inverse btn-success ei-smiley"> Ganado</a>
+			                  <a (click)="informacionCliente.prospectoE.estatus = 4" class="{{informacionCliente.prospectoE.estatus == 4 ? 'active' : ''}} padding-10 no-mrg-right btn btn-default btn-inverse btn-warning ei-sad"> Perdido</a>
+			                  <a (click)="informacionCliente.prospectoE.estatus = 5" class="{{informacionCliente.prospectoE.estatus == 5 ? 'active' : ''}} padding-10 no-mrg-right btn btn-default btn-inverse btn-danger ei-straight"> Cancelado</a>
+			                </div>
+			                <label class="mrg-top-10 text-right gray control-label">Describe lo que hiciste (Opcional) </label>
+
+			                <div class="col-12" style="padding-left: 0px !important">
+			                  <textarea class="form-control col-12" [(ngModel)]="informacionCliente.prospectoE.estatusComentario">{{informacionCliente.prospectoE.estatusComentario}}</textarea>
+			                </div>
+
+			                <div class="col-8 mrg-top-15 mrg-btm-15" style="padding-left: 0px !important"></div>
+
+			                <div class="col-4 mrg-btm-15" style="padding-left: 0px !important">
+
+			                  <div class="mrg-top-10">
+			                    <a (click)="selectDropEstatus(estatusDropdown,informacionCliente)" class=" mrg-right-15 btn btn-default ei-save font-size-15"></a>
+			                    <a (click)="estatusDropdown.close()" class=" no-mrg-right btn btn-default ei-close" style="padding-top:12px;padding-bottom:6px;"></a>
+			                  </div>
+
+			                </div>
+
+			              </div>
+
+			            </li>
+
+			          </ul>
+			        </div>
+
+							<div class="dropdown inline-block" ngbDropdown #probabilidadDropdown="ngbDropdown">
+			          <button class="btn btn-default btn-inverse dropdown-toggle" type="button" data-toggle="dropdown" ngbDropdownAnchor (focus)="probabilidadDropdown.open()">
+			            <span> {{ informacionCliente.prospectoE.probabilidad }}%</span>
+			          </button>
+			          <ul class="dropdown-menu status_box" style="width:200px;" ngbDropdownMenu>
+			            <li class="col-12">
+			              <div class="row col-12 no-pdd mrg-left-10">
+
+			                <label class="mrg-top-10 text-right gray control-label">Posibilidad de Cierre</label>
+
+			                <div class="col-10" style="padding-left: 0px !important">
+			                  <input type="text" class="form-control" [(ngModel)]="informacionCliente.prospectoE.probabilidad" placeholder="Escriba el porcentaje">
+			                </div>
+			                <div class="col-2 no-pdd mrg-top-5 font-size-18">
+			                  <label>%</label>
+			                </div>
+
+			                <div class="row col-12 mrg-btm-15">
+			                  <div class="mrg-top-10">
+			                    <div class="display-block">
+			                      <div class="btn-group">
+			                        <button (click)="selectDropProbabilidad(probabilidadDropdown,informacionCliente)" type="button" class="btn btn-default"><i class="ei-save"></i></button>
+			                        <button (click)="probabilidadDropdown.close()" type="button" class="btn btn-default" style="margin-bottom:10px;" ngbDropdownToggle><i class="ei-close"></i></button>
+			                      </div>
+			                    </div>
+			                  </div>
+			                </div>
+
+			              </div>
+
+			            </li>
+
+			          </ul>
+			        </div>
+
+							<a (click)="editLead()" class="btn btn-default btn-inverse" style="margin-bottom: 0px; float: right;"><i class="fa fa-edit"></i></a>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="card-heading border bottom">
+						<h4 class="card-title">Actividades/Comentarios</h4>
+					</div>
+					<div class="card-block">
+						<div class="pdd-vertical-10">
+							<div class="table-overflow">
+								<table class="table">
+
+									<tbody>
+										<tr *ngFor="let comentario of comentarios; let i = index" id="comentario_{{comentario.idProspectoComentario}}">
+											<td>
+												<span class="bg-info" style="padding:2px 5px;border-radius:5px;"><span class="text-white">{{comentario.usuario.nombreCompleto}}</span></span>
+												<span style="float:right;font-size:12px;">{{comentario.fechaActualizacion}}</span>
+												<div class="col-md-12 mrg-top-10">
+													<input type="text" class="form-control mrg-top-10" value="{{comentario.descripcion}}" placeholder="Escribir actividad o comentario">
+												</div>
+											</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td>
+												<div class="col-md-12 mrg-top-10">
+													<input type="text" class="form-control mrg-top-10" #agregarComentario (keyup.enter)="onEnter(agregarComentario.value, informacionCliente.idCliente)" placeholder="Agregar comentario">
+												</div>
+											</td>
+										</tr>
+									</tfoot>
+								</table>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-heading border bottom">
+						<h4 class="card-title">Asignación de Lead</h4>
+					</div>
+					<div class="card-block no-pdd-top">
+						<div class="pdd-vertical-10">
+
+							<table class="table">
+
+								<div class="row">
+									<div class="col-6">
+										<h5 class="card-title mrg-top-20"><i class="fa fa-user pdd-right-10"></i>Ejecutivo Asignado</h5>
+									</div>
+									<div class="col-6 mrg-top-20 mrg-btm-20">
+										<span class="thumb-med bg-primary"><span class="text-white">{{appContants.ACTIVE_USER.nombreCompleto.substr(0,2)}}</span></span>
+										<p class="font-size-17">{{appContants.ACTIVE_USER.nombreCompleto}}</p>
+									</div>
+								</div>
+
+								<tbody>
+
+									<tr>
+										<td class="col-12 row no-mrg">
+											<h5 class="card-title col-6 mrg-top-20" style="padding-left: 2px;">
+												<i class="fa fa-tags pdd-right-10"></i>Etiquetas
+											</h5>
+
+											<div class="mrg-top-10 col-6">
+												<div class="dropdown inline-block" ngbDropdown #etiquetasDrop="ngbDropdown">
+
+								          <button class="btn btn-default btn-inverse btn-rounded dropdown-toggle" ngbDropdownAnchor (focus)="etiquetasDrop.open()">
+								            Añadir Etiquetas
+								          </button>
+
+								          <ul class="dropdown-menu" ngbDropdownMenu style="width:180px;border-radius:10px;box-shadow:0px 2px 2px #eae9e9;">
+								            <li><a (click)="toogleEtiqueta(informacionCliente, 'solicitudServiciosMoviles')">Servicios Móviles</a></li>
+								            <li><a (click)="toogleEtiqueta(informacionCliente, 'solicitudServiciosFijos')">Servicios Fijos</a></li>
+								            <li><a (click)="toogleEtiqueta(informacionCliente, 'sfTelefoniaFija')">Telefonía Fija</a></li>
+								            <li><a (click)="toogleEtiqueta(informacionCliente, 'sfTelevisionSuscripcion')">Televisión Suscripción</a></li>
+														<li><a (click)="toogleEtiqueta(informacionCliente, 'sfInternetFijo')">Internet Fijo</a></li>
+														<li><a (click)="toogleEtiqueta(informacionCliente, 'buroCredito')">Buro de Crédito</a></li>
+														<li><a (click)="toogleEtiqueta(informacionCliente, 'voto')">Voto</a></li>
+								          </ul>
+
+								        </div>
+											</div>
+											<div class="row">
+												<div class="mrg-top-20 p-2">
+													<a (click)="toogleEtiqueta(informacionCliente, 'solicitudServiciosMoviles')"
+														*ngIf="informacionCliente.prospectoE.solicitudServiciosMoviles" class="btn btn-info btn-inverse btn-rounded etiqueta">Servicios Móviles</a>
+													<a (click)="toogleEtiqueta(informacionCliente, 'solicitudServiciosFijos')"
+															*ngIf="informacionCliente.prospectoE.solicitudServiciosFijos" class="btn btn-info btn-inverse btn-rounded etiqueta">Servicios Fijos</a>
+													<a (click)="toogleEtiqueta(informacionCliente, 'sfInternetFijo')"
+															*ngIf="informacionCliente.prospectoE.sfInternetFijo" class="btn btn-info btn-inverse btn-rounded etiqueta">Internet Fijo</a>
+													<a (click)="toogleEtiqueta(informacionCliente, 'sfTelefoniaFija')"
+															*ngIf="informacionCliente.prospectoE.sfTelefoniaFija" class="btn btn-info btn-inverse btn-rounded etiqueta">Telefonía Fija</a>
+													<a (click)="toogleEtiqueta(informacionCliente, 'sfTelevisionSuscripcion')"
+															*ngIf="informacionCliente.prospectoE.sfTelevisionSuscripcion" class="btn btn-info btn-inverse btn-rounded etiqueta">Televisión Suscripción</a>
+													<a (click)="toogleEtiqueta(informacionCliente, 'buroCredito')"
+															*ngIf="informacionCliente.prospectoE.buroCredito" class="btn btn-info btn-inverse btn-rounded etiqueta">Buro Crédito</a>
+													<a (click)="toogleEtiqueta(informacionCliente, 'voto')"
+															*ngIf="informacionCliente.prospectoE.voto" class="btn btn-info btn-inverse btn-rounded etiqueta">Voto</a>
+												</div>
+											</div>
+
+										</td>
+
+									</tr>
+
+									<tr>
+										<td class="col-12 row no-mrg">
+											<h5 class="card-title col-6 mrg-top-20" style="padding-left: 2px;">
+												<i class="fa fa-file-pdf-o pdd-right-10"></i>Documentos Anexos
+											</h5>
+
+											<div class="mrg-top-10 col-6">
+												<a (click)="takePhoto()" class="btn btn-default btn-inverse" style="float: right;"><i class="fa fa-folder-open-o pdd-right-10"></i>Adjuntar</a>
+
+											</div>
+
+											<div class="col-12" *ngFor="let solicitud of solicitudesAnexo; let i = index" id="solicitud_{{solicitud.idSolicitudAnexos}}">
+												<div class="">
+													<div class="display-block">
+														<div class="btn-group">
+															<a (click)="openFile(solicitud.urlArchivo)" class="btn btn-default">
+																<span><strong>{{solicitud.nombreArchivo}}</strong></span>
+															</a>
+															<a (click)="deleteSolicitudAnexo(solicitud)" class="btn btn-default">
+																<i class="ti-trash"></i>
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</td>
+
+									</tr>
+
+
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+				</div>
+
+
+		</div>
+
+	</div>
+</div>

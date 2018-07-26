@@ -1,0 +1,12 @@
+export { Usuario } from "../interfaces/usuario.interface";
+export { InformacionCliente } from "../interfaces/informacionCliente.interface";
+export { DireccionCliente } from "../interfaces/direccionCliente.interface";
+export { Prospecto } from "../interfaces/prospecto.interface";
+export { DireccionProspecto } from "../interfaces/direccionProspecto.interface";
+export { ServicioFijo } from "../interfaces/servicioFijo.interface";
+export { FormaPago } from "../interfaces/formaPago.interface";
+export { InternetFijo } from "../interfaces/internetFijo.interface";
+export { TelefoniaFija } from "../interfaces/telefoniaFija.interface";
+export { TelevisionSuscripcion } from "../interfaces/televisionSuscripcion.interface";
+export { ServicioMovil } from "../interfaces/servicioMovil.interface";
+export { ServicioMovilContratado } from "../interfaces/servicioMovilContratado.interface";

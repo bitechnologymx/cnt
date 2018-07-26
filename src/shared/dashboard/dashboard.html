@@ -27,9 +27,9 @@
                         <ul class="nav-right">
                             <li class="user-profile dropdown" ngbDropdown #userProfileDropdown="ngbDropdown">
                                 <a class="dropdown-toggle" data-toggle="dropdown" ngbDropdownToggle>
-                                    <img class="profile-img img-fluid" src="assets/images/user.jpg">
+                                    <img class="profile-img img-fluid" src="assets/images/avatars/{{usuario.imagen}}">
                                     <div class="user-info">
-                                        <span class="name pdd-right-5">Nate Leong</span>
+                                        <span class="name pdd-right-5">{{usuario.nombreCompleto}}</span>
                                         <i class="ti-angle-down font-size-10"></i>
                                     </div>
                                 </a>
@@ -64,30 +64,10 @@
                                         <ul class="list-info overflow-y-auto relative scrollable">
                                             <li>
                                                 <a href="">
-                                                    <img class="thumb-img" src="assets/images/avatars/thumb-5.jpg" alt="">
+                                                    <span class="thumb-sm bg-primary"> <span class="text-white">Je</span></span>
                                                     <div class="info">
                                                         <span class="title"><span class="font-size-14 text-semibold">Jennifer Watkins</span></span>
                                                         <span class="sub-title">Id: 2375827394</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    <img class="thumb-img" src="assets/images/avatars/thumb-4.jpg" alt="">
-                                                    <div class="info">
-                                                        <span class="title"><span class="font-size-14 text-semibold">Samuel Field</span></span>
-                                                        <span class="sub-title">Id: 02734876237</span>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="">
-                                                    <span class="thumb-img bg-primary">
-															<span class="text-white">M</span>
-                                                    </span>
-                                                    <div class="info">
-                                                        <span class="title"><span class="font-size-14 text-semibold">Michael Birch</span></span>
-                                                        <span class="sub-title">Id: 23987192837</span>
                                                     </div>
                                                 </a>
                                             </li>
@@ -115,13 +95,13 @@
                 <div class="side-panel" [ngClass]="{'side-panel-open' : app.layout.sidePanelOpen}">
                     <div class="side-panel-wrapper bg-white">
                         <ul class="nav nav-tabs" role="tablist">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#chat" role="tab" data-toggle="tab">
+                            <li class="nav-item {{actividadBtn}}">
+                                <a class="nav-link" (click)="toogleActividadPerfil('actividad')" >
                                     <span>Actividad</span>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#profile" role="tab" data-toggle="tab">
+                            <li class="nav-item {{perfilBtn}}">
+                                <a class="nav-link" (click)="toogleActividadPerfil('perfil')" >
                                     <span>Perfil</span>
                                 </a>
                             </li>
@@ -133,87 +113,18 @@
                         </ul>
                         <div class="tab-content">
                             <!-- chat START -->
-                            <div id="chat" role="tabpanel" class="tab-pane fade in active">
+                            <div id="chat" role="tabpanel" class="tab-pane fade {{actividadTab}}">
                                 <div class="chat">
                                     <div class="chat-user-list scrollable">
                                         <div class="chat-section">
                                             <h5 class="chat-title">Reciente</h5>
-                                            <a href="javascript:void(0);" class="chat-user chat-toggle">
-                                                <img class="thumb-img" src="assets/images/avatars/thumb-1.jpg" alt="">
+                                            <a href="javascript:void(0);" class="chat-user chat-toggle" *ngFor="let userRA of usersRecentActivity">
+                                                <img class="thumb-img" src="assets/images/avatars/{{userRA.imagen}}" alt="">
                                                 <div class="user-info">
-                                                    <span class="user-name">Jordan Hurst</span>
-                                                    <span class="prev-chat">Id: 1278273618</span>
+                                                    <span class="user-name pdd-top-5">{{userRA.nombreCompleto}}</span>
+                                                    <span class="prev-chat">Id : 00000{{userRA.idUsuario}}</span>
                                                 </div>
-                                                <span class="status online"><span></span></span>
-                                            </a>
-                                            <a href="javascript:void(0);" class="chat-user chat-toggle">
-                                                <img class="thumb-img" src="assets/images/avatars/thumb-2.jpg" alt="">
-                                                <div class="user-info">
-                                                    <span class="user-name">Harriet Douglas</span>
-                                                    <span class="prev-chat">Id: 29362377499</span>
-                                                </div>
-                                                <span class="status no-disturb"></span>
-                                            </a>
-                                            <a href="javascript:void(0);" class="chat-user chat-toggle">
-                                                <img class="thumb-img" src="assets/images/avatars/thumb-3.jpg" alt="">
-                                                <div class="user-info">
-                                                    <span class="user-name">Victoria Clayton</span>
-                                                    <span class="prev-chat">Id: 203979816288</span>
-                                                </div>
-                                                <span class="status away"></span>
-                                            </a>
-                                            <a href="javascript:void(0);" class="chat-user chat-toggle">
-                                                <img class="thumb-img" src="assets/images/avatars/thumb-6.jpg" alt="">
-                                                <div class="user-info">
-                                                    <span class="user-name">Michael Birch</span>
-                                                    <span class="prev-chat">Id: 20392283762</span>
-                                                </div>
-                                                <span class="status online"></span>
-                                            </a>
-                                        </div>
-                                        <div class="chat-section">
-                                            <h5 class="chat-title">Vendedores</h5>
-                                            <a href="javascript:void(0);" class="chat-user chat-toggle">
-                                                <img class="thumb-img" src="assets/images/avatars/thumb-4.jpg" alt="">
-                                                <div class="user-info">
-                                                    <span class="user-name pdd-top-5">Samuel Field</span>
-                                                </div>
-                                                <span class="status"></span>
-                                            </a>
-                                            <a href="javascript:void(0);" class="chat-user chat-toggle">
-                                                <img class="thumb-img" src="assets/images/avatars/thumb-5.jpg" alt="">
-                                                <div class="user-info">
-                                                    <span class="user-name pdd-top-5">Jennifer Watkins</span>
-                                                </div>
-                                                <span class="status"></span>
-                                            </a>
-                                            <a href="javascript:void(0);" class="chat-user chat-toggle">
-                                                <img class="thumb-img" src="assets/images/avatars/thumb-6.jpg" alt="">
-                                                <div class="user-info">
-                                                    <span class="user-name pdd-top-5">Michael Birch</span>
-                                                </div>
-                                                <span class="status"></span>
-                                            </a>
-                                            <a href="javascript:void(0);" class="chat-user chat-toggle">
-                                                <img class="thumb-img" src="assets/images/avatars/thumb-10.jpg" alt="">
-                                                <div class="user-info">
-                                                    <span class="user-name pdd-top-5">Renee Edwards</span>
-                                                </div>
-                                                <span class="status"></span>
-                                            </a>
-                                            <a href="javascript:void(0);" class="chat-user chat-toggle">
-                                                <img class="thumb-img" src="assets/images/avatars/thumb-11.jpg" alt="">
-                                                <div class="user-info">
-                                                    <span class="user-name pdd-top-5">Kathy White</span>
-                                                </div>
-                                                <span class="status"></span>
-                                            </a>
-                                            <a href="javascript:void(0);" class="chat-user chat-toggle">
-                                                <img class="thumb-img" src="assets/images/avatars/thumb-9.jpg" alt="">
-                                                <div class="user-info">
-                                                    <span class="user-name pdd-top-5">Daryl Ellis</span>
-                                                </div>
-                                                <span class="status"></span>
+                                                <span class="status {{ userRA.estatusApp | actividadUsuario}}"></span>
                                             </a>
                                         </div>
                                     </div>
@@ -252,18 +163,21 @@
                             </div>
                             <!-- chat END -->
                             <!-- profile START -->
-                            <div id="profile" role="tabpanel" class="tab-pane fade">
+                            <div id="profile" role="tabpanel" class="tab-pane fade {{perfilTab}}">
                                 <div class="profile scrollable">
                                     <div class="pdd-horizon-20 pdd-top-20">
                                         <div class="border bottom">
                                             <div class="text-center mrg-top-20">
                                                 <div class="row">
                                                     <div class="col-md-6 ml-auto mr-auto text-center">
-                                                        <img class="img-fluid border-radius-round" src="assets/images/foto_login.jpg" alt="">
+                                                        <img class="img-fluid border-radius-round" src="assets/images/avatars/" alt="">
                                                     </div>
                                                 </div>
-                                                <h4 class="mrg-top-20">Nate Leong</h4>
-                                                <span class="">Superusuario</span>
+                                                <h4 class="mrg-top-20">{{usuario.nombreCompleto}}</h4>
+
+                                                <div *ngFor="let rl of usuario.roles; let i = index">
+                                                  <span class="">{{rl.nombre}} <br/></span>
+                                                </div>
                                             </div>
                                             <div class="row text-center pdd-vertical-20">
                                                 <div class="col-sm-12">
@@ -271,7 +185,7 @@
                                                         <div class="col-sm-12 col-xs-4">
                                                             <div class="pdd-vertical-10">
                                                                 <span class="font-size-18 text-dark">Último ingreso</span><br/>
-                                                                <small>30/04/2018</small>
+                                                                <small>{{usuario.ultimoIngreso}}</small>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -318,7 +232,7 @@
 
                 <!-- Content Wrapper START -->
                 <div class="main-content">
-                    <ion-nav #dashboardNav [root]="homePage" #nav style="left:auto;top:auto;"></ion-nav>
+                    <ion-nav #dashboardNav style="left:auto;top:auto;"></ion-nav>
                 </div>
                 <!-- Content Wrapper END -->
 
